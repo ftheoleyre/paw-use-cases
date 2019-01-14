@@ -100,6 +100,50 @@
 
 
 
+<section title="Pro Audio and Video">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The professional audio and video industry ("ProAV") includes:
+   			<list style="symbols">
+                <t>
+                    Gaming (e.g., Play Station, Xbox)
+                </t>
+                <t>
+                    Public address, media and emergency systems at large venues (airports, 
+                    stadiums, train stations, churches, theme parks).
+                </t>
+                <!-- Cinema
+				Live sound 
+				Music and film content creation
+				-->
+            </list>
+   		</t>
+   		
+   		<t>
+   			Today the ProAV applications are moving to packet-based technology
+   			to introduce routing features and to reduce costs.
+   		</t>
+   </section>    
+   
+   
+   <section title="Specificities">
+   	   		       
+       <t> 
+       </t>
+    </section>
+       
+       
+   <section title="Applications">
+       
+       <t> 
+       </t>
+   </section>
+
+    
+</section>
+
+
 
 <section title="Amusement Parks">
    
