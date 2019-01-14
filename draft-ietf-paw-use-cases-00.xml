@@ -24,20 +24,34 @@
    
    
  
-    <author initials="G.Z." surname="Papadopoulos" fullname="Georgios Papadopoulos">
-      <organization>IMT Atlantique</organization>
-      <address>
+ <author initials="G.Z." surname="Papadopoulos" fullname="Georgios Papadopoulos">
+     <organization>IMT Atlantique</organization>
+     <address>
          <postal>
-            <street>Office B00 - 114A</street>
-            <street>2 Rue de la Chataigneraie</street>
-            <city>Cesson-Sevigne - Rennes</city>
-            <code>35510</code>
-            <country>FRANCE</country>
+             <street>Office B00 - 114A</street>
+             <street>2 Rue de la Chataigneraie</street>
+             <city>Cesson-Sevigne - Rennes</city>
+             <code>35510</code>
+             <country>FRANCE</country>
          </postal>
-         <phone>+33 299 12 70 04</phone>         
-    <email>georgios.papadopoulos@imt-atlantique.fr</email>
-      </address>
-    </author>
+         <phone>+33 299 12 70 04</phone>
+         <email>georgios.papadopoulos@imt-atlantique.fr</email>
+     </address>
+ </author>
+ <author initials="F." surname="Theoleyre" fullname="Fabrice Theoleyre">
+     <organization>CNRS</organization>
+     <address>
+         <postal>
+             <street>Office B-270</street>
+             <street>Boulevard Sebastien Brant</street>
+             <city>Illkirch</city>
+             <code>67400</code>
+             <country>FRANCE</country>
+         </postal>
+         <phone>+33 368 85 45 33</phone>
+         <email>theoleyre@unistra.fr</email>
+     </address>
+ </author>
 
 
    <date/>
@@ -77,30 +91,76 @@
 
 
 <section title="Introduction">
+    <t>
+        
+    </t>
    
     
 </section>
 
 
 
-<section title="IANA Considerations">
-    <t>
-        This proposal requests the allocation of a new value TBD1 for the "Parent Set" TLV in the Routing Metric/Constraint TLVs sub-registry from IANA.
-    </t>
-            
+
+<section title="Amusement Parks">
+   
+   <t> The digitalization of Amusement Parks is expected to decrease signficantly
+       the cost for maintaining the attractions. By monitoring in real-time
+       the machines, predictive maintenance will help to reduce the repairing cost
+       as well as the downtime. Besides, the attractions may use wireless
+       transmissions to interconnect sensors and actuators, to priviledge
+       reconfigurability, and standardization.
+   </t>
+   
+   <t> Using wireless devices also aim to enable novel high-value services.
+       VIP tickets are nowadays more and more popular. Wireless wearable devices
+       may help to reduce the operating costs <xref target="disney-VIP"/> and
+       increasing the number of charged services provided to the audience (VIP
+       tickets, interactions, etc.)
+   </t>
+    
+   
+   
+   <section title="Specificities">
+       
+       <t> Amusement parks comprise a variable number of attractions, mostly outdoor.
+           The tourists are free to move from an attraction to another, covering a large
+           geographical area.
+       </t>
+       
+       <t> We make a distinction between the wireless devices which control the attractions,
+           and the wearable devices owned by the visitors. The park may "guide" the
+           different users acording to the attractions' attenance, waiting time,
+           preferences of the users, distance of the attraction.
+       </t>
+    </section>
+       
+       
+   <section title="Applications">
+       
+       <t> Tourist attractions may comprise a large set of sensors and actuators, which
+           react in real time. Typical applications (ordered by criticality in
+           descending order) are:
+       </t>
+       <t>
+           <list style="symbols">
+               <t>emergency: safety has to be preserved, and MUST stop the attraction
+                   when a failure is detected;</t>
+               
+               <t>real-time control: real-time applications embedded in the attraction
+                   need to trigger an action when an event is detected. For instance, a
+                   photograph can be taken when a car crosses an actuator, combined
+                   with a wireless ID that the turists wear;</t>
+               
+               <t>predictive maintenance: statistics are collected to predict the
+                   future failures, or to compute later more complex stiatsitics about
+                   the attraction's usage, the downtime, its popularity, etc. </t>
+               
+           </list>
+       </t>
+   </section>
+
+    
 </section>
-
-
-
-  <?rfc compact="yes" ?>
-
-<!-- <section title="Acknowledgments">
-  		<t>
-  			TODO: We are grateful to XXXX YYYYY and KKKK LLLL for their comments that 
-  			lead to many improvements to this document. 
-  		</t>
-</section> -->
-
 
 
 </middle>
@@ -109,12 +169,28 @@
 
 
  <back>
-<!--  <references title="Normative References"> 
-  </references> -->
+     
+     
+     <references title="Other Informative References">
+       <reference anchor="disney-VIP" target="https://www.wired.com/2015/03/disney-magicband/">
+           <front>
+               <title>Disney's $1 Billion Bet on a Magical Wristband</title>
+               <author>
+                   <organization>Wired</organization>
+               </author>
+               <date year="2015" month="March"/>
+           </front>
+       </reference>
+     </references>
+<!--
+ 
+ 
+ <references title="Normative References">
+
 
   <references title="Informative references">
         <?rfc include='reference.RFC.2119'?>
-        <?rfc include="reference.RFC.6550"?> 						<!-- RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks -->
+        <?rfc include="reference.RFC.6550"?>
         
   </references>
   
@@ -131,27 +207,8 @@
         </front>
     </reference>
   </references>
+  -->
   
-  
-  <section title="Implementation Status">
-      <t>
-        blabla
-      </t>
-      
-  
-      <t>
-        Links:
-        <list style="symbols">
-            <t>
-                <eref target="https://github.com/ariskou/contiki/tree/draft-koutsiamanis-roll-nsa-extension">Contiki OS DIO DAGMC NSA extension (draft-koutsiamanis-roll-nsa-extension branch)</eref>
-            </t>
-            <t>
-                <eref target="https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=e2f6ba229f45d8ccae2a6405e0ef41f1e61da138">Wireshark dissectors (for the optional TLV, i.e., PS) - currently merged / in master</eref>
-            </t>
-        </list>
-      </t>
-      
-  </section>
-     
+ 
 </back> 
 </rfc>
