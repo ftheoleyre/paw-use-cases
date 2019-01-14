@@ -103,25 +103,26 @@
 
 <section title="Amusement Parks">
    
-   <t> The digitalization of Amusement Parks is expected to decrease signficantly
-       the cost for maintaining the attractions. By monitoring in real-time
-       the machines, predictive maintenance will help to reduce the repairing cost
-       as well as the downtime. Besides, the attractions may use wireless
-       transmissions to interconnect sensors and actuators, to priviledge
-       reconfigurability, and standardization.
-   </t>
+   <section title="Use Case Description">
+   		<t> The digitalization of Amusement Parks is expected to decrease significantly
+       		the cost for maintaining the attractions. By monitoring in real-time
+       		the machines, predictive maintenance will help to reduce the repairing cost
+       		as well as the downtime. Besides, the attractions may use wireless
+       		transmissions to interconnect sensors and actuators, to privileged
+       		reconfigurability, and standardization.
+   		</t>
    
-   <t> Using wireless devices also aim to enable novel high-value services.
-       VIP tickets are nowadays more and more popular. Wireless wearable devices
-       may help to reduce the operating costs <xref target="disney-VIP"/> and
-       increasing the number of charged services provided to the audience (VIP
-       tickets, interactions, etc.)
-   </t>
-    
+   		<t> Using wireless devices also aim to enable novel high-value services.
+       		VIP tickets are nowadays more and more popular. Wireless wearable devices
+       		may help to reduce the operating costs <xref target="disney-VIP"/> and
+       		increasing the number of charged services provided to the audience (VIP
+       		tickets, interactions, etc.)
+   		</t>
+   </section>    
    
    
    <section title="Specificities">
-       
+   	   		       
        <t> Amusement parks comprise a variable number of attractions, mostly outdoor.
            The tourists are free to move from an attraction to another, covering a large
            geographical area.
@@ -129,7 +130,7 @@
        
        <t> We make a distinction between the wireless devices which control the attractions,
            and the wearable devices owned by the visitors. The park may "guide" the
-           different users acording to the attractions' attenance, waiting time,
+           different users according to the attractions' attendance, waiting time,
            preferences of the users, distance of the attraction.
        </t>
     </section>
@@ -149,10 +150,10 @@
                <t>real-time control: real-time applications embedded in the attraction
                    need to trigger an action when an event is detected. For instance, a
                    photograph can be taken when a car crosses an actuator, combined
-                   with a wireless ID that the turists wear;</t>
+                   with a wireless ID that the tourists wear;</t>
                
                <t>predictive maintenance: statistics are collected to predict the
-                   future failures, or to compute later more complex stiatsitics about
+                   future failures, or to compute later more complex statistics about
                    the attraction's usage, the downtime, its popularity, etc. </t>
                
            </list>
