@@ -92,10 +92,22 @@
 
 <section title="Introduction">
     <t>
-        
+        This draft describes industrial use cases which require deterministic flows over 
+        wireless multi-hop paths.
     </t>
-   
+
+	<t>
+    	The PAW use cases explicitly do not propose or suggest any specific solution or 
+    	design for PAW architecture or protocols. 
+    	These are subjects of other PAW drafts.
+    	The PAW use cases are not considered as concrete requirements by the PAW Working 
+    	Group.
+	</t>
     
+	<t>
+    	The industrial use cases covered in this draft are professional audio, wireless 
+    	for industrial applications and amusement parks.
+	</t>    
 </section>
 
 
@@ -127,19 +139,11 @@
    </section>    
    
    
-   <section title="Specificities">
-   	   		       
+   <section title="Specificities">     
        <t> 
+       		
        </t>
     </section>
-       
-       
-   <section title="Applications">
-       
-       <t> 
-       </t>
-   </section>
-
     
 </section>
 
