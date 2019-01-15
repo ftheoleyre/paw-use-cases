@@ -38,6 +38,9 @@
          <email>georgios.papadopoulos@imt-atlantique.fr</email>
      </address>
  </author>
+ 
+ 
+ 
  <author initials="F." surname="Theoleyre" fullname="Fabrice Theoleyre">
      <organization>CNRS</organization>
      <address>
@@ -133,7 +136,7 @@
    		</t>
    		
    		<t>
-   			Today the ProAV applications are moving to packet-based technology
+   			Today the ProAV applications are moving towards packet-based technology
    			to introduce routing features and to reduce costs.
    		</t>
    </section>    
@@ -141,7 +144,11 @@
    
    <section title="Specificities">     
        <t> 
-       		
+       		Considering the uninterrupted audio or video stream, a potential packet losses 
+       		during the transmission of audio or video flows cannot be tackled by re-trying 
+       		the transmission, as it is done with file transfer, because by the time the 
+       		packet lost has been identified it is too late to proceed with packet 
+       		re-transmission.
        </t>
     </section>
     
@@ -207,7 +214,25 @@
            </list>
        </t>
    </section>
+       
+</section>
 
+
+
+<section title="Wireless for Industrial Applications">
+   
+   <section title="Use Case Description">
+   		<t> 
+
+   		</t>
+   		
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       </t>
+    </section>
     
 </section>
 
