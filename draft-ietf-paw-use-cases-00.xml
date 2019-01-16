@@ -24,37 +24,50 @@
    
    
  
- <author initials="G.Z." surname="Papadopoulos" fullname="Georgios Papadopoulos">
-     <organization>IMT Atlantique</organization>
-     <address>
-         <postal>
-             <street>Office B00 - 114A</street>
-             <street>2 Rue de la Chataigneraie</street>
-             <city>Cesson-Sevigne - Rennes</city>
-             <code>35510</code>
+	<author initials="G.Z." surname="Papadopoulos" fullname="Georgios Papadopoulos">
+    	<organization>IMT Atlantique</organization>
+    	<address>
+        	<postal>
+            	<street>Office B00 - 114A</street>
+             	<street>2 Rue de la Chataigneraie</street>
+             	<city>Cesson-Sevigne - Rennes</city>
+             	<code>35510</code>
              <country>FRANCE</country>
-         </postal>
-         <phone>+33 299 12 70 04</phone>
-         <email>georgios.papadopoulos@imt-atlantique.fr</email>
-     </address>
- </author>
+         	</postal>
+         	<phone>+33 299 12 70 04</phone>
+         	<email>georgios.papadopoulos@imt-atlantique.fr</email>
+		</address>
+	</author>
  
+ 	<author initials="P" surname="Thubert" fullname="Pascal Thubert">   
+		<organization abbrev="Cisco">Cisco Systems, Inc</organization>
+      	<address>
+        	<postal>
+            	<street>Building D</street>
+            	<street>45 Allee des Ormes - BP1200 </street>
+            	<city>MOUGINS - Sophia Antipolis</city>
+            	<code>06254</code>
+            	<country>FRANCE</country>
+         	</postal>
+         	<phone>+33 497 23 26 34</phone>
+         	<email>pthubert@cisco.com</email>
+		</address>
+	</author>   
  
- 
- <author initials="F." surname="Theoleyre" fullname="Fabrice Theoleyre">
-     <organization>CNRS</organization>
-     <address>
-         <postal>
-             <street>Office B-270</street>
-             <street>Boulevard Sebastien Brant</street>
-             <city>Illkirch</city>
-             <code>67400</code>
-             <country>FRANCE</country>
-         </postal>
-         <phone>+33 368 85 45 33</phone>
-         <email>theoleyre@unistra.fr</email>
-     </address>
- </author>
+	<author initials="F." surname="Theoleyre" fullname="Fabrice Theoleyre">
+    	<organization>CNRS</organization>
+     	<address>
+        	<postal>
+            	<street>Office B-270</street>
+             	<street>Boulevard Sebastien Brant</street>
+             	<city>Illkirch</city>
+             	<code>67400</code>
+             	<country>FRANCE</country>
+         	</postal>
+         	<phone>+33 368 85 45 33</phone>
+         	<email>theoleyre@unistra.fr</email>
+     	</address>
+ 	</author>
 
 
    <date/>
