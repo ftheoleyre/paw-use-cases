@@ -107,23 +107,79 @@
 
 
 <section title="Introduction">
+
     <t>
-        This draft describes industrial use cases which require deterministic flows over 
-        wireless multi-hop paths.
+    Based on time, resource reservation, and policy enforcement by distributed 
+	shapers, Deterministic Networking provides the capability to carry
+	specified unicast or multicast data streams for real-time applications with
+	extremely low data loss rates and bounded latency, so as to support
+	time-sensitive and mission-critical applications on a converged enterprise
+	infrastructure.  
+	</t>
+	<t>
+    Deterministic Networking technology allows new Quality of Service (QoS)
+	guarantees of ‘worst-case’ delivery.  More precisely, the worst-case data
+	loss and latency can be guaranteed in a consistent fashion as multiple
+	services are deployed, augmenting the load of the network with no
+	measurable impact on existing flows whatsoever.
+	</t>
+	<t>
+	Key attributes of Deterministic Networking are:
+       <list>
+     <t> Time synchronization on all the nodes, often including source and destination </t> 
+	 <t>The centralized computation of network-wide deterministic paths</t>
+	 <t>New traffic shapers within and at the edge to protect the network</t>
+     <t>Specialized hardware for scheduled access to the media.</t>
+	   </list>
+	</t>
+	<t>
+	So far, Open Standards for Deterministic Networking have prevalently been
+	focused on wired media, with Audio/Video Bridgeing (AVB) and Time Sensitive
+	Networking (TSN) at the IEEE and DetNet <xref target="I-D.ietf-detnet-architecture"/> at the IETF. But in a number of
+	use-cases, wires can simplu not apply. Examples include mobile or rotating
+	devices, rehabilitated industrial buildings, wearable or in-body sensory
+	devices, vehicle automation and	multiplayer	gaming.
+	</t>
+	<t>
+	Purpose-built technologies <xref target="ISA100"/>
+ <xref target="WirelessHART"/>have been deployed in the most critical cases to
+	cope with the lack of open standards, but those yield a high cost in OPEX
+	and CAPEX and are limited to very few industries, e.g., concerts and racing.
+	This is now changing.
+	<list>
+	   <t>IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
+	   (URLLC)as a key functionality for the upcoming 5G. </t>
+	   <t>IEEE 802.11 is integrating real-time applications in the charter of
+	   the	Extreme High Throughput (EHT) Task Group (to be formed at the time
+	   of this writing), and</t>
+	   <t>the IETF has designed an IPv6 stack <xref target="I-D.ietf-6tisch-architecture"/> for IEEE Std. 802.15.4
+	   TimeSlotted Channel Hopping (TSCH) and an architecture that enables 
+	   Predictable and Available Wireless (PAW) communications on a shared MAC
+	   .
+	   </t>
+	</list>
+	</t>
+    <t>
+	Achieving Determinism requires a tight control of the physical resources, 
+	and at the physical level, wireless and wired are fundamentally
+	different. Wireless operates in a shared medium, and the quality of the 
+	transmission is fuzzy and depends of variable in the time, the spatial and
+	the frequency domains. It results that while the generic Problem Statement
+	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to
+	the wireless medium as well as to wires, the methods to achieve Predictable
+	and Available Wireless communications will necessarily differ from those
+	used to support Time-Sensitive Networks in the wired environment.
+	The expectation is that PAW would centralize the work on efforts that 
+	inherit from DetNet but focus on wireless. 
+	</t>
+    <t>
+    This draft extends the <xref target="I-D.ietf-detnet-use-cases">
+	"Deterministic Networking Use Cases"</xref> and describes a number of
+	additional use cases which require deterministic flows over wireless links
+	and possibly complex multi-hop paths.
     </t>
 
-	<t>
-    	The PAW use cases explicitly do not propose or suggest any specific solution or 
-    	design for PAW architecture or protocols. 
-    	These are subjects of other PAW drafts.
-    	The PAW use cases are not considered as concrete requirements by the PAW Working 
-    	Group.
-	</t>
-    
-	<t>
-    	The industrial use cases covered in this draft are professional audio, wireless 
-    	for industrial applications and amusement parks.
-	</t>    
+ 
 </section>
 
 
@@ -149,8 +205,8 @@
    		</t>
    		
    		<t>
-   			Today the ProAV applications are moving towards packet-based technology
-   			to introduce routing features and to reduce costs.
+   			Today the ProAV applications are moving towards packet-based 
+			technology to introduce routing features and to reduce costs.
    		</t>
    </section>    
    
@@ -165,6 +221,10 @@
        </t>
     </section>
     
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
 </section>
 
 
@@ -228,6 +288,12 @@
        </t>
    </section>
        
+	   
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
+	
 </section>
 
 
@@ -246,6 +312,11 @@
        <t> 
        </t>
     </section>
+	
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
     
 </section>
 
@@ -257,8 +328,19 @@
 
  <back>
      
+ <references title="Normative References">
+ </references>
      
-     <references title="Other Informative References">
+ <references title="Informative References">
+ 
+ 
+	   
+	  <?rfc include='reference.I-D.ietf-detnet-problem-statement'?>
+	  <?rfc include='reference.I-D.ietf-detnet-use-cases'?>
+      <?rfc include='reference.I-D.ietf-6tisch-architecture'?>
+      <?rfc include='reference.I-D.ietf-detnet-architecture'?>
+	   
+ 
        <reference anchor="disney-VIP" target="https://www.wired.com/2015/03/disney-magicband/">
            <front>
                <title>Disney's $1 Billion Bet on a Magical Wristband</title>
@@ -268,33 +350,50 @@
                <date year="2015" month="March"/>
            </front>
        </reference>
-     </references>
-<!--
- 
- 
- <references title="Normative References">
-
-
-  <references title="Informative references">
-        <?rfc include='reference.RFC.2119'?>
-        <?rfc include="reference.RFC.6550"?>
-        
-  </references>
-  
-  <references title="Other Informative References">
-  	<reference anchor="IEEE802154-2015">
-    	<front>
-        	<title>
-        	   IEEE Std 802.15.4-2015 Standard for Low-Rate Wireless Personal Area Networks (WPANs)
-        	</title>
+	   
+	   
+       <reference anchor="ISA100" target="https://www.isa.org/isa100/">
+         <front>
+            <title>ISA100, Wireless Systems for Automation</title>
+            <author>
+               <organization>ISA/ANSI</organization>
+            </author>
+            <date/>
+         </front>
+      </reference>
+	  
+	  
+      <reference anchor="WirelessHART">
+         <front>
+            <title>Industrial Communication Networks - Wireless Communication Network and Communication Profiles - WirelessHART - IEC 62591</title>
+            <author>
+               <organization>www.hartcomm.org</organization>
+            </author>
+            <date year="2010" />
+         </front>
+      </reference>
+	  
+	  
+      <reference anchor="IEEE802154">
+         <front>
+            <title>IEEE Std. 802.15.4, Part. 15.4: Wireless Medium Access
+            Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate
+            Wireless Personal Area Networks
+            </title>
             <author>
                <organization>IEEE standard for Information Technology</organization>
             </author>
-            <date year="2015" month="December"/>
-        </front>
-    </reference>
-  </references>
-  -->
+            <date/>
+         </front>
+      </reference>
+	  
+	  
+	  
+	   
+ </references>
+
+ 
+ 
   
  
 </back> 
