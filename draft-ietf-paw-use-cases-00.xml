@@ -118,7 +118,7 @@
 	</t>
 	<t>
     Deterministic Networking technology allows new Quality of Service (QoS)
-	guarantees of ‘worst-case’ delivery.  More precisely, the worst-case data
+	guarantees of worst-case delivery.  More precisely, the worst-case data
 	loss and latency can be guaranteed in a consistent fashion as multiple
 	services are deployed, augmenting the load of the network with no
 	measurable impact on existing flows whatsoever.
@@ -323,14 +323,13 @@
 
 </middle>
 
+<back>
 
-
-
- <back>
-     
- <references title="Normative References">
+<!--
+   <references title="Normative References">
  </references>
-     
+--> 
+
  <references title="Informative References">
  
  
