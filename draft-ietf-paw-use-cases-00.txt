@@ -62,7 +62,7 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Pro Audio and Video . . . . . . . . . . . . . . . . . . . . .   3
-     2.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   3
+     2.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
      2.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   4
      2.3.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   4
    3.  Amusement Parks . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -88,9 +88,12 @@ Table of Contents
 
    Deterministic Networking technology allows new Quality of Service
    (QoS) guarantees of worst-case delivery.  More precisely, the worst-
-   case data loss and latency can be guaranteed in a consistent fashion
-   as multiple services are deployed, augmenting the load of the network
-   with no measurable impact on existing flows whatsoever.
+   case data latency can be guaranteed for a bounded throughput in a
+   consistent fashion as multiple services are deployed, augmenting the
+   load of the network with no measurable impact on existing flows
+   whatsoever.  Additional QoS goals can include a loss ratio like 10e-5
+   or a maximum losses in a row like three consecutive losses at a
+   maximum.
 
    Key attributes of Deterministic Networking are:
 
@@ -103,9 +106,6 @@ Table of Contents
 
       Specialized hardware for scheduled access to the media.
 
-   So far, Open Standards for Deterministic Networking have prevalently
-   been focused on wired media, with Audio/Video Bridgeing (AVB) and
-   Time Sensitive Networking (TSN) at the IEEE and DetNet
 
 
 
@@ -114,6 +114,9 @@ Papadopoulos, et al.     Expires August 5, 2019                 [Page 2]
 Internet-Draft           PAW use cases scenarios           February 2019
 
 
+   So far, Open Standards for Deterministic Networking have prevalently
+   been focused on wired media, with Audio/Video Bridgeing (AVB) and
+   Time Sensitive Networking (TSN) at the IEEE and DetNet
    [I-D.ietf-detnet-architecture] at the IETF.  But in a number of use-
    cases, wires can simplu not apply.  Examples include mobile or
    rotating devices, rehabilitated industrial buildings, wearable or in-
@@ -156,11 +159,8 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 2.  Pro Audio and Video
 
-2.1.  Use Case Description
 
-   The professional audio and video industry ("ProAV") includes:
 
-   o  Gaming (e.g., Play Station, Xbox)
 
 
 
@@ -169,6 +169,12 @@ Papadopoulos, et al.     Expires August 5, 2019                 [Page 3]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
+
+2.1.  Use Case Description
+
+   The professional audio and video industry ("ProAV") includes:
+
+   o  Gaming (e.g., Play Station, Xbox)
 
    o  Public address, media and emergency systems at large venues
       (airports, stadiums, train stations, churches, theme parks).
@@ -212,12 +218,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
    We make a distinction between the wireless devices which control the
    attractions, and the wearable devices owned by the visitors.  The
-   park may "guide" the different users according to the attractions'
-   attendance, waiting time, preferences of the users, distance of the
-   attraction.
-
-
-
 
 
 
@@ -225,6 +225,10 @@ Papadopoulos, et al.     Expires August 5, 2019                 [Page 4]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
+
+   park may "guide" the different users according to the attractions'
+   attendance, waiting time, preferences of the users, distance of the
+   attraction.
 
 3.3.  Applications
 
@@ -270,10 +274,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
               Finn, N., Thubert, P., Varga, B., and J. Farkas,
               "Deterministic Networking Architecture", draft-ietf-
               detnet-architecture-10 (work in progress), December 2018.
-
-
-
-
 
 
 

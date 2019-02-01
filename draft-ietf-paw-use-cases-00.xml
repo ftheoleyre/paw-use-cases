@@ -119,9 +119,11 @@
 	<t>
     Deterministic Networking technology allows new Quality of Service (QoS)
 	guarantees of worst-case delivery.  More precisely, the worst-case data
-	loss and latency can be guaranteed in a consistent fashion as multiple
-	services are deployed, augmenting the load of the network with no
-	measurable impact on existing flows whatsoever.
+    latency can be guaranteed for a bounded throughput in a consistent fashion
+	as multiple	services are deployed, augmenting the load of the network with
+	no measurable impact on existing flows whatsoever. Additional QoS goals can
+	include a loss ratio like 10e-5 or a maximum losses in a row like three
+	consecutive losses at a maximum.
 	</t>
 	<t>
 	Key attributes of Deterministic Networking are:
