@@ -79,8 +79,8 @@
    The wireless medium presents significant specific challenges to achieve
    properties similar to those of wired deterministic networks. At the same
    time, a number of use cases cannot be solved with wires and justify the
-   extra effort of going wireless. This document presents a number of these
-   use cases.
+   extra effort of going wireless. This document presents some of these
+   use-cases.
    </t>
    </abstract>
    
@@ -126,57 +126,59 @@
     latency can be guaranteed for a bounded throughput in a consistent fashion
 	as multiple	services are deployed, augmenting the load of the network with
 	no measurable impact on existing flows whatsoever. Additional QoS goals can
-	include a loss ratio like 10e-5 or a maximum losses in a row like three
+	include a bounded loss ratio or a maximum losses in a row like three
 	consecutive losses at a maximum.
 	</t>
 	<t>
 	Key attributes of Deterministic Networking are:
-       <list>
-     <t> Time synchronization on all the nodes, often including source and destination </t> 
-	 <t>The centralized computation of network-wide deterministic paths</t>
-	 <t>New traffic shapers within and at the edge to protect the network</t>
-     <t>Specialized hardware for scheduled access to the media.</t>
+       <list style="symbols">
+     <t>time synchronization on all the nodes;</t> 
+	 <t>the centralized computation of network-wide deterministic paths;</t>
+	 <t>new traffic shapers within and at the edge to protect the network;</t>
+     <t>specialized hardware for scheduled access to the media.</t>
 	   </list>
+	</t>
+    <t>
+	Achieving Determinism requires a tight control of the physical resources, 
+	and at the physical level, the wireless and wired media are fundamentally
+	different. Wireless operates in a shared medium, and the quality of the 
+	transmission is fuzzy, depending on variables in the time, space and
+	frequency domains. 
+	</t>
+    <t>
+	It results that while the generic Problem Statement
+	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to
+	the wireless medium as well as to wires, the methods to achieve Predictable
+	and Available Wireless (PAW) communications will necessarily differ from
+	those used to support Time-Sensitive Networks in the wired environment.
 	</t>
 	<t>
 	So far, Open Standards for Deterministic Networking have prevalently been
-	focused on wired media, with Audio/Video Bridgeing (AVB) and Time Sensitive
+	focused on wired media, with Audio/Video Bridging (AVB) and Time Sensitive
 	Networking (TSN) at the IEEE and DetNet <xref target="I-D.ietf-detnet-architecture"/> at the IETF. But wires cannot be used in
 	a number of cases, including mobile or rotating	devices, rehabilitated 
 	industrial buildings, wearable or in-body sensory devices, vehicle 
 	automation and	multiplayer	gaming.
 	</t>
 	<t>
-	Purpose-built wireless technologies such as <xref target="ISA100"/> or
-    <xref target="WirelessHART"/> have been deployed in the most critical 
-	cases to cope with the lack of open standards, but they yield a high cost 
-	in OPEX and CAPEX and are limited to very few industries, e.g., concerts 
-	and racing.	This is now changing.
-	<list>
+	Purpose-built wireless technologies such as <xref target="ISA100"/>, which
+    incorporates IPv6, were developped and deployed to cope for the lack of open
+	standards, but they yield a high cost in OPEX and CAPEX and are limited to
+	very few industries, e.g., process control, concert instruments or racing. 
+	</t>
+	<t>
+	This is now changing:
+	<list style="symbols">
 	   <t>IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
-	   (URLLC)as a key functionality for the upcoming 5G. </t>
+	   (URLLC) as a key functionality for the upcoming 5G,</t>
 	   <t>IEEE 802.11 is integrating real-time applications in the charter of
 	   the	Extreme High Throughput (EHT) Task Group (to be formed at the time
 	   of this writing), and</t>
 	   <t>the IETF has designed an IPv6 stack <xref target="I-D.ietf-6tisch-architecture"/> for IEEE Std. 802.15.4
 	   TimeSlotted Channel Hopping (TSCH) and an architecture that enables 
-	   Predictable and Available Wireless (PAW) communications on a shared MAC
-	   .
+	   Predictable and Available Wireless (PAW) communications on a shared MAC.
 	   </t>
 	</list>
-	</t>
-    <t>
-	Achieving Determinism requires a tight control of the physical resources, 
-	and at the physical level, wireless and wired are fundamentally
-	different. Wireless operates in a shared medium, and the quality of the 
-	transmission is fuzzy and depends of variable in the time, the spatial and
-	the frequency domains. It results that while the generic Problem Statement
-	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to
-	the wireless medium as well as to wires, the methods to achieve Predictable
-	and Available Wireless communications will necessarily differ from those
-	used to support Time-Sensitive Networks in the wired environment.
-	The expectation is that PAW would centralize the work on efforts that 
-	inherit from DetNet but focus on wireless. 
 	</t>
     <t>
     This draft extends the <xref target="I-D.ietf-detnet-use-cases">
@@ -217,7 +219,7 @@
    </section>    
    
    
-   <section title="The Need for Wireless">     
+   <section title="Specificities">     
        <t> 
        		Considering the uninterrupted audio or video stream, a potential packet losses 
        		during the transmission of audio or video flows cannot be tackled by re-trying 
@@ -226,6 +228,10 @@
        		re-transmission.
        </t>
     </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> <!-- title="The Need for Wireless" --> 
     
    <section title="Asks for PAW">     
        <t> 
@@ -255,7 +261,7 @@
    </section>    
    
    
-   <section title="Specificities">
+   <section title="Specificities">    
    	   		       
        <t> Amusement parks comprise a variable number of attractions, mostly outdoor.
            The tourists are free to move from an attraction to another, covering a large
@@ -294,6 +300,8 @@
        </t>
    </section>
        
+   <section title="The Need for Wireless"> 
+   </section> <!-- title="The Need for Wireless" --> 
 	   
    <section title="Asks for PAW">     
        <t> 
@@ -307,17 +315,48 @@
 <section title="Wireless for Industrial Applications">
    
    <section title="Use Case Description">
-   		<t> 
-
-   		</t>
-   		
+   <t> 
+   A major use case for networking in Industrial is the control networks where 
+   periodic control loops operate between a sensor that measures a physical 
+   property such as the temperature of a fluid, a Programmable Logic
+   Controller that decides an action such as warm up the mix, and an actuator
+   that performs the required action, e.g., inject power in a resistor.
+   </t>
+		
    </section>    
    
    
-   <section title="The Need for Wireless">     
-       <t> 
-       </t>
-    </section>
+   <section title="Speficicities">     
+ 
+   <t>
+   Process Control designates continous processing operations, e.g.,
+   processing of oil and gas, or food. In the Process Control area, those
+   control loops operate at a low rate, typically 4 times per second.
+   Factory Automation, on the other hand, deal with discrete goods, like
+   indivual parts, are requires faster loops, in the order of 10ms per loop.
+   Motion control that monitors dynamic activities may require even faster rates in the order of a few ms. Finally, some industries exhibit hybrid 
+   behaviours, like canned soup that will start as a process industry while 
+   mixing the food and then operate as a discrete manufacturing when putting
+   the final product in cans.
+   </t>
+   <t>
+   A secondary use case deals with monitoring and diagnostics. This information
+   is essential to improve the performances of a production line, e.g., by
+   optimizing maintenance windows using Machine Learning predictions, but this
+   kind of data flow is not welcome in the control network for a number of
+   reasons. On the one hand it is rich and asynchronous, meaning that using the
+   control network may influence the deterministic nature of the control
+   operations and impact the production. On the other hand, this information
+   must be reported to the carpeted floor over IP, which means the potential
+   for a breach of the Operational Technology (OT) operation using abuse of
+   Internet technology (IT).
+   </t>   
+   
+   </section> <!-- title="Speficicities -->
+   
+   
+   <section title="The Need for Wireless"> 
+   </section> <!-- title="The Need for Wireless" --> 
 	
    <section title="Asks for PAW">     
        <t> 

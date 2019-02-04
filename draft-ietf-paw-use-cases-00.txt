@@ -5,17 +5,21 @@
 PAW                                                      G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: August 5, 2019                                            Cisco
+Expires: August 8, 2019                                            Cisco
                                                             F. Theoleyre
                                                                     CNRS
-                                                        February 1, 2019
+                                                        February 4, 2019
 
 
                       draft-ietf-paw-use-cases-00
 
 Abstract
 
- 
+   The wireless medium presents significant specific challenges to
+   achieve properties similar to those of wired deterministic networks.
+   At the same time, a number of use cases cannot be solved with wires
+   and justify the extra effort of going wireless.  This document
+   presents some of these use-cases.
 
 Status of This Memo
 
@@ -32,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 5, 2019.
+   This Internet-Draft will expire on August 8, 2019.
 
 Copyright Notice
 
@@ -46,36 +50,38 @@ Copyright Notice
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
-   the Trust Legal Provisions and are provided without warranty as
-   described in the Simplified BSD License.
 
 
 
-
-
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 1]
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 1]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
 
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Pro Audio and Video . . . . . . . . . . . . . . . . . . . . .   3
+   2.  Pro Audio and Video . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
      2.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   4
-     2.3.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   4
+     2.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   4
+     2.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   4
    3.  Amusement Parks . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
-     3.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   4
+     3.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   5
      3.3.  Applications  . . . . . . . . . . . . . . . . . . . . . .   5
-     3.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   5
+     3.4.  The Need for Wireless . . . . . . . . . . . . . . . . . .   5
+     3.5.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   5
    4.  Wireless for Industrial Applications  . . . . . . . . . . . .   5
      4.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   5
-     4.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   5
-     4.3.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   5
-   5.  Informative References  . . . . . . . . . . . . . . . . . . .   5
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.2.  Speficicities . . . . . . . . . . . . . . . . . . . . . .   6
+     4.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   6
+     4.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  Informative References  . . . . . . . . . . . . . . . . . . .   6
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -91,84 +97,83 @@ Table of Contents
    case data latency can be guaranteed for a bounded throughput in a
    consistent fashion as multiple services are deployed, augmenting the
    load of the network with no measurable impact on existing flows
-   whatsoever.  Additional QoS goals can include a loss ratio like 10e-5
-   or a maximum losses in a row like three consecutive losses at a
-   maximum.
+   whatsoever.  Additional QoS goals can include a bounded loss ratio or
+   a maximum losses in a row like three consecutive losses at a maximum.
 
    Key attributes of Deterministic Networking are:
 
-      Time synchronization on all the nodes, often including source and
-      destination
+   o  time synchronization on all the nodes;
 
-      The centralized computation of network-wide deterministic paths
-
-      New traffic shapers within and at the edge to protect the network
-
-      Specialized hardware for scheduled access to the media.
+   o  the centralized computation of network-wide deterministic paths;
 
 
 
 
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 2]
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 2]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
 
+   o  new traffic shapers within and at the edge to protect the network;
+
+   o  specialized hardware for scheduled access to the media.
+
+   Achieving Determinism requires a tight control of the physical
+   resources, and at the physical level, the wireless and wired media
+   are fundamentally different.  Wireless operates in a shared medium,
+   and the quality of the transmission is fuzzy, depending on variables
+   in the time, space and frequency domains.
+
+   It results that while the generic Problem Statement
+   [I-D.ietf-detnet-problem-statement] for DetNet applies to the
+   wireless medium as well as to wires, the methods to achieve
+   Predictable and Available Wireless (PAW) communications will
+   necessarily differ from those used to support Time-Sensitive Networks
+   in the wired environment.
+
    So far, Open Standards for Deterministic Networking have prevalently
-   been focused on wired media, with Audio/Video Bridgeing (AVB) and
-   Time Sensitive Networking (TSN) at the IEEE and DetNet
-   [I-D.ietf-detnet-architecture] at the IETF.  But in a number of use-
-   cases, wires can simplu not apply.  Examples include mobile or
-   rotating devices, rehabilitated industrial buildings, wearable or in-
-   body sensory devices, vehicle automation and multiplayer gaming.
+   been focused on wired media, with Audio/Video Bridging (AVB) and Time
+   Sensitive Networking (TSN) at the IEEE and DetNet
+   [I-D.ietf-detnet-architecture] at the IETF.  But wires cannot be used
+   in a number of cases, including mobile or rotating devices,
+   rehabilitated industrial buildings, wearable or in-body sensory
+   devices, vehicle automation and multiplayer gaming.
 
-   Purpose-built technologies [ISA100] [WirelessHART]have been deployed
-   in the most critical cases to cope with the lack of open standards,
-   but those yield a high cost in OPEX and CAPEX and are limited to very
-   few industries, e.g., concerts and racing.  This is now changing.
+   Purpose-built wireless technologies such as [ISA100], which
+   incorporates IPv6, were developped and deployed to cope for the lack
+   of open standards, but they yield a high cost in OPEX and CAPEX and
+   are limited to very few industries, e.g., process control, concert
+   instruments or racing.
 
-      IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
-      (URLLC)as a key functionality for the upcoming 5G.
+   This is now changing:
 
-      IEEE 802.11 is integrating real-time applications in the charter
+   o  IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
+      (URLLC) as a key functionality for the upcoming 5G,
+
+   o  IEEE 802.11 is integrating real-time applications in the charter
       of the Extreme High Throughput (EHT) Task Group (to be formed at
       the time of this writing), and
 
-      the IETF has designed an IPv6 stack [I-D.ietf-6tisch-architecture]
+   o  the IETF has designed an IPv6 stack [I-D.ietf-6tisch-architecture]
       for IEEE Std. 802.15.4 TimeSlotted Channel Hopping (TSCH) and an
       architecture that enables Predictable and Available Wireless (PAW)
-      communications on a shared MAC .
-
-   Achieving Determinism requires a tight control of the physical
-   resources, and at the physical level, wireless and wired are
-   fundamentally different.  Wireless operates in a shared medium, and
-   the quality of the transmission is fuzzy and depends of variable in
-   the time, the spatial and the frequency domains.  It results that
-   while the generic Problem Statement
-   [I-D.ietf-detnet-problem-statement] for DetNet applies to the
-   wireless medium as well as to wires, the methods to achieve
-   Predictable and Available Wireless communications will necessarily
-   differ from those used to support Time-Sensitive Networks in the
-   wired environment.  The expectation is that PAW would centralize the
-   work on efforts that inherit from DetNet but focus on wireless.
+      communications on a shared MAC.
 
    This draft extends the "Deterministic Networking Use Cases"
    [I-D.ietf-detnet-use-cases] and describes a number of additional use
+
+
+
+
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 3]
+
+Internet-Draft           PAW use cases scenarios           February 2019
+
+
    cases which require deterministic flows over wireless links and
    possibly complex multi-hop paths.
 
 2.  Pro Audio and Video
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 3]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
 2.1.  Use Case Description
 
@@ -190,7 +195,9 @@ Internet-Draft           PAW use cases scenarios           February 2019
    transfer, because by the time the packet lost has been identified it
    is too late to proceed with packet re-transmission.
 
-2.3.  Asks for PAW
+2.3.  The Need for Wireless
+
+2.4.  Asks for PAW
 
 3.  Amusement Parks
 
@@ -210,6 +217,15 @@ Internet-Draft           PAW use cases scenarios           February 2019
    increasing the number of charged services provided to the audience
    (VIP tickets, interactions, etc.)
 
+
+
+
+
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 4]
+
+Internet-Draft           PAW use cases scenarios           February 2019
+
+
 3.2.  Specificities
 
    Amusement parks comprise a variable number of attractions, mostly
@@ -218,14 +234,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
    We make a distinction between the wireless devices which control the
    attractions, and the wearable devices owned by the visitors.  The
-
-
-
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 4]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    park may "guide" the different users according to the attractions'
    attendance, waiting time, preferences of the users, distance of the
    attraction.
@@ -248,15 +256,60 @@ Internet-Draft           PAW use cases scenarios           February 2019
       future failures, or to compute later more complex statistics about
       the attraction's usage, the downtime, its popularity, etc.
 
-3.4.  Asks for PAW
+3.4.  The Need for Wireless
+
+3.5.  Asks for PAW
 
 4.  Wireless for Industrial Applications
 
 4.1.  Use Case Description
 
-4.2.  Specificities
+   A major use case for networking in Industrial is the control networks
+   where periodic control loops operate between a sensor that measures a
+   physical property such as the temperature of a fluid, a Programmable
+   Logic Controller that decides an action such as warm up the mix, and
+   an actuator that performs the required action, e.g., inject power in
+   a resistor.
 
-4.3.  Asks for PAW
+
+
+
+
+
+
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 5]
+
+Internet-Draft           PAW use cases scenarios           February 2019
+
+
+4.2.  Speficicities
+
+   Process Control designates continous processing operations, e.g.,
+   processing of oil and gas, or food.  In the Process Control area,
+   those control loops operate at a low rate, typically 4 times per
+   second.  Factory Automation, on the other hand, deal with discrete
+   goods, like indivual parts, are requires faster loops, in the order
+   of 10ms per loop.  Motion control that monitors dynamic activities
+   may require even faster rates in the order of a few ms.  Finally,
+   some industries exhibit hybrid behaviours, like canned soup that will
+   start as a process industry while mixing the food and then operate as
+   a discrete manufacturing when putting the final product in cans.
+
+   A secondary use case deals with monitoring and diagnostics.  This
+   information is essential to improve the performances of a production
+   line, e.g., by optimizing maintenance windows using Machine Learning
+   predictions, but this kind of data flow is not welcome in the control
+   network for a number of reasons.  On the one hand it is rich and
+   asynchronous, meaning that using the control network may influence
+   the deterministic nature of the control operations and impact the
+   production.  On the other hand, this information must be reported to
+   the carpeted floor over IP, which means the potential for a breach of
+   the Operational Technology (OT) operation using abuse of Internet
+   technology (IT).
+
+4.3.  The Need for Wireless
+
+4.4.  Asks for PAW
 
 5.  Informative References
 
@@ -277,7 +330,10 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 5]
+
+
+
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 6]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -333,7 +389,7 @@ Authors' Addresses
 
 
 
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 6]
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 7]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -389,4 +445,4 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 5, 2019                 [Page 7]
+Papadopoulos, et al.     Expires August 8, 2019                 [Page 8]
