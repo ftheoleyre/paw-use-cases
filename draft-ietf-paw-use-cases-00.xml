@@ -76,7 +76,11 @@
 
    <abstract>
    <t>
-       blablka
+   The wireless medium presents significant specific challenges to achieve
+   properties similar to those of wired deterministic networks. At the same
+   time, a number of use cases cannot be solved with wires and justify the
+   extra effort of going wireless. This document presents a number of these
+   use cases.
    </t>
    </abstract>
    
@@ -137,17 +141,17 @@
 	<t>
 	So far, Open Standards for Deterministic Networking have prevalently been
 	focused on wired media, with Audio/Video Bridgeing (AVB) and Time Sensitive
-	Networking (TSN) at the IEEE and DetNet <xref target="I-D.ietf-detnet-architecture"/> at the IETF. But in a number of
-	use-cases, wires can simplu not apply. Examples include mobile or rotating
-	devices, rehabilitated industrial buildings, wearable or in-body sensory
-	devices, vehicle automation and	multiplayer	gaming.
+	Networking (TSN) at the IEEE and DetNet <xref target="I-D.ietf-detnet-architecture"/> at the IETF. But wires cannot be used in
+	a number of cases, including mobile or rotating	devices, rehabilitated 
+	industrial buildings, wearable or in-body sensory devices, vehicle 
+	automation and	multiplayer	gaming.
 	</t>
 	<t>
-	Purpose-built technologies <xref target="ISA100"/>
- <xref target="WirelessHART"/>have been deployed in the most critical cases to
-	cope with the lack of open standards, but those yield a high cost in OPEX
-	and CAPEX and are limited to very few industries, e.g., concerts and racing.
-	This is now changing.
+	Purpose-built wireless technologies such as <xref target="ISA100"/> or
+    <xref target="WirelessHART"/> have been deployed in the most critical 
+	cases to cope with the lack of open standards, but they yield a high cost 
+	in OPEX and CAPEX and are limited to very few industries, e.g., concerts 
+	and racing.	This is now changing.
 	<list>
 	   <t>IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
 	   (URLLC)as a key functionality for the upcoming 5G. </t>
@@ -213,7 +217,7 @@
    </section>    
    
    
-   <section title="Specificities">     
+   <section title="The Need for Wireless">     
        <t> 
        		Considering the uninterrupted audio or video stream, a potential packet losses 
        		during the transmission of audio or video flows cannot be tackled by re-trying 
@@ -310,7 +314,7 @@
    </section>    
    
    
-   <section title="Specificities">     
+   <section title="The Need for Wireless">     
        <t> 
        </t>
     </section>
