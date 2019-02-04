@@ -121,36 +121,40 @@
 	infrastructure.  
 	</t>
 	<t>
-    Deterministic Networking technology allows new Quality of Service (QoS)
-	guarantees of worst-case delivery.  More precisely, the worst-case data
-    latency can be guaranteed for a bounded throughput in a consistent fashion
-	as multiple	services are deployed, augmenting the load of the network with
-	no measurable impact on existing flows whatsoever. Additional QoS goals can
-	include a bounded loss ratio or a maximum losses in a row like three
-	consecutive losses at a maximum.
+	Deterministic Networking in the IP world is an attempt to eliminate packet 
+	loss for a committed bandwidth while ensuring a worst case end-to-end 
+	latency, regardless of the network conditions and across technologies.
+    It can be seen as a set of new Quality of Service (QoS) guarantees of
+	worst-case delivery. IP networks become more deterministic when the
+	effects of statistical multiplexing (jitter and collision loss) are mostly
+	eliminated. This requires a tight control of the physical resources to
+	maintain the amount of traffic within the physical capabilities of the
+	underlying technology, e.g., by the use of time-shared resources
+	(bandwidth and buffers) per circuit, and/or by shaping and/or scheduling
+	the packets at every hop.
 	</t>
 	<t>
-	Key attributes of Deterministic Networking are:
+	Key attributes of Deterministic Networking include:
        <list style="symbols">
-     <t>time synchronization on all the nodes;</t> 
-	 <t>the centralized computation of network-wide deterministic paths;</t>
-	 <t>new traffic shapers within and at the edge to protect the network;</t>
-     <t>specialized hardware for scheduled access to the media.</t>
+     <t>time synchronization on all the nodes,</t> 
+	 <t>centralized computation of network-wide deterministic paths, and</t>
+	 <t>new traffic shapers within and at the edge to protect the network.</t>
 	   </list>
 	</t>
     <t>
-	Achieving Determinism requires a tight control of the physical resources, 
-	and at the physical level, the wireless and wired media are fundamentally
-	different. Wireless operates in a shared medium, and the quality of the 
-	transmission is fuzzy, depending on variables in the time, space and
-	frequency domains. 
+	Wireless operates on a shared medium, and transmissions cannot be fully
+	deterministic due to uncontrolled interferences, including self-induced
+	multipath fading. Scheduling transmissions enables to alleviate those 
+	effects	by leveraging diversity in the spatial, time and frequency domains, 
+	and provide a more Predictable and Available Wireless (PAW) service..
 	</t>
-    <t>
-	It results that while the generic Problem Statement
-	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to
-	the wireless medium as well as to wires, the methods to achieve Predictable
-	and Available Wireless (PAW) communications will necessarily differ from
-	those used to support Time-Sensitive Networks in the wired environment.
+    <t>	
+	The wireless and wired media are fundamentally different at the physical 
+	level, and while the generic Problem Statement 
+	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to 
+	the wired as well as the wireless medium, the methods to achieve PAW
+	necessarily differ from those used to support Time-Sensitive Networking
+	over wires. 
 	</t>
 	<t>
 	So far, Open Standards for Deterministic Networking have prevalently been
@@ -174,8 +178,9 @@
 	   <t>IEEE 802.11 is integrating real-time applications in the charter of
 	   the	Extreme High Throughput (EHT) Task Group (to be formed at the time
 	   of this writing), and</t>
-	   <t>the IETF has designed an IPv6 stack <xref target="I-D.ietf-6tisch-architecture"/> for IEEE Std. 802.15.4
-	   TimeSlotted Channel Hopping (TSCH) and an architecture that enables 
+	   <t>the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
+	   TimeSlotted Channel Hopping (TSCH) and an architecture
+       <xref target="I-D.ietf-6tisch-architecture"/> that enables 
 	   Predictable and Available Wireless (PAW) communications on a shared MAC.
 	   </t>
 	</list>
@@ -184,7 +189,7 @@
     This draft extends the <xref target="I-D.ietf-detnet-use-cases">
 	"Deterministic Networking Use Cases"</xref> and describes a number of
 	additional use cases which require deterministic flows over wireless links
-	and possibly complex multi-hop paths.
+	and possibly complex multi-hop paths called Tracks.
     </t>
 
  
