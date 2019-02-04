@@ -326,41 +326,115 @@
    </section>    
    
    
-   <section title="Speficicities">     
+   <section anchor="indusspecif" title="Specificities">    
+   <section anchor="indusloops" title="Control Loops">     
  
    <t>
-   Process Control designates continous processing operations, e.g.,
-   processing of oil and gas, or food. In the Process Control area, those
-   control loops operate at a low rate, typically 4 times per second.
-   Factory Automation, on the other hand, deal with discrete goods, like
-   indivual parts, are requires faster loops, in the order of 10ms per loop.
+   Process Control designates continous processing operations, e.g., heating
+   Oil in a refinery or mixing drinking soda. Control loops in the Process
+   Control industry operate at a very low rate, typically 4 times per second.
+   Factory Automation, on the other hand, deal with discrete goods such as
+   individual automobile parts, and requires faster loops, in the order of 10ms.
    Motion control that monitors dynamic activities may require even faster rates in the order of a few ms. Finally, some industries exhibit hybrid 
    behaviours, like canned soup that will start as a process industry while 
    mixing the food and then operate as a discrete manufacturing when putting
-   the final product in cans.
+   the final product in cans and shipping them. 
    </t>
    <t>
-   A secondary use case deals with monitoring and diagnostics. This information
-   is essential to improve the performances of a production line, e.g., by
-   optimizing maintenance windows using Machine Learning predictions, but this
-   kind of data flow is not welcome in the control network for a number of
-   reasons. On the one hand it is rich and asynchronous, meaning that using the
-   control network may influence the deterministic nature of the control
-   operations and impact the production. On the other hand, this information
-   must be reported to the carpeted floor over IP, which means the potential
-   for a breach of the Operational Technology (OT) operation using abuse of
-   Internet technology (IT).
-   </t>   
+   In all those cases, a packet must flow deterministically between the sensor
+   and the PLC, be processed by the PLC, and sent to the actuator within the
+   control loop period. In some particular use cases that inherit from analog
+   operations, jitter might also alter the operation of the control loop. 
+   A rare packet loss is usually admissible, but typically 4 losses in a row
+   will cause an emergency halt of the production and incur a high cost for
+   the manufacturer.
+   </t> 
+   </section><!--"Control Loops"-->
+   
+   <section anchor="indusdiags" title="Unmeasured Data">   
+   <t>
+   A secondary use case deals with monitoring and diagnostics. This so-called unmeasured data is essential to improve the performances of a production
+   line, e.g., by optimizing real-time processing or maintenance windows using
+   Machine Learning predictions. For the lack of wireless technologies, some
+   specific industries such as Oil and Gas have been using serial cables,
+   literally by the millions, to perform their process optimization over the
+   previous decades. But few industries would afford the associated cost and
+   the Holy Grail of the Industrial Internet of Things is to provide the same
+   benefits to all industries, including SmartGrid, Transportation, Building,
+   Commercial and Medical. This requires a cheap, available and scalable
+   IP-based access technology.
+   </t>
+
+   <t>
+   Inside the factory, wires may already be available to operate the Control
+   Network. But unmeasured data are not welcome in that network for a number of
+   reasons. On the one hand it is rich and asynchronous, meaning that using they
+   may influence the deterministic nature of the control operations and impact
+   the production. On the other hand, this information must be reported to the
+   carpeted floor over IP, which means the potential for a security breach via
+   the interconnection of the Operational Technology (OT) network with the
+   Internet technology (IT) network and possibly enable a rogue access.
+   </t>    
+   </section><!-- "Unmeasured Data" -->   
    
    </section> <!-- title="Speficicities -->
    
    
    <section title="The Need for Wireless"> 
+   <t>
+   Ethernet cables used on a robot arm are prone to breakage after a few
+   thousands flexions, a lot faster than a power cable that is wider inn diameter, and more resilient. In general, wired networking and mobile parts
+   are not a good match, mostly in the case of fast and recurrent activities, as
+   well as rotation.
+   </t>
+   <t>
+   When refurbishing older premises that were built before the Internet age,
+   power is usually available everywhere, but data is not. It is often 
+   impractical, time consuming and expensive to deploy an Ethernet fabric
+   across walls and between buildings. Deploying a wire may take months and
+   cost tens of thousands of US Dollars.
+   </t>
+   <t>
+   Even when wiring exists, e.g., in an existing control network, asynchronous
+   IP packets such as diagnostics may not be welcome for operational and
+   security reasons (see <xref target="indusloops" />). An alternate network
+   that can scale with the many sensors and actuators that equip every robot, 
+   every valve and fan that are deployed on the factory floor and may help 
+   detect and prevent a failure that could impact the production.
+   IEEE Std. 802.15.4 Time-Slotted Channel Hopping (TSCH)
+   <xref target="RFC7554"/> is a promising technology for that purpose, mostly
+   if the scheduled operations enable to use the same network by asynchronous
+   and deterministic flows in parallel.   
+   </t>
+   
+   
+   
    </section> <!-- title="The Need for Wireless" --> 
 	
    <section title="Asks for PAW">     
-       <t> 
-       </t>
+	<t>
+	As stated by the <xref target="I-D.ietf-detnet-problem-statement">
+	"Deterministic Networking Problem Statement" </xref>, a Deterministic
+	Network is backwards compatible with (capable of transporting) statistically
+	multiplexed traffic while preserving the properties of the accepted
+	deterministic flows. While the <xref target="I-D.ietf-6tisch-architecture"/>
+	serves that requirement, the work at 6TiSCH was focused on best-effort IPv6
+	packet flows. PAW should be able to lock so-called hard cells for use by a
+	centralized scheduler, and program so-called end-to-end Tracks over those
+	cells.
+	</t>
+    <t> 
+	Over the course of the recent years, major Industrial Protocols, e.g.,
+	<xref target="ODVA"/> with EtherNet/IP <xref target="EIP"/> and
+	<xref target="Profinet"/>, have been migrating towards Ethernet and IP.
+	In order to unleash the full power of the IP hourglass model, it should be
+	possible to deploy any application over any network that has the physical
+	capacity to transport the industrial flow, regardless of the MAC/PHY
+	technology, wired or wireless, and across technologies. 
+	PAW should be able to setup a Track over a wireless access segment such as
+	TSCH and a backbone segment such as Ethernet or WI-Fi, to report a sensor
+	data or a critical monitoring within a bouded latency.
+    </t>
     </section>
     
 </section>
@@ -377,6 +451,7 @@
 
  <references title="Informative References">
  
+      <?rfc include="reference.RFC.7554"?> <!-- 6TiSCH TSCH -->
  
 	   
 	  <?rfc include='reference.I-D.ietf-detnet-problem-statement'?>
@@ -395,7 +470,44 @@
            </front>
        </reference>
 	   
+	  <reference anchor="ODVA">
+         <front>
+            <title>The organization that supports network technologies built on 
+            the Common Industrial Protocol (CIP) including EtherNet/IP.</title>
+            <author>
+               <organization>http://www.odva.org/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+      
+      
 	   
+      <reference anchor="Profinet"  target="http://us.profinet.com/technology/profinet/">
+         <front>
+            <title>PROFINET is a standard for industrial networking in
+            automation. </title>
+            <author>
+               <organization>http://us.profinet.com/technology/profinet/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+	  
+	  <reference anchor="EIP"  target="http://www.odva.org/Portals/0/Library/Publications_Numbered/PUB00138R3_CIP_Adv_Tech_Series_EtherNetIP.pdf">
+          <front>
+          <title> EtherNet/IP provides users with the network tools to deploy
+          standard Ethernet technology (IEEE 802.3 combined with the TCP/IP
+          Suite) for industrial automation applications while enabling Internet
+          and enterprise connectivity data anytime, anywhere.</title> 
+            <author>
+               <organization>http://www.odva.org/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+	  
+	  
        <reference anchor="ISA100" target="https://www.isa.org/isa100/">
          <front>
             <title>ISA100, Wireless Systems for Automation</title>
