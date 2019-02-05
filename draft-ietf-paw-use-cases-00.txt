@@ -5,10 +5,10 @@
 PAW                                                      G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: August 8, 2019                                            Cisco
+Expires: August 9, 2019                                            Cisco
                                                             F. Theoleyre
                                                                     CNRS
-                                                        February 4, 2019
+                                                        February 5, 2019
 
 
                       draft-ietf-paw-use-cases-00
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 8, 2019.
+   This Internet-Draft will expire on August 9, 2019.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 1]
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 1]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -72,18 +72,17 @@ Table of Contents
    3.  Amusement Parks . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
      3.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   5
-     3.3.  Applications  . . . . . . . . . . . . . . . . . . . . . .   5
-     3.4.  The Need for Wireless . . . . . . . . . . . . . . . . . .   5
-     3.5.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   5
-   4.  Wireless for Industrial Applications  . . . . . . . . . . . .   5
-     4.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   5
+     3.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   5
+     3.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   6
+   4.  Wireless for Industrial Applications  . . . . . . . . . . . .   6
+     4.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   6
      4.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   6
-       4.2.1.  Control Loops . . . . . . . . . . . . . . . . . . . .   6
-       4.2.2.  Unmeasured Data . . . . . . . . . . . . . . . . . . .   6
-     4.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   7
-     4.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   7
-   5.  Informative References  . . . . . . . . . . . . . . . . . . .   8
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   9
+       4.2.1.  Control Loops . . . . . . . . . . . . . . . . . . . .   7
+       4.2.2.  Unmeasured Data . . . . . . . . . . . . . . . . . . .   7
+     4.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   8
+     4.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   8
+   5.  Informative References  . . . . . . . . . . . . . . . . . . .   9
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
@@ -109,7 +108,8 @@ Table of Contents
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 2]
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 2]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -165,7 +165,7 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 3]
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 3]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -216,37 +216,19 @@ Internet-Draft           PAW use cases scenarios           February 2019
    sensors and actuators, to privileged reconfigurability, and
    standardization.
 
-   Using wireless devices also aim to enable novel high-value services.
-   VIP tickets are nowadays more and more popular.  Wireless wearable
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 4]
+
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 4]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
 
-   devices may help to reduce the operating costs [disney-VIP] and
-   increasing the number of charged services provided to the audience
-   (VIP tickets, interactions, etc.)
-
-3.2.  Specificities
-
-   Amusement parks comprise a variable number of attractions, mostly
-   outdoor.  The tourists are free to move from an attraction to
-   another, covering a large geographical area.
-
-   We make a distinction between the wireless devices which control the
-   attractions, and the wearable devices owned by the visitors.  The
-   park may "guide" the different users according to the attractions'
-   attendance, waiting time, preferences of the users, distance of the
-   attraction.
-
-3.3.  Applications
-
-   Tourist attractions may comprise a large set of sensors and
-   actuators, which react in real time.  Typical applications (ordered
-   by criticality in descending order) are:
+   Attractions may comprise a large set of sensors and actuators, which
+   react in real time.  Typical applications (ordered by criticality in
+   descending order) are:
 
    o  emergency: safety has to be preserved, and MUST stop the
       attraction when a failure is detected;
@@ -260,9 +242,76 @@ Internet-Draft           PAW use cases scenarios           February 2019
       future failures, or to compute later more complex statistics about
       the attraction's usage, the downtime, its popularity, etc.
 
-3.4.  The Need for Wireless
+3.2.  Specificities
 
-3.5.  Asks for PAW
+   Amusement parks comprise a variable number of attractions, mostly
+   outdoor.  Thus,
+
+   The tourists are free to move from an attraction to another, covering
+   a large geographical area.  Wearable devices are expected for a user
+   experience personalisation.  Thus, some devices may be mobile, while
+   the rest of the infrastructure remains static.
+
+   The infrastrcuture is typically multi-scale:
+
+   o  local area: the sensors and actuators controling the attractions
+      are co-located.  Real-time flows are localized, a set of sensors
+      triggering actuators.  Maintenance flows are mostly lrage-range,
+      interconnected with the information system;
+
+   o  wearable devices are free to move in the park.  They exchange
+      traffic locally (identification, personalization, multimedia) or
+      globally (billing child tracking);
+
+   o  global information system manages the whole park, and exchange
+      commands or information with the different parts.
+
+3.3.  The Need for Wireless
+
+   Amusement parks cover large areas and a global interconnection would
+   require a huge length of cables.  Wireless also optimizes the
+   reconfigurability, enabling to plug novel services easily to increase
+   e.g. the interactivity.
+
+
+
+
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 5]
+
+Internet-Draft           PAW use cases scenarios           February 2019
+
+
+   Attractions comprise mobile components (e.g. robots, wagons), which
+   require wireless connections since cables are particulalry
+   inconvenient and source of failures in such conditions.
+
+   Wearable devices have to support by nature wireless
+   transmissions.They aim to enable novel high-value services.  VIP
+   tickets are nowadays more and more popular.  Wireless wearable
+   devices may help to reduce the operating costs [disney-VIP] and
+   increasing the number of charged services provided to the audience
+   (VIP tickets, interactivity, etc.)
+
+3.4.  Asks for PAW
+
+   The networ infrastructure has to support heterogenous traffic, with
+   very different criticalities.  Thus, flow isolation has to be
+   provided, where best effort traffic only
+
+   We have to schedule appropriately the transmissions, even in presence
+   of mobile devices.  While the [I-D.ietf-6tisch-architecture] already
+   proposes an architecture for synchronized, IEEE Std. 802.15.4 Time-
+   Slotted Channel Hopping (TSCH) networks, 6TiSCH focused on best-
+   effort IPv6 flows.  PAW expects to schedule appropriately the
+   transmissions, accross hetereogeneous technoologies, with strict SLA
+   requirements.
+
+   Nowadays, long-range wireless transmissions are used for best-effort
+   traffic, and [IEEE802.1TSN] is used for critical flows using Ethernet
+   devices.  However, we need an IP enabled technology to interconnect
+   large areas, independent of the PHY and MAC layer to maximize the
+   compliancy.
 
 4.  Wireless for Industrial Applications
 
@@ -275,14 +324,19 @@ Internet-Draft           PAW use cases scenarios           February 2019
    an actuator that performs the required action, e.g., inject power in
    a resistor.
 
+4.2.  Specificities
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 5]
+
+
+
+
+
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 6]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
-
-4.2.  Specificities
 
 4.2.1.  Control Loops
 
@@ -333,7 +387,9 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 6]
+
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 7]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -389,7 +445,7 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 7]
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 8]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -430,11 +486,25 @@ Internet-Draft           PAW use cases scenarios           February 2019
               ietf-detnet-use-cases-20 (work in progress), December
               2018.
 
+   [IEEE802.1TSN]
+              IEEE standard for Information Technology, "IEEE
+              802.1AS-2011 - IEEE Standard for Local and Metropolitan
+              Area Networks - Timing and Synchronization for Time-
+              Sensitive Applications in Bridged Local Area Networks".
+
    [IEEE802154]
               IEEE standard for Information Technology, "IEEE Std.
               802.15.4, Part. 15.4: Wireless Medium Access Control (MAC)
               and Physical Layer (PHY) Specifications for Low-Rate
               Wireless Personal Area Networks".
+
+
+
+
+Papadopoulos, et al.     Expires August 9, 2019                 [Page 9]
+
+Internet-Draft           PAW use cases scenarios           February 2019
+
 
    [ISA100]   ISA/ANSI, "ISA100, Wireless Systems for Automation",
               <https://www.isa.org/isa100/>.
@@ -442,13 +512,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    [ODVA]     http://www.odva.org/, "The organization that supports
               network technologies built on the Common Industrial
               Protocol (CIP) including EtherNet/IP.".
-
-
-
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 8]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
    [Profinet]
               http://us.profinet.com/technology/profinet/, "PROFINET is
@@ -494,14 +557,7 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 8, 2019                 [Page 9]
+Papadopoulos, et al.     Expires August 9, 2019                [Page 10]
 
 Internet-Draft           PAW use cases scenarios           February 2019
 
@@ -557,4 +613,4 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-Papadopoulos, et al.     Expires August 8, 2019                [Page 10]
+Papadopoulos, et al.     Expires August 9, 2019                [Page 11]

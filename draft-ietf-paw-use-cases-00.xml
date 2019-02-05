@@ -249,70 +249,127 @@
 <section title="Amusement Parks">
    
    <section title="Use Case Description">
-   		<t> The digitalization of Amusement Parks is expected to decrease significantly
-       		the cost for maintaining the attractions. By monitoring in real-time
-       		the machines, predictive maintenance will help to reduce the repairing cost
-       		as well as the downtime. Besides, the attractions may use wireless
-       		transmissions to interconnect sensors and actuators, to privileged
-       		reconfigurability, and standardization.
-   		</t>
-   
-   		<t> Using wireless devices also aim to enable novel high-value services.
-       		VIP tickets are nowadays more and more popular. Wireless wearable devices
-       		may help to reduce the operating costs <xref target="disney-VIP"/> and
-       		increasing the number of charged services provided to the audience (VIP
-       		tickets, interactions, etc.)
-   		</t>
-   </section>    
-   
-   
-   <section title="Specificities">    
-   	   		       
-       <t> Amusement parks comprise a variable number of attractions, mostly outdoor.
-           The tourists are free to move from an attraction to another, covering a large
-           geographical area.
-       </t>
-       
-       <t> We make a distinction between the wireless devices which control the attractions,
-           and the wearable devices owned by the visitors. The park may "guide" the
-           different users according to the attractions' attendance, waiting time,
-           preferences of the users, distance of the attraction.
-       </t>
-    </section>
-       
-       
-   <section title="Applications">
-       
-       <t> Tourist attractions may comprise a large set of sensors and actuators, which
-           react in real time. Typical applications (ordered by criticality in
-           descending order) are:
-       </t>
-       <t>
-           <list style="symbols">
-               <t>emergency: safety has to be preserved, and MUST stop the attraction
-                   when a failure is detected;</t>
-               
-               <t>real-time control: real-time applications embedded in the attraction
-                   need to trigger an action when an event is detected. For instance, a
-                   photograph can be taken when a car crosses an actuator, combined
-                   with a wireless ID that the tourists wear;</t>
-               
-               <t>predictive maintenance: statistics are collected to predict the
-                   future failures, or to compute later more complex statistics about
-                   the attraction's usage, the downtime, its popularity, etc. </t>
-               
-           </list>
-       </t>
+      <t>
+         The digitalization of Amusement Parks is expected to decrease significantly
+         the cost for maintaining the attractions. By monitoring in real-time
+         the machines, predictive maintenance will help to reduce the repairing cost
+         as well as the downtime. Besides, the attractions may use wireless
+         transmissions to interconnect sensors and actuators, to privileged
+         reconfigurability, and standardization.
+      </t>
+      
+      <t>
+         Attractions may comprise a large set of sensors and actuators, which
+         react in real time. Typical applications (ordered by criticality in
+         descending order) are:
+      </t>
+      <t>
+         <list style="symbols">
+            <t>emergency: safety has to be preserved, and MUST stop the attraction
+               when a failure is detected;
+            </t>
+            
+            <t>real-time control: real-time applications embedded in the attraction
+               need to trigger an action when an event is detected. For instance, a
+               photograph can be taken when a car crosses an actuator, combined
+               with a wireless ID that the tourists wear;
+            </t>
+            
+            <t>predictive maintenance: statistics are collected to predict the
+               future failures, or to compute later more complex statistics about
+               the attraction's usage, the downtime, its popularity, etc.
+            </t>
+            
+         </list>
+      </t>
    </section>
-       
-   <section title="The Need for Wireless"> 
-   </section> <!-- title="The Need for Wireless" --> 
-	   
-   <section title="Asks for PAW">     
-       <t> 
-       </t>
+   
+   
+   <section title="Specificities">
+      
+      <t>
+         Amusement parks comprise a variable number of attractions, mostly outdoor.
+         Thus,
+      </t>
+      
+      <t>
+         The tourists are free to move from an attraction to another, covering a large
+         geographical area. Wearable devices are expected for a user experience
+         personalisation. Thus, some devices may be mobile, while the rest of the
+         infrastructure remains static.
+      </t>
+      
+      <t> The infrastrcuture is typically multi-scale:
+         <list style="symbols">
+            <t>local area: the sensors and actuators controling the attractions are
+               co-located. Real-time flows are localized, a set of sensors triggering
+               actuators. Maintenance flows are mostly lrage-range, interconnected with
+               the information system;
+               </t>
+            
+            <t>wearable devices are free to move in the park. They exchange traffic
+               locally (identification, personalization, multimedia) or globally
+               (billing child tracking);
+               </t>
+            
+            <t>global information system manages the whole park, and exchange commands
+               or information with the different parts.
+               </t>
+         </list>
+         
+      </t>
+      </section>
+    
+    
+    
+    
+    <section title="The Need for Wireless">
+        <t>
+           Amusement parks cover large areas and a global interconnection would require a
+           huge length of cables. Wireless also optimizes the reconfigurability, enabling
+           to plug novel services easily to increase e.g. the interactivity.
+         </t>
+        
+        <t>
+           Attractions comprise mobile components (e.g. robots, wagons), which require
+           wireless connections since cables are particulalry inconvenient and source
+           of failures in such conditions.
+        </t>
+        
+        <t>
+           Wearable devices have to support by nature wireless transmissions.They aim to
+           enable novel high-value services. VIP tickets are nowadays more and more
+           popular. Wireless wearable devices may help to reduce the operating costs
+           <xref target="disney-VIP"/> and increasing the number of charged services provided
+           to the audience (VIP tickets, interactivity, etc.)
+        </t>
+    </section> <!-- title="The Need for Wireless" -->
+    
+    
+    <section title="Asks for PAW">
+        <t>
+           The networ infrastructure has to support heterogenous traffic, with very
+           different criticalities. Thus, flow isolation has to be provided, where best
+           effort traffic only
+        </t>
+        
+        <t>
+           We have to schedule appropriately the transmissions, even in presence of
+           mobile devices. While the <xref target="I-D.ietf-6tisch-architecture"/>
+           already proposes an architecture for synchronized, IEEE Std. 802.15.4
+           Time-Slotted Channel Hopping (TSCH) networks, 6TiSCH focused on best-effort
+           IPv6 flows. PAW expects to schedule appropriately the transmissions,
+           accross hetereogeneous technoologies, with strict SLA requirements.
+           </t>
+        
+        <t>Nowadays, long-range wireless transmissions are used for best-effort
+           traffic, and <xref target="IEEE802.1TSN"/> is used for critical flows
+           using Ethernet devices. However, we need an IP enabled technology to
+           interconnect large areas, independent of the PHY and MAC layer to
+           maximize the compliancy.
+           </t>
     </section>
-	
+    
 </section>
 
 
@@ -332,8 +389,8 @@
    
    
    <section anchor="indusspecif" title="Specificities">    
-   <section anchor="indusloops" title="Control Loops">     
- 
+   <section anchor="indusloops" title="Control Loops">
+       
    <t>
    Process Control designates continous processing operations, e.g., heating
    Oil in a refinery or mixing drinking soda. Control loops in the Process
@@ -526,7 +583,8 @@
 	  
       <reference anchor="WirelessHART">
          <front>
-            <title>Industrial Communication Networks - Wireless Communication Network and Communication Profiles - WirelessHART - IEC 62591</title>
+            <title>Industrial Communication Networks - Wireless Communication Network
+               and Communication Profiles - WirelessHART - IEC 62591</title>
             <author>
                <organization>www.hartcomm.org</organization>
             </author>
@@ -548,7 +606,19 @@
          </front>
       </reference>
 	  
-	  
+     
+     <reference anchor="IEEE802.1TSN">
+        <front>
+           <title>IEEE 802.1AS-2011 - IEEE Standard for Local and Metropolitan Area
+              Networks - Timing and Synchronization for Time-Sensitive Applications
+              in Bridged Local Area Networks
+           </title>
+           <author>
+              <organization>IEEE standard for Information Technology</organization>
+           </author>
+           <date/>
+        </front>
+     </reference>
 	  
 	   
  </references>
