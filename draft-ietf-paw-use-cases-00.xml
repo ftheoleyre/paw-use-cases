@@ -24,7 +24,7 @@
    
    
  
-	<author initials="G.Z." surname="Papadopoulos" fullname="Georgios Papadopoulos">
+	<author initials="G.Z." surname="Papadopoulos" fullname="Georgios Z. Papadopoulos">
     	<organization>IMT Atlantique</organization>
     	<address>
         	<postal>
@@ -196,53 +196,6 @@
 </section>
 
 
-
-<section title="Pro Audio and Video">
-   
-   <section title="Use Case Description">
-   		<t> 
-   			The professional audio and video industry ("ProAV") includes:
-   			<list style="symbols">
-                <t>
-                    Gaming (e.g., Play Station, Xbox)
-                </t>
-                <t>
-                    Public address, media and emergency systems at large venues (airports, 
-                    stadiums, train stations, churches, theme parks).
-                </t>
-                <!-- Cinema
-				Live sound 
-				Music and film content creation
-				-->
-            </list>
-   		</t>
-   		
-   		<t>
-   			Today the ProAV applications are moving towards packet-based 
-			technology to introduce routing features and to reduce costs.
-   		</t>
-   </section>    
-   
-   
-   <section title="Specificities">     
-       <t> 
-       		Considering the uninterrupted audio or video stream, a potential packet losses 
-       		during the transmission of audio or video flows cannot be tackled by re-trying 
-       		the transmission, as it is done with file transfer, because by the time the 
-       		packet lost has been identified it is too late to proceed with packet 
-       		re-transmission.
-       </t>
-    </section>
-	
-   
-   <section title="The Need for Wireless"> 
-   </section> <!-- title="The Need for Wireless" --> 
-    
-   <section title="Asks for PAW">     
-       <t> 
-       </t>
-    </section>
-</section>
 
 
 
@@ -499,6 +452,117 @@
     </t>
     </section>
     
+</section>
+
+
+<section title="Pro Audio and Video">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The professional audio and video industry ("ProAV") includes:
+   			<list style="symbols">
+                <t>
+                    Public address, media and emergency systems at large venues (airports, 
+                    stadiums, train stations, churches, theme parks).
+                </t>
+                <!-- Cinema
+				Live sound 
+				Music and film content creation
+				-->
+            </list>
+   		</t>
+   		
+   		<t>
+   			Today the ProAV applications are moving towards packet-based 
+			technology to introduce routing features and to reduce costs.
+   		</t>
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		Considering the uninterrupted audio or video stream, a potential packet losses 
+       		during the transmission of audio or video flows cannot be tackled by re-trying 
+       		the transmission, as it is done with file transfer, because by the time the 
+       		packet lost has been identified it is too late to proceed with packet 
+       		re-transmission.
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> <!-- title="The Need for Wireless" --> 
+    
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
+</section>
+
+
+<section title="Gaming">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The gaming industry includes:
+   			<list style="symbols">
+                <t>
+                    
+                </t>
+
+            </list>
+   		</t>
+   		
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		bla bla
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> 
+    
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
+</section>
+
+
+<section title="Emergency systems">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The Emergency systems industry includes:
+   			<list style="symbols">
+                <t>
+                    
+                </t>
+
+            </list>
+   		</t>
+   		
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		bla bla
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> 
+    
+   <section title="Asks for PAW">     
+       <t> 
+       </t>
+    </section>
 </section>
 
 
