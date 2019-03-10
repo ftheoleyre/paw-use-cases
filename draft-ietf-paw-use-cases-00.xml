@@ -69,6 +69,24 @@
      	</address>
  	</author>
 
+        <author fullname="Carlos J. Bernardos"
+            initials="CJ."
+            surname="Bernardos">
+         <organization abbrev="UC3M">
+         Universidad Carlos III de Madrid
+         </organization>
+         <address>
+           <postal>
+             <street>Av. Universidad, 30</street>
+             <city>Leganes, Madrid</city>
+             <code>28911</code>
+             <country>Spain</country>
+           </postal>
+           <phone>+34 91624 6236</phone>
+           <email>cjbc@it.uc3m.es</email>
+           <uri>http://www.it.uc3m.es/cjbc/</uri>
+         </address>
+       </author>
 
    <date/>
 
@@ -565,6 +583,183 @@
     </section>
 </section>
 
+<!-- [2019-03-08] cjbc: text added -->
+<section title="UAV platooning and control">
+
+   <section title="Use Case Description">
+
+      <t>
+Unmanned Aerial Vehicles (UAVs) are becoming very popular for many different
+applications, including military and civil use cases. The term drone is commonly
+used to refer to a UAV.
+      </t>
+
+      <t>
+UAVs can be used to perform aerial surveillance activities, traffic monitoring
+(e.g., Spanish traffic control has recently introduced a fleet of drones for
+quicker reactions upon traffic congestion related events), support of emergency
+situations, and even transportation of small goods.
+      </t>
+
+      <t>
+UAVs typically have various forms of wireless connectivity:
+      </t>
+
+      <t>
+
+         <list style="symbols">
+
+            <t>cellular: for communication with the control center, for remote
+manuevering as well as monitoring of the drone;
+            </t>
+
+            <t>IEEE 802.11: for inter-drone communications (e.g., platooning)
+and providing connectivity to other devices (e.g., acting as Access Point).
+            </t>
+
+         </list>
+
+      </t>
+
+   </section>
+
+   <section title="Specificities">
+
+      <t>
+Some of the use cases/tasks involving drones require coordination among drones.
+Others involve complex compute tasks that might not be performed using the
+limited computing resources that a drone typically has. These two aspects
+require continuous connectivity with the control center and among drones.
+      </t>
+
+      <t>
+Remote manouvering of a drone might be performed over a cellular network in some
+cased, however, there are situations that need very low latencies and
+deterministic behaviour of the connectivity. Examples involve platooning of
+drones or share of computing resources among drones (e.g., a drone offload some
+function to a neighbouring drone).
+      </t>
+
+   </section>
+
+   <section title="The Need for Wireless">
+
+        <t>
+UAVs cannot be connected through any type of wired media, so it is obvious that
+wireless is needed.
+        </t>
+
+   </section> <!-- title="The Need for Wireless" -->
+
+   <section title="Asks for PAW">
+
+        <t>
+The network infrastructure is actually composed by the UAVs themselves,
+requiring self-configuration capabilities.
+        </t>
+
+        <t>
+Heterogeneous types of traffic need to be supported, from extremely critical
+ones requiring ultra low latency and high resiliency, to traffic requiring
+low-medium latency.
+        </t>
+
+        <t>
+When a given service is decomposed into functions -- hosted at different drones
+-- chained, each link connecting two given functions would have a well-defined
+set of requirements (latency, bandwith and jitter) that have to be met.
+        </t>
+
+   </section>
+
+</section>
+
+<!-- [2019-03-08] cjbc: text added -->
+<section title="Edge Robotics control">
+
+   <section title="Use Case Description">
+
+      <t>
+The Edge Robotics scenario consists of several robots, deployed in a given area
+(for example a shopping mall), inter-connected via an access network to a
+network's edge device or a data center. The robots are connected to the edge so
+complex computational activities are not executed locally at the robots, but
+offloaded to the edge. This brings additional flexibility in the type of tasks
+that the robots do, as well as reducing the costs of robot manufacturing (due to
+their lower complexity), and enabling complex tasks involving coordination among
+robots (that can be more easily performed if robots are centrally controlled).
+      </t>
+
+      <t>
+A simple example of the use of multiples robots is cleaning, delivering of goods
+from warehouses to shops or video surveillance. Multiple robots are
+simultaneously instructed to perform individual tasks by moving the robotic
+intelligence from the robots to the network's edge (e.g., data center). That
+enables easy synchronization, scalable solution and on-demand option to create
+flexible fleet of robots.
+      </t>
+
+      <t>
+Robots would have various forms of wireless connectivity:
+      </t>
+
+      <t>
+         <list style="symbols">
+
+            <t>IEEE 802.11: for connection to the edge and also inter-robot communications (e.g.,  for coordinated actions);
+            </t>
+
+            <t>cellular: as an additional communication link to the edge, though primarily as backup, since ultra low latencies are needed.
+            </t>
+
+         </list>
+
+      </t>
+
+   </section>
+
+   <section title="Specificities">
+
+      <t>
+Some of the use cases/tasks involving robots might benefit from decomposition of
+a service in small functions that are distributed and chained among robots and
+the edge. These require continuous connectivity with the control center and
+among drones.
+      </t>
+
+      <t>
+Robot control is an activity requiring very low latencies between the robot and
+the location where the control intelligence resides (which might be the edge or
+another robot).
+      </t>
+
+   </section>
+
+   <section title="The Need for Wireless">
+
+        <t>
+Deploying robots in scenarios such as shopping malls for the aforementioned
+applications cannot be done via wired connectivity.
+        </t>
+
+    </section> <!-- title="The Need for Wireless" -->
+
+    <section title="Asks for PAW">
+
+        <t>
+The network infrastructure needs to support heterogeneous types of traffic, from
+robot control to video streaming.
+        </t>
+
+        <t>
+When a given service is decomposed into functions -- hosted at different robots
+-- chained, each link connecting two given functions would have a well-defined
+set of requirements (latency, bandwith and jitter) that have to be met.
+        </t>
+
+    </section>
+
+</section>
 
 </middle>
 

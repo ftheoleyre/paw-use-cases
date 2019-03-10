@@ -5,10 +5,12 @@
 PAW                                                      G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: August 11, 2019                                           Cisco
+Expires: September 11, 2019                                        Cisco
                                                             F. Theoleyre
                                                                     CNRS
-                                                        February 7, 2019
+                                                           CJ. Bernardos
+                                                                    UC3M
+                                                          March 10, 2019
 
 
                       draft-ietf-paw-use-cases-00
@@ -36,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 11, 2019.
+   This Internet-Draft will expire on September 11, 2019.
 
 Copyright Notice
 
@@ -48,27 +50,27 @@ Copyright Notice
    (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 1]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 1]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
    2.  Amusement Parks . . . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
      2.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   5
      2.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   5
-     2.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   5
+     2.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   6
    3.  Wireless for Industrial Applications  . . . . . . . . . . . .   6
      3.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   6
      3.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   6
@@ -78,7 +80,7 @@ Table of Contents
      3.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   8
    4.  Pro Audio and Video . . . . . . . . . . . . . . . . . . . . .   8
      4.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   8
-     4.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   8
+     4.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   9
      4.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   9
      4.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   9
    5.  Gaming  . . . . . . . . . . . . . . . . . . . . . . . . . . .   9
@@ -91,8 +93,26 @@ Table of Contents
      6.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   9
      6.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   9
      6.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .   9
-   7.  Informative References  . . . . . . . . . . . . . . . . . . .   9
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  11
+   7.  UAV platooning and control  . . . . . . . . . . . . . . . . .  10
+     7.1.  Use Case Description  . . . . . . . . . . . . . . . . . .  10
+     7.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .  10
+     7.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  10
+     7.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .  10
+   8.  Edge Robotics control . . . . . . . . . . . . . . . . . . . .  11
+     8.1.  Use Case Description  . . . . . . . . . . . . . . . . . .  11
+     8.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .  11
+     8.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  12
+     8.4.  Asks for PAW  . . . . . . . . . . . . . . . . . . . . . .  12
+   9.  Informative References  . . . . . . . . . . . . . . . . . . .  12
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 2]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
 
 1.  Introduction
 
@@ -106,14 +126,6 @@ Table of Contents
    Deterministic Networking in the IP world is an attempt to eliminate
    packet loss for a committed bandwidth while ensuring a worst case
    end-to-end latency, regardless of the network conditions and across
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 2]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    technologies.  It can be seen as a set of new Quality of Service
    (QoS) guarantees of worst-case delivery.  IP networks become more
    deterministic when the effects of statistical multiplexing (jitter
@@ -150,6 +162,14 @@ Internet-Draft           PAW use cases scenarios           February 2019
    been focused on wired media, with Audio/Video Bridging (AVB) and Time
    Sensitive Networking (TSN) at the IEEE and DetNet
    [I-D.ietf-detnet-architecture] at the IETF.  But wires cannot be used
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 3]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    in a number of cases, including mobile or rotating devices,
    rehabilitated industrial buildings, wearable or in-body sensory
    devices, vehicle automation and multiplayer gaming.
@@ -161,14 +181,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    instruments or racing.
 
    This is now changing:
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 3]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
    o  IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
       (URLLC) as a key functionality for the upcoming 5G,
@@ -206,6 +218,14 @@ Internet-Draft           PAW use cases scenarios           February 2019
    o  emergency: safety has to be preserved, and MUST stop the
       attraction when a failure is detected;
 
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 4]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    o  real-time control: real-time applications embedded in the
       attraction need to trigger an action when an event is detected.
       For instance, a photograph can be taken when a car crosses an
@@ -214,17 +234,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    o  predictive maintenance: statistics are collected to predict the
       future failures, or to compute later more complex statistics about
       the attraction's usage, the downtime, its popularity, etc.
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 4]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
 2.2.  Specificities
 
@@ -265,6 +274,14 @@ Internet-Draft           PAW use cases scenarios           February 2019
    transmissions.They aim to enable novel high-value services.  VIP
    tickets are nowadays more and more popular.  Wireless wearable
    devices may help to reduce the operating costs [disney-VIP] and
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 5]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    increasing the number of charged services provided to the audience
    (VIP tickets, interactivity, etc.)
 
@@ -273,14 +290,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    The networ infrastructure has to support heterogenous traffic, with
    very different criticalities.  Thus, flow isolation has to be
    provided, where best effort traffic only
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 5]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
    We have to schedule appropriately the transmissions, even in presence
    of mobile devices.  While the [I-D.ietf-6tisch-architecture] already
@@ -320,6 +329,15 @@ Internet-Draft           PAW use cases scenarios           February 2019
    dynamic activities may require even faster rates in the order of a
    few ms.  Finally, some industries exhibit hybrid behaviours, like
    canned soup that will start as a process industry while mixing the
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 6]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    food and then operate as a discrete manufacturing when putting the
    final product in cans and shipping them.
 
@@ -330,13 +348,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    of the control loop.  A rare packet loss is usually admissible, but
    typically 4 losses in a row will cause an emergency halt of the
    production and incur a high cost for the manufacturer.
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 6]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
 3.2.2.  Unmeasured Data
 
@@ -374,6 +385,15 @@ Internet-Draft           PAW use cases scenarios           February 2019
    When refurbishing older premises that were built before the Internet
    age, power is usually available everywhere, but data is not.  It is
    often impractical, time consuming and expensive to deploy an Ethernet
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 7]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
    fabric across walls and between buildings.  Deploying a wire may take
    months and cost tens of thousands of US Dollars.
 
@@ -385,15 +405,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    floor and may help detect and prevent a failure that could impact the
    production.  IEEE Std. 802.15.4 Time-Slotted Channel Hopping (TSCH)
    [RFC7554] is a promising technology for that purpose, mostly if the
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 7]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    scheduled operations enable to use the same network by asynchronous
    and deterministic flows in parallel.
 
@@ -432,6 +443,13 @@ Internet-Draft           PAW use cases scenarios           February 2019
    Today the ProAV applications are moving towards packet-based
    technology to introduce routing features and to reduce costs.
 
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 8]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
 4.2.  Specificities
 
    Considering the uninterrupted audio or video stream, a potential
@@ -439,16 +457,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
    be tackled by re-trying the transmission, as it is done with file
    transfer, because by the time the packet lost has been identified it
    is too late to proceed with packet re-transmission.
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 8]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
 4.3.  The Need for Wireless
 
@@ -486,25 +494,155 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 6.4.  Asks for PAW
 
-7.  Informative References
+
+
+
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019               [Page 9]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
+7.  UAV platooning and control
+
+7.1.  Use Case Description
+
+   Unmanned Aerial Vehicles (UAVs) are becoming very popular for many
+   different applications, including military and civil use cases.  The
+   term drone is commonly used to refer to a UAV.
+
+   UAVs can be used to perform aerial surveillance activities, traffic
+   monitoring (e.g., Spanish traffic control has recently introduced a
+   fleet of drones for quicker reactions upon traffic congestion related
+   events), support of emergency situations, and even transportation of
+   small goods.
+
+   UAVs typically have various forms of wireless connectivity:
+
+   o  cellular: for communication with the control center, for remote
+      manuevering as well as monitoring of the drone;
+
+   o  IEEE 802.11: for inter-drone communications (e.g., platooning) and
+      providing connectivity to other devices (e.g., acting as Access
+      Point).
+
+7.2.  Specificities
+
+   Some of the use cases/tasks involving drones require coordination
+   among drones.  Others involve complex compute tasks that might not be
+   performed using the limited computing resources that a drone
+   typically has.  These two aspects require continuous connectivity
+   with the control center and among drones.
+
+   Remote manouvering of a drone might be performed over a cellular
+   network in some cased, however, there are situations that need very
+   low latencies and deterministic behaviour of the connectivity.
+   Examples involve platooning of drones or share of computing resources
+   among drones (e.g., a drone offload some function to a neighbouring
+   drone).
+
+7.3.  The Need for Wireless
+
+   UAVs cannot be connected through any type of wired media, so it is
+   obvious that wireless is needed.
+
+7.4.  Asks for PAW
+
+   The network infrastructure is actually composed by the UAVs
+   themselves, requiring self-configuration capabilities.
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019              [Page 10]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
+   Heterogeneous types of traffic need to be supported, from extremely
+   critical ones requiring ultra low latency and high resiliency, to
+   traffic requiring low-medium latency.
+
+   When a given service is decomposed into functions -- hosted at
+   different drones -- chained, each link connecting two given functions
+   would have a well-defined set of requirements (latency, bandwith and
+   jitter) that have to be met.
+
+8.  Edge Robotics control
+
+8.1.  Use Case Description
+
+   The Edge Robotics scenario consists of several robots, deployed in a
+   given area (for example a shopping mall), inter-connected via an
+   access network to a network's edge device or a data center.  The
+   robots are connected to the edge so complex computational activities
+   are not executed locally at the robots, but offloaded to the edge.
+   This brings additional flexibility in the type of tasks that the
+   robots do, as well as reducing the costs of robot manufacturing (due
+   to their lower complexity), and enabling complex tasks involving
+   coordination among robots (that can be more easily performed if
+   robots are centrally controlled).
+
+   A simple example of the use of multiples robots is cleaning,
+   delivering of goods from warehouses to shops or video surveillance.
+   Multiple robots are simultaneously instructed to perform individual
+   tasks by moving the robotic intelligence from the robots to the
+   network's edge (e.g., data center).  That enables easy
+   synchronization, scalable solution and on-demand option to create
+   flexible fleet of robots.
+
+   Robots would have various forms of wireless connectivity:
+
+   o  IEEE 802.11: for connection to the edge and also inter-robot
+      communications (e.g., for coordinated actions);
+
+   o  cellular: as an additional communication link to the edge, though
+      primarily as backup, since ultra low latencies are needed.
+
+8.2.  Specificities
+
+   Some of the use cases/tasks involving robots might benefit from
+   decomposition of a service in small functions that are distributed
+   and chained among robots and the edge.  These require continuous
+   connectivity with the control center and among drones.
+
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019              [Page 11]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
+
+   Robot control is an activity requiring very low latencies between the
+   robot and the location where the control intelligence resides (which
+   might be the edge or another robot).
+
+8.3.  The Need for Wireless
+
+   Deploying robots in scenarios such as shopping malls for the
+   aforementioned applications cannot be done via wired connectivity.
+
+8.4.  Asks for PAW
+
+   The network infrastructure needs to support heterogeneous types of
+   traffic, from robot control to video streaming.
+
+   When a given service is decomposed into functions -- hosted at
+   different robots -- chained, each link connecting two given functions
+   would have a well-defined set of requirements (latency, bandwith and
+   jitter) that have to be met.
+
+9.  Informative References
 
    [disney-VIP]
               Wired, "Disney's $1 Billion Bet on a Magical Wristband",
               March 2015,
               <https://www.wired.com/2015/03/disney-magicband/>.
-
-
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019                [Page 9]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
 
    [EIP]      http://www.odva.org/, "EtherNet/IP provides users with the
               network tools to deploy standard Ethernet technology (IEEE
@@ -517,13 +655,24 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
    [I-D.ietf-6tisch-architecture]
               Thubert, P., "An Architecture for IPv6 over the TSCH mode
-              of IEEE 802.15.4", draft-ietf-6tisch-architecture-19 (work
-              in progress), December 2018.
+              of IEEE 802.15.4", draft-ietf-6tisch-architecture-20 (work
+              in progress), March 2019.
 
    [I-D.ietf-detnet-architecture]
               Finn, N., Thubert, P., Varga, B., and J. Farkas,
               "Deterministic Networking Architecture", draft-ietf-
-              detnet-architecture-10 (work in progress), December 2018.
+              detnet-architecture-12 (work in progress), March 2019.
+
+
+
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019              [Page 12]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
 
    [I-D.ietf-detnet-problem-statement]
               Finn, N. and P. Thubert, "Deterministic Networking Problem
@@ -554,14 +703,6 @@ Internet-Draft           PAW use cases scenarios           February 2019
               network technologies built on the Common Industrial
               Protocol (CIP) including EtherNet/IP.".
 
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019               [Page 10]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    [Profinet]
               http://us.profinet.com/technology/profinet/, "PROFINET is
               a standard for industrial networking in automation.",
@@ -577,6 +718,17 @@ Internet-Draft           PAW use cases scenarios           February 2019
               www.hartcomm.org, "Industrial Communication Networks -
               Wireless Communication Network and Communication Profiles
               - WirelessHART - IEC 62591", 2010.
+
+
+
+
+
+
+
+Papadopoulos, et al.   Expires September 11, 2019              [Page 13]
+
+Internet-Draft           PAW use cases scenarios              March 2019
+
 
 Authors' Addresses
 
@@ -602,22 +754,6 @@ Authors' Addresses
    Email: pthubert@cisco.com
 
 
-
-
-
-
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019               [Page 11]
-
-Internet-Draft           PAW use cases scenarios           February 2019
-
-
    Fabrice Theoleyre
    CNRS
    Office B-270
@@ -629,6 +765,15 @@ Internet-Draft           PAW use cases scenarios           February 2019
    Email: theoleyre@unistra.fr
 
 
+   Carlos J. Bernardos
+   Universidad Carlos III de Madrid
+   Av. Universidad, 30
+   Leganes, Madrid  28911
+   Spain
+
+   Phone: +34 91624 6236
+   Email: cjbc@it.uc3m.es
+   URI:   http://www.it.uc3m.es/cjbc/
 
 
 
@@ -636,37 +781,4 @@ Internet-Draft           PAW use cases scenarios           February 2019
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires August 11, 2019               [Page 12]
+Papadopoulos, et al.   Expires September 11, 2019              [Page 14]
