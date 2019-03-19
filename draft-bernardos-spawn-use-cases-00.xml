@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
+<?rfc toc="yes"?>
+<?rfc tocompact="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc tocindent="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc comments="yes"?>
+<?rfc inline="yes"?>
+<?rfc compact="no"?>
+<?rfc subcompact="no"?>
+<?rfc authorship="yes"?>
+<?rfc tocappendix="yes"?>
+
+<rfc category="std" ipr="trust200902" docName="draft-bernardos-spawn-use-cases-00">
+
+
+<front> 
+
+    <title abbrev="SPAWN use cases scenarios">
+    
+    </title>
+   
+   
+ 
+	<author initials="G.Z." surname="Papadopoulos" fullname="Georgios Z. Papadopoulos">
+    	<organization>IMT Atlantique</organization>
+    	<address>
+        	<postal>
+            	<street>Office B00 - 114A</street>
+             	<street>2 Rue de la Chataigneraie</street>
+             	<city>Cesson-Sevigne - Rennes</city>
+             	<code>35510</code>
+             <country>FRANCE</country>
+         	</postal>
+         	<phone>+33 299 12 70 04</phone>
+         	<email>georgios.papadopoulos@imt-atlantique.fr</email>
+		</address>
+	</author>
+ 
+ 	<author initials="P" surname="Thubert" fullname="Pascal Thubert">   
+		<organization abbrev="Cisco">Cisco Systems, Inc</organization>
+      	<address>
+        	<postal>
+            	<street>Building D</street>
+            	<street>45 Allee des Ormes - BP1200 </street>
+            	<city>MOUGINS - Sophia Antipolis</city>
+            	<code>06254</code>
+            	<country>FRANCE</country>
+         	</postal>
+         	<phone>+33 497 23 26 34</phone>
+         	<email>pthubert@cisco.com</email>
+		</address>
+	</author>   
+ 
+	<author initials="F." surname="Theoleyre" fullname="Fabrice Theoleyre">
+    	<organization>CNRS</organization>
+     	<address>
+        	<postal>
+            	<street>Office B-270</street>
+             	<street>Boulevard Sebastien Brant</street>
+             	<city>Illkirch</city>
+             	<code>67400</code>
+             	<country>FRANCE</country>
+         	</postal>
+         	<phone>+33 368 85 45 33</phone>
+         	<email>theoleyre@unistra.fr</email>
+     	</address>
+ 	</author>
+
+        <author fullname="Carlos J. Bernardos"
+            initials="CJ."
+            surname="Bernardos">
+         <organization abbrev="UC3M">
+         Universidad Carlos III de Madrid
+         </organization>
+         <address>
+           <postal>
+             <street>Av. Universidad, 30</street>
+             <city>Leganes, Madrid</city>
+             <code>28911</code>
+             <country>Spain</country>
+           </postal>
+           <phone>+34 91624 6236</phone>
+           <email>cjbc@it.uc3m.es</email>
+           <uri>http://www.it.uc3m.es/cjbc/</uri>
+         </address>
+       </author>
+
+   <date/>
+
+   <workgroup>SPAWN</workgroup>
+
+   <abstract>
+   <t>
+   The wireless medium presents significant specific challenges to achieve
+   properties similar to those of wired deterministic networks. At the same
+   time, a number of use cases cannot be solved with wires and justify the
+   extra effort of going wireless. This document presents some of these
+   use-cases.
+   </t>
+   </abstract>
+   
+
+</front>
+
+<middle>
+
+
+
+<!--section title="TEMPORARY EDITORIAL NOTES">
+
+   <t>
+		This document is an Internet Draft, so it is work-in-progress by nature.
+   		It contains the following work-in-progress elements:
+   </t>	
+     		 
+   <t>
+   	<list style="symbols">
+		<t>"TODO" statements are elements which have not yet been written by the authors 
+		for some reason (lack of time, ongoing discussions with no clear consensus, etc).
+		The statement does indicate that the text will be written at some time.</t>
+   	</list>
+   </t>
+   		 
+</section --> 
+
+
+
+<section title="Introduction">
+
+    <t>
+    Based on time, resource reservation, and policy enforcement by distributed 
+	shapers, Deterministic Networking provides the capability to carry
+	specified unicast or multicast data streams for real-time applications with
+	extremely low data loss rates and bounded latency, so as to support
+	time-sensitive and mission-critical applications on a converged enterprise
+	infrastructure.  
+	</t>
+	<t>
+	Deterministic Networking in the IP world is an attempt to eliminate packet 
+	loss for a committed bandwidth while ensuring a worst case end-to-end 
+	latency, regardless of the network conditions and across technologies.
+    It can be seen as a set of new Quality of Service (QoS) guarantees of
+	worst-case delivery. IP networks become more deterministic when the
+	effects of statistical multiplexing (jitter and collision loss) are mostly
+	eliminated. This requires a tight control of the physical resources to
+	maintain the amount of traffic within the physical capabilities of the
+	underlying technology, e.g., by the use of time-shared resources
+	(bandwidth and buffers) per circuit, and/or by shaping and/or scheduling
+	the packets at every hop.
+	</t>
+	<t>
+	Key attributes of Deterministic Networking include:
+       <list style="symbols">
+     <t>time synchronization on all the nodes,</t> 
+	 <t>centralized computation of network-wide deterministic paths, and</t>
+	 <t>new traffic shapers within and at the edge to protect the network.</t>
+	   </list>
+	</t>
+    <t>
+	Wireless operates on a shared medium, and transmissions cannot be fully
+	deterministic due to uncontrolled interferences, including self-induced
+	multipath fading. Scheduling transmissions enables to alleviate those 
+	effects by leveraging diversity in the spatial, time and frequency domains, 
+	enabling Scheduled Predictable and Available Wireless Networks (SPAWN).
+	</t>
+    <t>	
+	The wireless and wired media are fundamentally different at the physical 
+	level, and while the generic Problem Statement 
+	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to 
+	the wired as well as the wireless medium, the methods to achieve SPAWN
+	necessarily differ from those used to support Time-Sensitive Networking
+	over wires. 
+	</t>
+	<t>
+	So far, Open Standards for Deterministic Networking have prevalently been
+	focused on wired media, with Audio/Video Bridging (AVB) and Time Sensitive
+	Networking (TSN) at the IEEE and DetNet <xref target="I-D.ietf-detnet-architecture"/> at the IETF. But wires cannot be used in
+	a number of cases, including mobile or rotating	devices, rehabilitated 
+	industrial buildings, wearable or in-body sensory devices, vehicle 
+	automation and	multiplayer	gaming.
+	</t>
+	<t>
+	Purpose-built wireless technologies such as <xref target="ISA100"/>, which
+    incorporates IPv6, were developped and deployed to cope for the lack of open
+	standards, but they yield a high cost in OPEX and CAPEX and are limited to
+	very few industries, e.g., process control, concert instruments or racing. 
+	</t>
+	<t>
+	This is now changing:
+	<list style="symbols">
+	   <t>IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
+	   (URLLC) as a key functionality for the upcoming 5G,</t>
+	   <t>IEEE 802.11 is integrating real-time applications in the charter of
+	   the	Extreme High Throughput (EHT) Task Group (to be formed at the time
+	   of this writing), and</t>
+	   <t>the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
+	   TimeSlotted Channel Hopping (TSCH) and an architecture
+       <xref target="I-D.ietf-6tisch-architecture"/> that enables 
+	   Scheduled Predictable and Available Wireless Networks (SPAWN) on a shared MAC.
+	   </t>
+	</list>
+	</t>
+    <t>
+    This draft extends the <xref target="I-D.ietf-detnet-use-cases">
+	"Deterministic Networking Use Cases"</xref> and describes a number of
+	additional use cases which require deterministic flows over wireless links
+	and possibly complex multi-hop paths called Tracks.
+    </t>
+
+ 
+</section>
+
+
+
+
+
+<section title="Amusement Parks">
+   
+   <section title="Use Case Description">
+      <t>
+         The digitalization of Amusement Parks is expected to decrease significantly
+         the cost for maintaining the attractions. By monitoring in real-time
+         the machines, predictive maintenance will help to reduce the repairing cost
+         as well as the downtime. Besides, the attractions may use wireless
+         transmissions to interconnect sensors and actuators, to privileged
+         reconfigurability, and standardization.
+      </t>
+      
+      <t>
+         Attractions may comprise a large set of sensors and actuators, which
+         react in real time. Typical applications (ordered by criticality in
+         descending order) are:
+      </t>
+      <t>
+         <list style="symbols">
+            <t>emergency: safety has to be preserved, and MUST stop the attraction
+               when a failure is detected;
+            </t>
+            
+            <t>real-time control: real-time applications embedded in the attraction
+               need to trigger an action when an event is detected. For instance, a
+               photograph can be taken when a car crosses an actuator, combined
+               with a wireless ID that the tourists wear;
+            </t>
+            
+            <t>predictive maintenance: statistics are collected to predict the
+               future failures, or to compute later more complex statistics about
+               the attraction's usage, the downtime, its popularity, etc.
+            </t>
+            
+         </list>
+      </t>
+   </section>
+   
+   
+   <section title="Specificities">
+      
+      <t>
+         Amusement parks comprise a variable number of attractions, mostly outdoor.
+         Thus,
+      </t>
+      
+      <t>
+         The tourists are free to move from an attraction to another, covering a large
+         geographical area. Wearable devices are expected for a user experience
+         personalisation. Thus, some devices may be mobile, while the rest of the
+         infrastructure remains static.
+      </t>
+      
+      <t> The infrastrcuture is typically multi-scale:
+         <list style="symbols">
+            <t>local area: the sensors and actuators controling the attractions are
+               co-located. Real-time flows are localized, a set of sensors triggering
+               actuators. Maintenance flows are mostly lrage-range, interconnected with
+               the information system;
+               </t>
+            
+            <t>wearable devices are free to move in the park. They exchange traffic
+               locally (identification, personalization, multimedia) or globally
+               (billing child tracking);
+               </t>
+            
+            <t>global information system manages the whole park, and exchange commands
+               or information with the different parts.
+               </t>
+         </list>
+         
+      </t>
+      </section>
+    
+    
+    
+    
+    <section title="The Need for Wireless">
+        <t>
+           Amusement parks cover large areas and a global interconnection would require a
+           huge length of cables. Wireless also optimizes the reconfigurability, enabling
+           to plug novel services easily to increase e.g. the interactivity.
+         </t>
+        
+        <t>
+           Attractions comprise mobile components (e.g. robots, wagons), which require
+           wireless connections since cables are particulalry inconvenient and source
+           of failures in such conditions.
+        </t>
+        
+        <t>
+           Wearable devices have to support by nature wireless transmissions.They aim to
+           enable novel high-value services. VIP tickets are nowadays more and more
+           popular. Wireless wearable devices may help to reduce the operating costs
+           <xref target="disney-VIP"/> and increasing the number of charged services provided
+           to the audience (VIP tickets, interactivity, etc.)
+        </t>
+    </section> <!-- title="The Need for Wireless" -->
+    
+    
+    <section title="Asks for SPAWN">
+        <t>
+           The networ infrastructure has to support heterogenous traffic, with very
+           different criticalities. Thus, flow isolation has to be provided, where best
+           effort traffic only
+        </t>
+        
+        <t>
+           We have to schedule appropriately the transmissions, even in presence of
+           mobile devices. While the <xref target="I-D.ietf-6tisch-architecture"/>
+           already proposes an architecture for synchronized, IEEE Std. 802.15.4
+           Time-Slotted Channel Hopping (TSCH) networks, 6TiSCH focused on best-effort
+           IPv6 flows. SPAWN expects to schedule appropriately the transmissions,
+           accross hetereogeneous technoologies, with strict SLA requirements.
+           </t>
+        
+        <t>Nowadays, long-range wireless transmissions are used for best-effort
+           traffic, and <xref target="IEEE802.1TSN"/> is used for critical flows
+           using Ethernet devices. However, we need an IP enabled technology to
+           interconnect large areas, independent of the PHY and MAC layer to
+           maximize the compliancy.
+           </t>
+    </section>
+    
+</section>
+
+
+
+<section title="Wireless for Industrial Applications">
+   
+   <section title="Use Case Description">
+   <t> 
+   A major use case for networking in Industrial is the control networks where 
+   periodic control loops operate between a sensor that measures a physical 
+   property such as the temperature of a fluid, a Programmable Logic
+   Controller that decides an action such as warm up the mix, and an actuator
+   that performs the required action, e.g., inject power in a resistor.
+   </t>
+		
+   </section>    
+   
+   
+   <section anchor="indusspecif" title="Specificities">    
+   <section anchor="indusloops" title="Control Loops">
+       
+   <t>
+   Process Control designates continous processing operations, e.g., heating
+   Oil in a refinery or mixing drinking soda. Control loops in the Process
+   Control industry operate at a very low rate, typically 4 times per second.
+   Factory Automation, on the other hand, deal with discrete goods such as
+   individual automobile parts, and requires faster loops, in the order of 10ms.
+   Motion control that monitors dynamic activities may require even faster rates in the order of a few ms. Finally, some industries exhibit hybrid 
+   behaviours, like canned soup that will start as a process industry while 
+   mixing the food and then operate as a discrete manufacturing when putting
+   the final product in cans and shipping them. 
+   </t>
+   <t>
+   In all those cases, a packet must flow deterministically between the sensor
+   and the PLC, be processed by the PLC, and sent to the actuator within the
+   control loop period. In some particular use cases that inherit from analog
+   operations, jitter might also alter the operation of the control loop. 
+   A rare packet loss is usually admissible, but typically 4 losses in a row
+   will cause an emergency halt of the production and incur a high cost for
+   the manufacturer.
+   </t> 
+   </section><!--"Control Loops"-->
+   
+   <section anchor="indusdiags" title="Unmeasured Data">   
+   <t>
+   A secondary use case deals with monitoring and diagnostics. This so-called unmeasured data is essential to improve the performances of a production
+   line, e.g., by optimizing real-time processing or maintenance windows using
+   Machine Learning predictions. For the lack of wireless technologies, some
+   specific industries such as Oil and Gas have been using serial cables,
+   literally by the millions, to perform their process optimization over the
+   previous decades. But few industries would afford the associated cost and
+   the Holy Grail of the Industrial Internet of Things is to provide the same
+   benefits to all industries, including SmartGrid, Transportation, Building,
+   Commercial and Medical. This requires a cheap, available and scalable
+   IP-based access technology.
+   </t>
+
+   <t>
+   Inside the factory, wires may already be available to operate the Control
+   Network. But unmeasured data are not welcome in that network for a number of
+   reasons. On the one hand it is rich and asynchronous, meaning that using they
+   may influence the deterministic nature of the control operations and impact
+   the production. On the other hand, this information must be reported to the
+   carpeted floor over IP, which means the potential for a security breach via
+   the interconnection of the Operational Technology (OT) network with the
+   Internet technology (IT) network and possibly enable a rogue access.
+   </t>    
+   </section><!-- "Unmeasured Data" -->   
+   
+   </section> <!-- title="Speficicities -->
+   
+   
+   <section title="The Need for Wireless"> 
+   <t>
+   Ethernet cables used on a robot arm are prone to breakage after a few
+   thousands flexions, a lot faster than a power cable that is wider inn diameter, and more resilient. In general, wired networking and mobile parts
+   are not a good match, mostly in the case of fast and recurrent activities, as
+   well as rotation.
+   </t>
+   <t>
+   When refurbishing older premises that were built before the Internet age,
+   power is usually available everywhere, but data is not. It is often 
+   impractical, time consuming and expensive to deploy an Ethernet fabric
+   across walls and between buildings. Deploying a wire may take months and
+   cost tens of thousands of US Dollars.
+   </t>
+   <t>
+   Even when wiring exists, e.g., in an existing control network, asynchronous
+   IP packets such as diagnostics may not be welcome for operational and
+   security reasons (see <xref target="indusloops" />). An alternate network
+   that can scale with the many sensors and actuators that equip every robot, 
+   every valve and fan that are deployed on the factory floor and may help 
+   detect and prevent a failure that could impact the production.
+   IEEE Std. 802.15.4 Time-Slotted Channel Hopping (TSCH)
+   <xref target="RFC7554"/> is a promising technology for that purpose, mostly
+   if the scheduled operations enable to use the same network by asynchronous
+   and deterministic flows in parallel.   
+   </t>
+   
+   
+   
+   </section> <!-- title="The Need for Wireless" --> 
+	
+   <section title="Asks for SPAWN">     
+	<t>
+	As stated by the <xref target="I-D.ietf-detnet-problem-statement">
+	"Deterministic Networking Problem Statement" </xref>, a Deterministic
+	Network is backwards compatible with (capable of transporting) statistically
+	multiplexed traffic while preserving the properties of the accepted
+	deterministic flows. While the <xref target="I-D.ietf-6tisch-architecture"/>
+	serves that requirement, the work at 6TiSCH was focused on best-effort IPv6
+	packet flows. SPAWN should be able to lock so-called hard cells for use by a
+	centralized scheduler, and program so-called end-to-end Tracks over those
+	cells.
+	</t>
+    <t> 
+	Over the course of the recent years, major Industrial Protocols, e.g.,
+	<xref target="ODVA"/> with EtherNet/IP <xref target="EIP"/> and
+	<xref target="Profinet"/>, have been migrating towards Ethernet and IP.
+	In order to unleash the full power of the IP hourglass model, it should be
+	possible to deploy any application over any network that has the physical
+	capacity to transport the industrial flow, regardless of the MAC/PHY
+	technology, wired or wireless, and across technologies. 
+	SPAWN should be able to setup a Track over a wireless access segment such as
+	TSCH and a backbone segment such as Ethernet or WI-Fi, to report a sensor
+	data or a critical monitoring within a bouded latency.
+    </t>
+    </section>
+    
+</section>
+
+
+<section title="Pro Audio and Video">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The professional audio and video industry ("ProAV") includes:
+   			<list style="symbols">
+                <t>
+                    Public address, media and emergency systems at large venues (airports, 
+                    stadiums, train stations, churches, theme parks).
+                </t>
+                <!-- Cinema
+				Live sound 
+				Music and film content creation
+				-->
+            </list>
+   		</t>
+   		
+   		<t>
+   			Today the ProAV applications are moving towards packet-based 
+			technology to introduce routing features and to reduce costs.
+   		</t>
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		Considering the uninterrupted audio or video stream, a potential packet losses 
+       		during the transmission of audio or video flows cannot be tackled by re-trying 
+       		the transmission, as it is done with file transfer, because by the time the 
+       		packet lost has been identified it is too late to proceed with packet 
+       		re-transmission.
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> <!-- title="The Need for Wireless" --> 
+    
+   <section title="Asks for SPAWN">     
+       <t>
+TBD.
+       </t>
+    </section>
+</section>
+
+<!--
+<section title="Gaming">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The gaming industry includes:
+   			<list style="symbols">
+                <t>
+                    
+                </t>
+
+            </list>
+   		</t>
+   		
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		bla bla
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> 
+    
+   <section title="Asks for SPAWN">     
+       <t> 
+       </t>
+    </section>
+</section>
+
+
+<section title="Emergency systems">
+   
+   <section title="Use Case Description">
+   		<t> 
+   			The Emergency systems industry includes:
+   			<list style="symbols">
+                <t>
+                    
+                </t>
+
+            </list>
+   		</t>
+   		
+   </section>    
+   
+   
+   <section title="Specificities">     
+       <t> 
+       		bla bla
+       </t>
+    </section>
+	
+   
+   <section title="The Need for Wireless"> 
+   </section> 
+    
+   <section title="Asks for SPAWN">     
+       <t> 
+       </t>
+    </section>
+</section>
+-->
+
+<!-- [2019-03-08] cjbc: text added -->
+<section title="UAV platooning and control">
+
+   <section title="Use Case Description">
+
+      <t>
+Unmanned Aerial Vehicles (UAVs) are becoming very popular for many different
+applications, including military and civil use cases. The term drone is commonly
+used to refer to a UAV.
+      </t>
+
+      <t>
+UAVs can be used to perform aerial surveillance activities, traffic monitoring
+(e.g., Spanish traffic control has recently introduced a fleet of drones for
+quicker reactions upon traffic congestion related events), support of emergency
+situations, and even transportation of small goods.
+      </t>
+
+      <t>
+UAVs typically have various forms of wireless connectivity:
+      </t>
+
+      <t>
+
+         <list style="symbols">
+
+            <t>cellular: for communication with the control center, for remote
+manuevering as well as monitoring of the drone;
+            </t>
+
+            <t>IEEE 802.11: for inter-drone communications (e.g., platooning)
+and providing connectivity to other devices (e.g., acting as Access Point).
+            </t>
+
+         </list>
+
+      </t>
+
+   </section>
+
+   <section title="Specificities">
+
+      <t>
+Some of the use cases/tasks involving drones require coordination among drones.
+Others involve complex compute tasks that might not be performed using the
+limited computing resources that a drone typically has. These two aspects
+require continuous connectivity with the control center and among drones.
+      </t>
+
+      <t>
+Remote manouvering of a drone might be performed over a cellular network in some
+cased, however, there are situations that need very low latencies and
+deterministic behaviour of the connectivity. Examples involve platooning of
+drones or share of computing resources among drones (e.g., a drone offload some
+function to a neighbouring drone).
+      </t>
+
+   </section>
+
+   <section title="The Need for Wireless">
+
+        <t>
+UAVs cannot be connected through any type of wired media, so it is obvious that
+wireless is needed.
+        </t>
+
+   </section> <!-- title="The Need for Wireless" -->
+
+   <section title="Asks for SPAWN">
+
+        <t>
+The network infrastructure is actually composed by the UAVs themselves,
+requiring self-configuration capabilities.
+        </t>
+
+        <t>
+Heterogeneous types of traffic need to be supported, from extremely critical
+ones requiring ultra low latency and high resiliency, to traffic requiring
+low-medium latency.
+        </t>
+
+        <t>
+When a given service is decomposed into functions -- hosted at different drones
+-- chained, each link connecting two given functions would have a well-defined
+set of requirements (latency, bandwith and jitter) that have to be met.
+        </t>
+
+   </section>
+
+</section>
+
+<!-- [2019-03-08] cjbc: text added -->
+<section title="Edge Robotics control">
+
+   <section title="Use Case Description">
+
+      <t>
+The Edge Robotics scenario consists of several robots, deployed in a given area
+(for example a shopping mall), inter-connected via an access network to a
+network's edge device or a data center. The robots are connected to the edge so
+complex computational activities are not executed locally at the robots, but
+offloaded to the edge. This brings additional flexibility in the type of tasks
+that the robots do, as well as reducing the costs of robot manufacturing (due to
+their lower complexity), and enabling complex tasks involving coordination among
+robots (that can be more easily performed if robots are centrally controlled).
+      </t>
+
+      <t>
+A simple example of the use of multiples robots is cleaning, delivering of goods
+from warehouses to shops or video surveillance. Multiple robots are
+simultaneously instructed to perform individual tasks by moving the robotic
+intelligence from the robots to the network's edge (e.g., data center). That
+enables easy synchronization, scalable solution and on-demand option to create
+flexible fleet of robots.
+      </t>
+
+      <t>
+Robots would have various forms of wireless connectivity:
+      </t>
+
+      <t>
+         <list style="symbols">
+
+            <t>IEEE 802.11: for connection to the edge and also inter-robot communications (e.g.,  for coordinated actions);
+            </t>
+
+            <t>cellular: as an additional communication link to the edge, though primarily as backup, since ultra low latencies are needed.
+            </t>
+
+         </list>
+
+      </t>
+
+   </section>
+
+   <section title="Specificities">
+
+      <t>
+Some of the use cases/tasks involving robots might benefit from decomposition of
+a service in small functions that are distributed and chained among robots and
+the edge. These require continuous connectivity with the control center and
+among drones.
+      </t>
+
+      <t>
+Robot control is an activity requiring very low latencies between the robot and
+the location where the control intelligence resides (which might be the edge or
+another robot).
+      </t>
+
+   </section>
+
+   <section title="The Need for Wireless">
+
+        <t>
+Deploying robots in scenarios such as shopping malls for the aforementioned
+applications cannot be done via wired connectivity.
+        </t>
+
+    </section> <!-- title="The Need for Wireless" -->
+
+    <section title="Asks for SPAWN">
+
+        <t>
+The network infrastructure needs to support heterogeneous types of traffic, from
+robot control to video streaming.
+        </t>
+
+        <t>
+When a given service is decomposed into functions -- hosted at different robots
+-- chained, each link connecting two given functions would have a well-defined
+set of requirements (latency, bandwith and jitter) that have to be met.
+        </t>
+
+    </section>
+
+</section>
+
+</middle>
+
+<back>
+
+<!--
+   <references title="Normative References">
+ </references>
+--> 
+
+ <references title="Informative References">
+ 
+      <?rfc include="reference.RFC.7554"?> <!-- 6TiSCH TSCH -->
+ 
+	   
+	  <?rfc include='reference.I-D.ietf-detnet-problem-statement'?>
+	  <?rfc include='reference.I-D.ietf-detnet-use-cases'?>
+      <?rfc include='reference.I-D.ietf-6tisch-architecture'?>
+      <?rfc include='reference.I-D.ietf-detnet-architecture'?>
+	   
+ 
+       <reference anchor="disney-VIP" target="https://www.wired.com/2015/03/disney-magicband/">
+           <front>
+               <title>Disney's $1 Billion Bet on a Magical Wristband</title>
+               <author>
+                   <organization>Wired</organization>
+               </author>
+               <date year="2015" month="March"/>
+           </front>
+       </reference>
+	   
+	  <reference anchor="ODVA">
+         <front>
+            <title>The organization that supports network technologies built on 
+            the Common Industrial Protocol (CIP) including EtherNet/IP.</title>
+            <author>
+               <organization>http://www.odva.org/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+      
+      
+	   
+      <reference anchor="Profinet"  target="http://us.profinet.com/technology/profinet/">
+         <front>
+            <title>PROFINET is a standard for industrial networking in
+            automation. </title>
+            <author>
+               <organization>http://us.profinet.com/technology/profinet/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+	  
+	  <reference anchor="EIP"  target="http://www.odva.org/Portals/0/Library/Publications_Numbered/PUB00138R3_CIP_Adv_Tech_Series_EtherNetIP.pdf">
+          <front>
+          <title> EtherNet/IP provides users with the network tools to deploy
+          standard Ethernet technology (IEEE 802.3 combined with the TCP/IP
+          Suite) for industrial automation applications while enabling Internet
+          and enterprise connectivity data anytime, anywhere.</title> 
+            <author>
+               <organization>http://www.odva.org/</organization>
+            </author>
+            <date></date>
+         </front>
+      </reference>
+	  
+	  
+       <reference anchor="ISA100" target="https://www.isa.org/isa100/">
+         <front>
+            <title>ISA100, Wireless Systems for Automation</title>
+            <author>
+               <organization>ISA/ANSI</organization>
+            </author>
+            <date/>
+         </front>
+      </reference>
+	  
+	  
+      <reference anchor="WirelessHART">
+         <front>
+            <title>Industrial Communication Networks - Wireless Communication Network
+               and Communication Profiles - WirelessHART - IEC 62591</title>
+            <author>
+               <organization>www.hartcomm.org</organization>
+            </author>
+            <date year="2010" />
+         </front>
+      </reference>
+	  
+	  
+      <reference anchor="IEEE802154">
+         <front>
+            <title>IEEE Std. 802.15.4, Part. 15.4: Wireless Medium Access
+            Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate
+            Wireless Personal Area Networks
+            </title>
+            <author>
+               <organization>IEEE standard for Information Technology</organization>
+            </author>
+            <date/>
+         </front>
+      </reference>
+	  
+     
+     <reference anchor="IEEE802.1TSN">
+        <front>
+           <title>IEEE 802.1AS-2011 - IEEE Standard for Local and Metropolitan Area
+              Networks - Timing and Synchronization for Time-Sensitive Applications
+              in Bridged Local Area Networks
+           </title>
+           <author>
+              <organization>IEEE standard for Information Technology</organization>
+           </author>
+           <date/>
+        </front>
+     </reference>
+	  
+	   
+ </references>
+
+ 
+ 
+  
+ 
+</back> 
+</rfc>
