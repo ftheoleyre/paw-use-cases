@@ -5,12 +5,12 @@
 SPAWN                                                    G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: September 20, 2019                                        Cisco
+Expires: September 21, 2019                                        Cisco
                                                             F. Theoleyre
                                                                     CNRS
                                                            CJ. Bernardos
                                                                     UC3M
-                                                          March 19, 2019
+                                                          March 20, 2019
 
 
                             SPAWN use cases
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 20, 2019.
+   This Internet-Draft will expire on September 21, 2019.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 1]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 1]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 2]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 2]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -165,7 +165,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 3]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 3]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -221,7 +221,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 4]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 4]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -277,7 +277,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 5]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 5]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -333,7 +333,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 6]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 6]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -389,7 +389,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 7]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 7]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -445,7 +445,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 8]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 8]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -501,7 +501,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019               [Page 9]
+Papadopoulos, et al.   Expires September 21, 2019               [Page 9]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -557,7 +557,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019              [Page 10]
+Papadopoulos, et al.   Expires September 21, 2019              [Page 10]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -613,7 +613,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019              [Page 11]
+Papadopoulos, et al.   Expires September 21, 2019              [Page 11]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -669,7 +669,7 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019              [Page 12]
+Papadopoulos, et al.   Expires September 21, 2019              [Page 12]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -725,7 +725,7 @@ Authors' Addresses
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019              [Page 13]
+Papadopoulos, et al.   Expires September 21, 2019              [Page 13]
 
 Internet-Draft          SPAWN use cases scenarios             March 2019
 
@@ -781,4 +781,4 @@ Internet-Draft          SPAWN use cases scenarios             March 2019
 
 
 
-Papadopoulos, et al.   Expires September 20, 2019              [Page 14]
+Papadopoulos, et al.   Expires September 21, 2019              [Page 14]
