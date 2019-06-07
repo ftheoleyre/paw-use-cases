@@ -151,8 +151,9 @@
 	<t>
 	Key attributes of Deterministic Networking include:
        <list style="symbols">
-     <t>time synchronization on all the nodes,</t> 
-	 <t>centralized computation of network-wide deterministic paths, and</t>
+    <t>time synchronization on all the nodes,</t>
+	 <t>centralized computation of network-wide deterministic paths,</t>
+    <t>multi-technology path with co-channel interference minimzation, and</t>
 	 <t>new traffic shapers within and at the edge to protect the network.</t>
 	   </list>
 	</t>
@@ -189,11 +190,22 @@
 	This is now changing:
 	<list style="symbols">
 	   <t>IMT-2020 has recognized Ultra-Reliable Low-Latency Communication
-	   (URLLC) as a key functionality for the upcoming 5G,</t>
-	   <t>IEEE 802.11 is integrating real-time applications in the charter of
+	   (URLLC) as a key functionality for the upcoming 5G,
+      </t>
+	   
+      <!--
+      <t>IEEE 802.11 is integrating real-time applications in the charter of
 	   the	Extreme High Throughput (EHT) Task Group (to be formed at the time
 	   of this writing), and</t>
-	   <t>the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
+	   -->
+      
+      <t>
+      IEEE 802.11 has identified a set of real-applications <xref target="ieee80211-rt-tig"/>
+      which may use the IEEE802.11 standards. They typically emphasize
+      strict end-to-end delay requirements.
+      </t>
+      
+      <t>the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
 	   TimeSlotted Channel Hopping (TSCH) and an architecture
        <xref target="I-D.ietf-6tisch-architecture"/> that enables 
 	   Scheduled Predictable and Available Wireless Networks (PAW) on a shared MAC.
@@ -244,7 +256,7 @@
             <t>real-time interactions: visitors may interact with the attraction,
                like in a real-time video game. The vistors may virtually interact
                with their environment, triggering actions in the real world
-               (through actuators).
+               (through actuators) <xref target="robots"/>
             </t>
             
             <t>geolocation: vistors are tracked with a personal wireless
@@ -324,8 +336,7 @@
     <section title="Asks for PAW">
         <t>
            The networ infrastructure has to support heterogenous traffic, with very
-           different criticalities. Thus, flow isolation has to be provided, where best
-           effort traffic only
+           different criticalities. Thus, flow isolation has to be provided.
         </t>
         
         <t>
@@ -816,6 +827,22 @@ set of requirements (latency, bandwith and jitter) that have to be met.
       </reference>
       
       
+      <reference anchor="robots" target="https://doi.org/10.1109/HUMANOIDS.2012.6651623">
+         <front>
+            <title>Playing catch and juggling with a humanoid robot.</title>
+            <author initials="J." surname="Kober" fullname="J. Kober"></author>
+            <author initials="M." surname="Glisson" fullname="M. Glisson"></author>
+            <author initials="M." surname="Mistry" fullname="M. Mistry"></author>
+            <date year="2012"/>
+           <!--
+            <author initials="M." surname="Glisson" fullname="M. Glisson"></author>
+
+            IEEE-RAS International Conference on Humanoid Robots (Humanoids
+-->
+         </front>
+      </reference>
+      
+      
 	  <reference anchor="ODVA">
          <front>
             <title>The organization that supports network technologies built on 
@@ -826,8 +853,8 @@ set of requirements (latency, bandwith and jitter) that have to be met.
             <date></date>
          </front>
       </reference>
-      
-      
+     
+     
 	   
       <reference anchor="Profinet"  target="http://us.profinet.com/technology/profinet/">
          <front>
