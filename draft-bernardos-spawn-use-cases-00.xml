@@ -13,12 +13,12 @@
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
 
-<rfc category="std" ipr="trust200902" docName="draft-bernardos-spawn-use-cases-00">
+<rfc category="std" ipr="trust200902" docName="draft-bernardos-PAW-use-cases-00">
 
 
 <front> 
 
-    <title abbrev="SPAWN use cases scenarios">SPAWN use cases</title>
+    <title abbrev="PAW use cases scenarios">PAW use cases</title>
    
  
 	<author initials="G.Z." surname="Papadopoulos" fullname="Georgios Z. Papadopoulos">
@@ -55,8 +55,8 @@
     	<organization>CNRS</organization>
      	<address>
         	<postal>
-            	<street>Office B-270</street>
-             	<street>Boulevard Sebastien Brant</street>
+            	<street>Building B</street>
+             	<street>300 boulevard Sebastien Brant - CS 10413</street>
              	<city>Illkirch</city>
              	<code>67400</code>
              	<country>FRANCE</country>
@@ -87,7 +87,7 @@
 
    <date/>
 
-   <workgroup>SPAWN</workgroup>
+   <workgroup>PAW</workgroup>
 
    <abstract>
    <t>
@@ -161,13 +161,13 @@
 	deterministic due to uncontrolled interferences, including self-induced
 	multipath fading. Scheduling transmissions enables to alleviate those 
 	effects by leveraging diversity in the spatial, time and frequency domains, 
-	enabling Scheduled Predictable and Available Wireless Networks (SPAWN).
+	enabling Scheduled Predictable and Available Wireless Networks (PAW).
 	</t>
     <t>	
 	The wireless and wired media are fundamentally different at the physical 
 	level, and while the generic Problem Statement 
 	<xref target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to 
-	the wired as well as the wireless medium, the methods to achieve SPAWN
+	the wired as well as the wireless medium, the methods to achieve PAW
 	necessarily differ from those used to support Time-Sensitive Networking
 	over wires. 
 	</t>
@@ -196,7 +196,7 @@
 	   <t>the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
 	   TimeSlotted Channel Hopping (TSCH) and an architecture
        <xref target="I-D.ietf-6tisch-architecture"/> that enables 
-	   Scheduled Predictable and Available Wireless Networks (SPAWN) on a shared MAC.
+	   Scheduled Predictable and Available Wireless Networks (PAW) on a shared MAC.
 	   </t>
 	</list>
 	</t>
@@ -228,8 +228,7 @@
       
       <t>
          Attractions may comprise a large set of sensors and actuators, which
-         react in real time. Typical applications (ordered by criticality in
-         descending order) are:
+         react in real time. Typical applications comprise:
       </t>
       <t>
          <list style="symbols">
@@ -237,10 +236,19 @@
                when a failure is detected;
             </t>
             
-            <t>real-time control: real-time applications embedded in the attraction
-               need to trigger an action when an event is detected. For instance, a
-               photograph can be taken when a car crosses an actuator, combined
-               with a wireless ID that the tourists wear;
+            <t>video: augmented and virtual realities are integrated in the
+               attraction. Some wearable devices (e.g. glasses, virtual reality
+               headset) need to oflload one part of the processing tasks.
+            </t>
+            
+            <t>real-time interactions: visitors may interact with the attraction,
+               like in a real-time video game. The vistors may virtually interact
+               with their environment, triggering actions in the real world
+               (through actuators).
+            </t>
+            
+            <t>geolocation: vistors are tracked with a personal wireless
+               tag so that their user experience is improved.
             </t>
             
             <t>predictive maintenance: statistics are collected to predict the
@@ -256,23 +264,13 @@
    <section title="Specificities">
       
       <t>
-         Amusement parks comprise a variable number of attractions, mostly outdoor.
-         Thus,
-      </t>
-      
-      <t>
-         The tourists are free to move from an attraction to another, covering a large
-         geographical area. Wearable devices are expected for a user experience
-         personalisation. Thus, some devices may be mobile, while the rest of the
-         infrastructure remains static.
-      </t>
-      
-      <t> The infrastrcuture is typically multi-scale:
+         Amusement parks comprise a variable number of attractions, mostly outdoor,
+         over a large geographical area. The IT infrastrcuture is typically multi-scale:
          <list style="symbols">
             <t>local area: the sensors and actuators controling the attractions are
-               co-located. Real-time flows are localized, a set of sensors triggering
-               actuators. Maintenance flows are mostly lrage-range, interconnected with
-               the information system;
+               co-located. Control loops trigger only local traffic, with a small
+               end-to-end delay, typically inferior than 10 milliseconds, like
+               classical industrial systems <xref target="ieee80211-rt-tig"/>
                </t>
             
             <t>wearable devices are free to move in the park. They exchange traffic
@@ -280,12 +278,17 @@
                (billing child tracking);
                </t>
             
-            <t>global information system manages the whole park, and exchange commands
-               or information with the different parts.
+            <t>a cloud may be required for cloud gaming to offload one part of the
+               processing, predictive maintenance for data analytics.
+               
                </t>
          </list>
-         
       </t>
+      
+     <t>
+        
+        </t>
+      
       </section>
     
     
@@ -293,28 +296,32 @@
     
     <section title="The Need for Wireless">
         <t>
-           Amusement parks cover large areas and a global interconnection would require a
-           huge length of cables. Wireless also optimizes the reconfigurability, enabling
-           to plug novel services easily to increase e.g. the interactivity.
-         </t>
+           Amusement parks cover large areas and a global interconnection would require
+           a huge length of cables. Wireless also optimizes the reconfigurability,
+           enabling to update cheaply the attractions. The frequent renewal helps to
+           increase customer loyalty.
+      </t>
         
         <t>
-           Attractions comprise mobile components (e.g. robots, wagons), which require
-           wireless connections since cables are particulalry inconvenient and source
-           of failures in such conditions.
+           Some parts of the attraction are mobile, e.g. trucks of a rollercoaster, robots.
+           Since cables are prone to frequent failures in this situation, wireless
+           transmissions are recommended.
         </t>
         
         <t>
-           Wearable devices have to support by nature wireless transmissions.They aim to
-           enable novel high-value services. VIP tickets are nowadays more and more
-           popular. Wireless wearable devices may help to reduce the operating costs
-           <xref target="disney-VIP"/> and increasing the number of charged services provided
-           to the audience (VIP tickets, interactivity, etc.)
+           Wearable devices are extensively used for a user experience personalisation. They
+           typically need to support wireless transmissions. Personal tags may help to
+           reduce the operating costs <xref target="disney-VIP"/> and to increase the
+           number of charged services provided to the audience (VIP tickets, interactivity,
+           etc.) Some applications rely on more sophisticated wearable devices such as
+           digital glasses or VR headests for an immersive experience.
         </t>
+        
+       
     </section> <!-- title="The Need for Wireless" -->
     
     
-    <section title="Asks for SPAWN">
+    <section title="Asks for PAW">
         <t>
            The networ infrastructure has to support heterogenous traffic, with very
            different criticalities. Thus, flow isolation has to be provided, where best
@@ -326,8 +333,8 @@
            mobile devices. While the <xref target="I-D.ietf-6tisch-architecture"/>
            already proposes an architecture for synchronized, IEEE Std. 802.15.4
            Time-Slotted Channel Hopping (TSCH) networks, 6TiSCH focused on best-effort
-           IPv6 flows. SPAWN expects to schedule appropriately the transmissions,
-           accross hetereogeneous technoologies, with strict SLA requirements.
+           IPv6 flows. PAW expects to schedule appropriately the transmissions,
+           accross hetereogeneous technologies, with strict SLA requirements.
            </t>
         
         <t>Nowadays, long-range wireless transmissions are used for best-effort
@@ -336,6 +343,14 @@
            interconnect large areas, independent of the PHY and MAC layer to
            maximize the compliancy.
            </t>
+        
+        <t>
+           We expect to deploy several different technologies (long vs. short
+           range) which have to cohabit in the same area. Thus, we need to
+           schedule appropriately the transmissions to limit the co-technology
+           interference, so that an end-to-end delay accross multiple technologies
+           can be guaranteed.
+         </t>
     </section>
     
 </section>
@@ -441,7 +456,7 @@
    
    </section> <!-- title="The Need for Wireless" --> 
 	
-   <section title="Asks for SPAWN">     
+   <section title="Asks for PAW">
 	<t>
 	As stated by the <xref target="I-D.ietf-detnet-problem-statement">
 	"Deterministic Networking Problem Statement" </xref>, a Deterministic
@@ -449,7 +464,7 @@
 	multiplexed traffic while preserving the properties of the accepted
 	deterministic flows. While the <xref target="I-D.ietf-6tisch-architecture"/>
 	serves that requirement, the work at 6TiSCH was focused on best-effort IPv6
-	packet flows. SPAWN should be able to lock so-called hard cells for use by a
+	packet flows. PAW should be able to lock so-called hard cells for use by a
 	centralized scheduler, and program so-called end-to-end Tracks over those
 	cells.
 	</t>
@@ -461,7 +476,7 @@
 	possible to deploy any application over any network that has the physical
 	capacity to transport the industrial flow, regardless of the MAC/PHY
 	technology, wired or wireless, and across technologies. 
-	SPAWN should be able to setup a Track over a wireless access segment such as
+	PAW should be able to setup a Track over a wireless access segment such as
 	TSCH and a backbone segment such as Ethernet or WI-Fi, to report a sensor
 	data or a critical monitoring within a bouded latency.
     </t>
@@ -508,7 +523,7 @@
    <section title="The Need for Wireless"> 
    </section> <!-- title="The Need for Wireless" --> 
     
-   <section title="Asks for SPAWN">     
+   <section title="Asks for PAW">
        <t>
 TBD.
        </t>
@@ -542,7 +557,7 @@ TBD.
    <section title="The Need for Wireless"> 
    </section> 
     
-   <section title="Asks for SPAWN">     
+   <section title="Asks for PAW">
        <t> 
        </t>
     </section>
@@ -575,7 +590,7 @@ TBD.
    <section title="The Need for Wireless"> 
    </section> 
     
-   <section title="Asks for SPAWN">     
+   <section title="Asks for PAW">
        <t> 
        </t>
     </section>
@@ -650,7 +665,7 @@ wireless is needed.
 
    </section> <!-- title="The Need for Wireless" -->
 
-   <section title="Asks for SPAWN">
+   <section title="Asks for PAW">
 
         <t>
 The network infrastructure is actually composed by the UAVs themselves,
@@ -743,7 +758,7 @@ applications cannot be done via wired connectivity.
 
     </section> <!-- title="The Need for Wireless" -->
 
-    <section title="Asks for SPAWN">
+    <section title="Asks for PAW">
 
         <t>
 The network infrastructure needs to support heterogeneous types of traffic, from
@@ -790,6 +805,17 @@ set of requirements (latency, bandwith and jitter) that have to be met.
            </front>
        </reference>
 	   
+      <reference anchor="ieee80211-rt-tig" target="http://www.ieee802.org/11/Reports/rtatig_update.htm">
+         <front>
+            <title>IEEE 802.11 Real Time Applications TIG Report</title>
+            <author>
+               <organization>IEEE</organization>
+            </author>
+            <date year="2018" month="Nov."/>
+         </front>
+      </reference>
+      
+      
 	  <reference anchor="ODVA">
          <front>
             <title>The organization that supports network technologies built on 
