@@ -335,7 +335,7 @@
     
     <section title="Asks for PAW">
         <t>
-           The networ infrastructure has to support heterogenous traffic, with very
+           The network infrastructure has to support heterogenous traffic, with very
            different criticalities. Thus, flow isolation has to be provided.
         </t>
         
@@ -496,48 +496,85 @@
 </section>
 
 
+
 <section title="Pro Audio and Video">
    
    <section title="Use Case Description">
-   		<t> 
+   		<t>
+   			Many devices support audio and video streaming by employing 802.11 wireless LAN. 
+   			Some of these applications require low latency capability. For instance, when 
+   			the application provides interactive play, or when the audio takes plays in
+   			real time (i.e. live) for public addresses in train stations or in theme parks.
+   		</t>
+   		<t>
    			The professional audio and video industry ("ProAV") includes:
    			<list style="symbols">
                 <t>
-                    Public address, media and emergency systems at large venues (airports, 
-                    stadiums, train stations, churches, theme parks).
+                	Virtual Reality / Augmented Reality (VR/AR)
                 </t>
-                <!-- Cinema
-				Live sound 
-				Music and film content creation
-				-->
+                <t>
+                    Public address, media and emergency systems at large venues (airports, 
+                    train stations, stadiums, theme parks).
+                </t>
             </list>
-   		</t>
-   		
-   		<t>
-   			Today the ProAV applications are moving towards packet-based 
-			technology to introduce routing features and to reduce costs.
    		</t>
    </section>    
    
    
-   <section title="Specificities">     
-       <t> 
-       		Considering the uninterrupted audio or video stream, a potential packet losses 
-       		during the transmission of audio or video flows cannot be tackled by re-trying 
-       		the transmission, as it is done with file transfer, because by the time the 
-       		packet lost has been identified it is too late to proceed with packet 
-       		re-transmission.
-       </t>
+   <section title="Specificities">
+		<section title="Uninterrupted Stream Playback">
+       		<t>
+       			Considering the uninterrupted audio or video stream, a potential packet losses 
+       			during the transmission of audio or video flows cannot be tackled by re-trying 
+       			the transmission, as it is done with file transfer, because by the time the 
+       			packet lost has been identified it is too late to proceed with packet 
+       			re-transmission.
+       			Buffering might be employed to provide a certain delay which will allow for 
+       			one or more re-transmissions, however such approach is not efficient in 
+       			application where delays are not acceptable.
+			</t>
+		</section>       	
+
+		<section title="Synchronized Stream Playback">
+			<t>
+       			In the context of ProAV, latency is the time between the transmitted signal 
+       			over a stream and its reception. Thus, for sound to remain synchronized to 
+       			the movement in the video, the latency of both the audio and video 
+       			streams must be bounded and consistent.
+       		</t>
+       	</section>
     </section>
 	
    
    <section title="The Need for Wireless"> 
+       <t>
+       		The devices need the wireless communication to support video streaming via 
+       		802.11 wireless LAN for instance.  
+       </t>
+       <t>
+       		During the public address, the deployed announcement speakers, for instance 
+       		along the platforms of the train stations, need the wireless communication to 
+       		forward the audio traffic in real time.
+       </t>
    </section> <!-- title="The Need for Wireless" --> 
-    
+
+
    <section title="Asks for PAW">
        <t>
-TBD.
+       		The network infrastructure needs to support heterogeneous types of traffic 
+       		(including QoS).
        </t>
+       
+       <t>
+       		Content delivery with bounded (lowest possible) latency.
+       </t>
+       
+       <t>
+       		The deployed network topology should allow for multipath.
+       		This will enable for multiple streams to have different (and multiple) paths 
+       		through the network to support redundancy.
+       </t>
+
     </section>
 </section>
 
@@ -607,6 +644,8 @@ TBD.
     </section>
 </section>
 -->
+
+
 
 <!-- [2019-03-08] cjbc: text added -->
 <section title="UAV platooning and control">
