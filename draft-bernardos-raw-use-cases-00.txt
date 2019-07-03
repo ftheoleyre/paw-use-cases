@@ -788,8 +788,8 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
    [I-D.ietf-6tisch-architecture]
               Thubert, P., "An Architecture for IPv6 over the TSCH mode
-              of IEEE 802.15.4", draft-ietf-6tisch-architecture-24 (work
-              in progress), July 2019.
+              of IEEE 802.15.4", draft-ietf-6tisch-architecture-21 (work
+              in progress), June 2019.
 
    [I-D.ietf-detnet-architecture]
               Finn, N., Thubert, P., Varga, B., and J. Farkas,
