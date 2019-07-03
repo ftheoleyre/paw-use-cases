@@ -151,13 +151,13 @@ Internet-Draft           RAW use cases scenarios               July 2019
    fully deterministic due to uncontrolled interferences, including
    self-induced multipath fading.  Scheduling transmissions enables to
    alleviate those effects by leveraging diversity in the spatial, time
-   and frequency domains, enabling Scheduled Predictable and Available
-   Wireless Networks (PAW).
+   and frequency domains, enabling Reliable and Available Wireless
+   (RAW).
 
    The wireless and wired media are fundamentally different at the
    physical level, and while the generic Problem Statement
    [I-D.ietf-detnet-problem-statement] for DetNet applies to the wired
-   as well as the wireless medium, the methods to achieve PAW
+   as well as the wireless medium, the methods to achieve RAW
    necessarily differ from those used to support Time-Sensitive
    Networking over wires.
 
@@ -195,8 +195,8 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
    o  the IETF has produced an IPv6 stack for IEEE Std. 802.15.4
       TimeSlotted Channel Hopping (TSCH) and an architecture
-      [I-D.ietf-6tisch-architecture] that enables Scheduled Predictable
-      and Available Wireless Networks (PAW) on a shared MAC.
+      [I-D.ietf-6tisch-architecture] that enables Reliable and Available
+      Wireless (RAW) on a shared MAC.
 
    This draft extends the "Deterministic Networking Use Cases"
    [I-D.ietf-detnet-use-cases] and describes a number of additional use
@@ -205,7 +205,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
    mainly by the "Wireless for Industrial Applications" use case, as the
    "Cellular Radio" is mostly dedicated to the (wired) transport part of
    a Radio Access Network (RAN).  Whereas the "Wireless for Industrial
-   Applications" use case certainly covers an area of interest for PAW,
+   Applications" use case certainly covers an area of interest for RAW,
    it is limited to 6TiSCH, and thus its scope is narrower than the use
    cases described next in this document.
 
@@ -323,7 +323,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
    schedule appropriately the transmissions to limit the co-technology
    interference, so that an end-to-end delay accross multiple
    technologies can be guaranteed.  It is needed to understand which
-   technologies PAW will cover and how they can be used cohabitating in
+   technologies RAW will cover and how they can be used cohabitating in
    the same area.
 
 

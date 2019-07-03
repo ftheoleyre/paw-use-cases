@@ -165,7 +165,7 @@ Wireless operates on a shared medium, and transmissions cannot be fully
 deterministic due to uncontrolled interferences, including self-induced
 multipath fading. Scheduling transmissions enables to alleviate those effects by
 leveraging diversity in the spatial, time and frequency domains, enabling
-Scheduled Predictable and Available Wireless Networks (PAW).
+Reliable and Available Wireless (RAW).
 
     </t>
 
@@ -173,7 +173,7 @@ Scheduled Predictable and Available Wireless Networks (PAW).
 The wireless and wired media are fundamentally different at the physical level,
 and while the generic Problem Statement <xref
 target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to the wired as
-well as the wireless medium, the methods to achieve PAW necessarily differ from
+well as the wireless medium, the methods to achieve RAW necessarily differ from
 those used to support Time-Sensitive Networking over wires.
     </t>
 
@@ -217,8 +217,7 @@ typically emphasize strict end-to-end delay requirements.
         <t>
 the IETF has produced an IPv6 stack for IEEE Std. 802.15.4 TimeSlotted Channel
 Hopping (TSCH) and an architecture <xref target="I-D.ietf-6tisch-architecture"/>
-that enables Scheduled Predictable and Available Wireless Networks (PAW) on a
-shared MAC.
+that enables Reliable and Available Wireless (RAW) on a shared MAC.
         </t>
       </list>
     </t>
@@ -227,7 +226,7 @@ shared MAC.
 This draft extends the <xref target="I-D.ietf-detnet-use-cases">
 "Deterministic Networking Use Cases"</xref> and describes a number of
 additional use cases which require deterministic flows over wireless links
-and possibly complex multi-hop paths called Tracks. This is covered mainly by the "Wireless for Industrial Applications" use case, as the "Cellular Radio" is mostly dedicated to the (wired) transport part of a Radio Access Network (RAN). Whereas the "Wireless for Industrial Applications" use case certainly covers an area of interest for PAW, it is limited to 6TiSCH, and thus its scope is narrower than the use cases described next in this document.
+and possibly complex multi-hop paths called Tracks. This is covered mainly by the "Wireless for Industrial Applications" use case, as the "Cellular Radio" is mostly dedicated to the (wired) transport part of a Radio Access Network (RAN). Whereas the "Wireless for Industrial Applications" use case certainly covers an area of interest for RAW, it is limited to 6TiSCH, and thus its scope is narrower than the use cases described next in this document.
     </t>
 
  
@@ -373,7 +372,7 @@ independent of the PHY and MAC layer to maximize the compliancy.
 We expect to deploy several different technologies (long vs. short range) which
 have to cohabit in the same area. Thus, we need to schedule appropriately the
 transmissions to limit the co-technology interference, so that an end-to-end
-delay accross multiple technologies can be guaranteed. It is needed to understand which technologies PAW will cover and how they can be used cohabitating in the same area.
+delay accross multiple technologies can be guaranteed. It is needed to understand which technologies RAW will cover and how they can be used cohabitating in the same area.
          </t>
 
     </section>
@@ -715,7 +714,7 @@ Admission Control. Congestion is a major cause of high/variable latency and it i
    <section title="The Need for Wireless"> 
    </section> 
     
-   <section title="Asks for PAW">
+   <section title="Requirements for RAW">
        <t> 
        </t>
     </section>
