@@ -55,7 +55,7 @@
     	<organization>CNRS</organization>
      	<address>
         	<postal>
-            	<street>Building B</street>
+            	<street>ICube Lab, Pole API</street>
              	<street>300 boulevard Sebastien Brant - CS 10413</street>
              	<city>Illkirch</city>
              	<code>67400</code>
@@ -63,6 +63,7 @@
          	</postal>
          	<phone>+33 368 85 45 33</phone>
          	<email>theoleyre@unistra.fr</email>
+            <uri>http://www.theoleyre.eu</uri>
      	</address>
  	</author>
 
@@ -144,8 +145,8 @@ networks become more deterministic when the effects of statistical multiplexing
 (jitter and collision loss) are mostly eliminated. This requires a tight control
 of the physical resources to maintain the amount of traffic within the physical
 capabilities of the underlying technology, e.g., by the use of time-shared
-resources (bandwidth and buffers) per circuit, and/or by shaping and/or
-scheduling the packets at every hop.
+resources (bandwidth and buffers) per circuit, and/or by shaping and/or scheduling
+the packets at every hop.
     </t>
 
     <t>
@@ -154,7 +155,8 @@ Key attributes of Deterministic Networking include:
       <list style="symbols">
         <t>time synchronization on all the nodes,</t>
         <t>centralized computation of network-wide deterministic paths,</t>
-        <t>multi-technology path with co-channel interference minimzation, and</t>
+        <t>multi-technology path with co-channel interference minimzation,</t>
+        <t>frame preemption and guard time mechanisms to ensure a worst-case delay, and</t>
         <t>new traffic shapers within and at the edge to protect the network.</t>
       </list>
 
@@ -241,12 +243,12 @@ The digitalization of Amusement Parks is expected to decrease significantly the
 cost for maintaining the attractions. By monitoring in real-time the machines,
 predictive maintenance will help to reduce the repairing cost as well as the
 downtime. Besides, the attractions may use wireless transmissions to
-interconnect sensors and actuators, to privileged reconfigurability, and
+interconnect sensors and actuators, to privilege reconfigurability, and
 standardization.
       </t>
       
       <t>
-Attractions may comprise a large set of sensors and actuators, which react in
+Attractions may rely on a large set of sensors and actuators, which react in
 real time. Typical applications comprise:
       </t>
 
@@ -258,13 +260,13 @@ failure is detected;
             </t>
 
             <t>
-video: augmented and virtual realities are integrated in the attraction. Some
-wearable devices (e.g. glasses, virtual reality headset) need to oflload one
-part of the processing tasks.
+video: augmented and virtual realities are integrated in the attraction. Wearable
+devices (e.g. glasses, virtual reality headset) need to offload one part of the
+processing tasks.
             </t>
 
             <t>
-real-time interactions: visitors may interact with the attraction, like in a
+real-time interactions: visitors may interact with an attraction, like in a
 real-time video game. The vistors may virtually interact with their environment,
 triggering actions in the real world (through actuators) <xref target="robots"/>
             </t>
@@ -289,7 +291,7 @@ downtime, its popularity, etc.
 
       <t>
 Amusement parks comprise a variable number of attractions, mostly outdoor, over
-a large geographical area. The IT infrastrcuture is typically multi-scale:
+a large geographical area. The IT infrastructure is typically multi-scale:
 
          <list style="symbols">
 
@@ -302,13 +304,14 @@ target="ieee80211-rt-tig"/>
 
             <t>
 wearable devices are free to move in the park. They exchange traffic locally
-(identification, personalization, multimedia) or globally (billing child
+(identification, personalization, multimedia) or globally (billing, child
 tracking);
                </t>
 
             <t>
-a cloud may be required for cloud gaming to offload one part of the processing,
-predictive maintenance for data analytics.
+computationally intensive applications offload some tasks to a cloud, and
+data analytics rely on a centralized infrastructure (predictive maintenance,
+marketing).
                </t>
 
          </list>
@@ -325,7 +328,7 @@ predictive maintenance for data analytics.
 
         <t>
 Amusement parks cover large areas and a global interconnection would require a
-huge length of cables. Wireless also optimizes the reconfigurability, enabling
+huge length of cables. Wireless also increases the reconfigurability, enabling
 to update cheaply the attractions. The frequent renewal helps to increase
 customer loyalty.
       </t>
@@ -357,8 +360,10 @@ different criticalities. Thus, flow isolation has to be provided.
 We have to schedule appropriately the transmissions, even in presence of mobile
 devices. While the <xref target="I-D.ietf-6tisch-architecture"/> already
 proposes an architecture for synchronized, IEEE Std. 802.15.4 Time-Slotted
-Channel Hopping (TSCH) networks, 6TiSCH focused on best-effort IPv6 flows. RAW
-might provide mechanisms helping to automatically adapt the network (i.e., schedule appropriately the transmissions, accross hetereogeneous technologies, with strict SLA requirements).
+Channel Hopping (TSCH) networks, 6TiSCH doesn't address real-time IPv6 flows.
+RAW might provide mechanisms helping to automatically adapt the network (i.e.,
+schedule appropriately the transmissions, accross hetereogeneous technologies,
+with strict SLA requirements).
            </t>
 
         <t>
@@ -372,7 +377,8 @@ independent of the PHY and MAC layer to maximize the compliancy.
 We expect to deploy several different technologies (long vs. short range) which
 have to cohabit in the same area. Thus, we need to schedule appropriately the
 transmissions to limit the co-technology interference, so that an end-to-end
-delay accross multiple technologies can be guaranteed. It is needed to understand which technologies RAW will cover and how they can be used cohabitating in the same area.
+delay accross multiple technologies can be guaranteed. It is needed to understand
+which technologies RAW will cover and how they can be used cohabitating in the same area.
          </t>
 
     </section>

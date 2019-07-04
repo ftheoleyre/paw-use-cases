@@ -5,12 +5,12 @@
 RAW                                                      G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: January 4, 2020                                           Cisco
+Expires: January 5, 2020                                           Cisco
                                                             F. Theoleyre
                                                                     CNRS
                                                            CJ. Bernardos
                                                                     UC3M
-                                                            July 3, 2019
+                                                            July 4, 2019
 
 
                              RAW use cases
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 4, 2020.
+   This Internet-Draft will expire on January 5, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 1]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 1]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -71,7 +71,7 @@ Table of Contents
    2.  Amusement Parks . . . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   4
      2.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   5
-     2.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   5
+     2.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .   6
      2.4.  Requirements for RAW  . . . . . . . . . . . . . . . . . .   6
    3.  Wireless for Industrial Applications  . . . . . . . . . . . .   7
      3.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   7
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 2]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 2]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -143,7 +143,9 @@ Internet-Draft           RAW use cases scenarios               July 2019
    o  centralized computation of network-wide deterministic paths,
 
    o  multi-technology path with co-channel interference minimzation,
-      and
+
+   o  frame preemption and guard time mechanisms to ensure a worst-case
+      delay, and
 
    o  new traffic shapers within and at the edge to protect the network.
 
@@ -163,9 +165,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-
-
-Papadopoulos, et al.     Expires January 4, 2020                [Page 3]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 3]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -221,25 +221,25 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 4]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 4]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
 
-   sensors and actuators, to privileged reconfigurability, and
+   sensors and actuators, to privilege reconfigurability, and
    standardization.
 
-   Attractions may comprise a large set of sensors and actuators, which
+   Attractions may rely on a large set of sensors and actuators, which
    react in real time.  Typical applications comprise:
 
    o  emergency: safety has to be preserved, and MUST stop the
       attraction when a failure is detected;
 
    o  video: augmented and virtual realities are integrated in the
-      attraction.  Some wearable devices (e.g. glasses, virtual reality
-      headset) need to oflload one part of the processing tasks.
+      attraction.  Wearable devices (e.g. glasses, virtual reality
+      headset) need to offload one part of the processing tasks.
 
-   o  real-time interactions: visitors may interact with the attraction,
+   o  real-time interactions: visitors may interact with an attraction,
       like in a real-time video game.  The vistors may virtually
       interact with their environment, triggering actions in the real
       world (through actuators) [robots]
@@ -254,7 +254,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 2.2.  Specificities
 
    Amusement parks comprise a variable number of attractions, mostly
-   outdoor, over a large geographical area.  The IT infrastrcuture is
+   outdoor, over a large geographical area.  The IT infrastructure is
    typically multi-scale:
 
    o  local area: the sensors and actuators controling the attractions
@@ -264,24 +264,28 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
    o  wearable devices are free to move in the park.  They exchange
       traffic locally (identification, personalization, multimedia) or
-      globally (billing child tracking);
+      globally (billing, child tracking);
 
-   o  a cloud may be required for cloud gaming to offload one part of
-      the processing, predictive maintenance for data analytics.
-
-2.3.  The Need for Wireless
-
-   Amusement parks cover large areas and a global interconnection would
-   require a huge length of cables.  Wireless also optimizes the
+   o  computationally intensive applications offload some tasks to a
+      cloud, and data analytics rely on a centralized infrastructure
+      (predictive maintenance, marketing).
 
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 5]
+
+
+
+
+Papadopoulos, et al.     Expires January 5, 2020                [Page 5]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
 
+2.3.  The Need for Wireless
+
+   Amusement parks cover large areas and a global interconnection would
+   require a huge length of cables.  Wireless also increases the
    reconfigurability, enabling to update cheaply the attractions.  The
    frequent renewal helps to increase customer loyalty.
 
@@ -306,8 +310,8 @@ Internet-Draft           RAW use cases scenarios               July 2019
    We have to schedule appropriately the transmissions, even in presence
    of mobile devices.  While the [I-D.ietf-6tisch-architecture] already
    proposes an architecture for synchronized, IEEE Std. 802.15.4 Time-
-   Slotted Channel Hopping (TSCH) networks, 6TiSCH focused on best-
-   effort IPv6 flows.  RAW might provide mechanisms helping to
+   Slotted Channel Hopping (TSCH) networks, 6TiSCH doesn't address real-
+   time IPv6 flows.  RAW might provide mechanisms helping to
    automatically adapt the network (i.e., schedule appropriately the
    transmissions, accross hetereogeneous technologies, with strict SLA
    requirements).
@@ -329,11 +333,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-
-
-
-
-Papadopoulos, et al.     Expires January 4, 2020                [Page 6]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 6]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -389,7 +389,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 7]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 7]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -445,7 +445,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 8]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 8]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -501,7 +501,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020                [Page 9]
+Papadopoulos, et al.     Expires January 5, 2020                [Page 9]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -557,7 +557,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 10]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 10]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -613,7 +613,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 11]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 11]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -669,7 +669,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 12]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 12]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -725,7 +725,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 13]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 13]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -781,7 +781,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 14]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 14]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -837,7 +837,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 15]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 15]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -893,20 +893,21 @@ Authors' Addresses
 
 
 
-Papadopoulos, et al.     Expires January 4, 2020               [Page 16]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 16]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
 
    Fabrice Theoleyre
    CNRS
-   Building B
+   ICube Lab, Pole API
    300 boulevard Sebastien Brant - CS 10413
    Illkirch  67400
    FRANCE
 
    Phone: +33 368 85 45 33
    Email: theoleyre@unistra.fr
+   URI:   http://www.theoleyre.eu
 
 
    Carlos J. Bernardos
@@ -948,5 +949,4 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-
-Papadopoulos, et al.     Expires January 4, 2020               [Page 17]
+Papadopoulos, et al.     Expires January 5, 2020               [Page 17]
