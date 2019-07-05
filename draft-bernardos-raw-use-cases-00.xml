@@ -174,7 +174,7 @@ Reliable and Available Wireless (RAW).
     <t>
 The wireless and wired media are fundamentally different at the physical level,
 and while the generic Problem Statement <xref
-target="I-D.ietf-detnet-problem-statement"/> for DetNet applies to the wired as
+target="RFC8557"/> for DetNet applies to the wired as
 well as the wireless medium, the methods to achieve RAW necessarily differ from
 those used to support Time-Sensitive Networking over wires.
     </t>
@@ -225,7 +225,7 @@ that enables Reliable and Available Wireless (RAW) on a shared MAC.
     </t>
 
     <t>
-This draft extends the <xref target="I-D.ietf-detnet-use-cases">
+This draft extends the <xref target="RFC8578">
 "Deterministic Networking Use Cases"</xref> and describes a number of
 additional use cases which require deterministic flows over wireless links
 and possibly complex multi-hop paths called Tracks. This is covered mainly by the "Wireless for Industrial Applications" use case, as the "Cellular Radio" is mostly dedicated to the (wired) transport part of a Radio Access Network (RAN). Whereas the "Wireless for Industrial Applications" use case certainly covers an area of interest for RAW, it is limited to 6TiSCH, and thus its scope is narrower than the use cases described next in this document.
@@ -255,7 +255,7 @@ real time. Typical applications comprise:
       <t>
          <list style="symbols">
             <t>
-emergency: safety has to be preserved, and MUST stop the attraction when a
+emergency: safety has to be preserved, and must stop the attraction when a
 failure is detected;
             </t>
 
@@ -490,7 +490,7 @@ of the production and incur a high cost for the manufacturer.
    <section title="Requirements for RAW">
 
     <t>
-As stated by the <xref target="I-D.ietf-detnet-problem-statement">
+As stated by the <xref target="RFC8557">
 "Deterministic Networking Problem Statement" </xref>, a Deterministic Network is
 backwards compatible with (capable of transporting) statistically multiplexed
 traffic while preserving the properties of the accepted deterministic flows.
@@ -907,6 +907,24 @@ set of requirements (latency, bandwith and jitter) that have to be met.
 
 </section>
 
+    <section anchor="IANA" title="IANA Considerations">
+
+      <t>
+N/A.
+      </t>
+
+    </section>
+
+
+    <section anchor="Security" title="Security Considerations">
+
+      <t>
+N/A.
+      </t>
+
+    </section>
+
+
 </middle>
 
 <back>
@@ -921,8 +939,8 @@ set of requirements (latency, bandwith and jitter) that have to be met.
       <?rfc include="reference.RFC.7554"?> <!-- 6TiSCH TSCH -->
  
 	   
-	  <?rfc include='reference.I-D.ietf-detnet-problem-statement'?>
-	  <?rfc include='reference.I-D.ietf-detnet-use-cases'?>
+	  <?rfc include='reference.RFC.8557'?>
+	  <?rfc include='reference.RFC.8578'?>
       <?rfc include='reference.I-D.ietf-6tisch-architecture'?>
       <?rfc include='reference.I-D.ietf-detnet-architecture'?>
 	   
@@ -1013,6 +1031,7 @@ set of requirements (latency, bandwith and jitter) that have to be met.
       </reference>
 	  
 	  
+<!--
       <reference anchor="WirelessHART">
          <front>
             <title>Industrial Communication Networks - Wireless Communication Network
@@ -1023,7 +1042,9 @@ set of requirements (latency, bandwith and jitter) that have to be met.
             <date year="2010" />
          </front>
       </reference>
-	  
+-->
+
+<!--
 	  
       <reference anchor="IEEE802154">
          <front>
@@ -1037,6 +1058,7 @@ set of requirements (latency, bandwith and jitter) that have to be met.
             <date/>
          </front>
       </reference>
+-->
 
      <reference anchor="IEEE802.1TSN">
         <front>

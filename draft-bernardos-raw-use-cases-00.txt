@@ -5,12 +5,12 @@
 RAW                                                      G. Papadopoulos
 Internet-Draft                                            IMT Atlantique
 Intended status: Standards Track                              P. Thubert
-Expires: January 5, 2020                                           Cisco
+Expires: January 6, 2020                                           Cisco
                                                             F. Theoleyre
                                                                     CNRS
                                                            CJ. Bernardos
                                                                     UC3M
-                                                            July 4, 2019
+                                                            July 5, 2019
 
 
                              RAW use cases
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 5, 2020.
+   This Internet-Draft will expire on January 6, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 1]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 1]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -84,7 +84,7 @@ Table of Contents
      4.1.  Use Case Description  . . . . . . . . . . . . . . . . . .   9
      4.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .   9
        4.2.1.  Uninterrupted Stream Playback . . . . . . . . . . . .   9
-       4.2.2.  Synchronized Stream Playback  . . . . . . . . . . . .  10
+       4.2.2.  Synchronized Stream Playback  . . . . . . . . . . . .   9
      4.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  10
      4.4.  Requirements for RAW  . . . . . . . . . . . . . . . . . .  10
    5.  Gaming  . . . . . . . . . . . . . . . . . . . . . . . . . . .  10
@@ -95,21 +95,21 @@ Table of Contents
    6.  UAV platooning and control  . . . . . . . . . . . . . . . . .  12
      6.1.  Use Case Description  . . . . . . . . . . . . . . . . . .  12
      6.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .  12
-     6.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  13
+     6.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  12
      6.4.  Requirements for RAW  . . . . . . . . . . . . . . . . . .  13
    7.  Edge Robotics control . . . . . . . . . . . . . . . . . . . .  13
      7.1.  Use Case Description  . . . . . . . . . . . . . . . . . .  13
      7.2.  Specificities . . . . . . . . . . . . . . . . . . . . . .  14
      7.3.  The Need for Wireless . . . . . . . . . . . . . . . . . .  14
      7.4.  Requirements for RAW  . . . . . . . . . . . . . . . . . .  14
-   8.  Informative References  . . . . . . . . . . . . . . . . . . .  14
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  14
+   10. Informative References  . . . . . . . . . . . . . . . . . . .  14
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  16
 
 
 
-
-
-Papadopoulos, et al.     Expires January 5, 2020                [Page 2]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 2]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -157,15 +157,15 @@ Internet-Draft           RAW use cases scenarios               July 2019
    (RAW).
 
    The wireless and wired media are fundamentally different at the
-   physical level, and while the generic Problem Statement
-   [I-D.ietf-detnet-problem-statement] for DetNet applies to the wired
-   as well as the wireless medium, the methods to achieve RAW
-   necessarily differ from those used to support Time-Sensitive
-   Networking over wires.
+   physical level, and while the generic Problem Statement [RFC8557] for
+   DetNet applies to the wired as well as the wireless medium, the
+   methods to achieve RAW necessarily differ from those used to support
+   Time-Sensitive Networking over wires.
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 3]
+
+Papadopoulos, et al.     Expires January 6, 2020                [Page 3]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -198,16 +198,16 @@ Internet-Draft           RAW use cases scenarios               July 2019
       [I-D.ietf-6tisch-architecture] that enables Reliable and Available
       Wireless (RAW) on a shared MAC.
 
-   This draft extends the "Deterministic Networking Use Cases"
-   [I-D.ietf-detnet-use-cases] and describes a number of additional use
-   cases which require deterministic flows over wireless links and
-   possibly complex multi-hop paths called Tracks.  This is covered
-   mainly by the "Wireless for Industrial Applications" use case, as the
-   "Cellular Radio" is mostly dedicated to the (wired) transport part of
-   a Radio Access Network (RAN).  Whereas the "Wireless for Industrial
-   Applications" use case certainly covers an area of interest for RAW,
-   it is limited to 6TiSCH, and thus its scope is narrower than the use
-   cases described next in this document.
+   This draft extends the "Deterministic Networking Use Cases" [RFC8578]
+   and describes a number of additional use cases which require
+   deterministic flows over wireless links and possibly complex multi-
+   hop paths called Tracks.  This is covered mainly by the "Wireless for
+   Industrial Applications" use case, as the "Cellular Radio" is mostly
+   dedicated to the (wired) transport part of a Radio Access Network
+   (RAN).  Whereas the "Wireless for Industrial Applications" use case
+   certainly covers an area of interest for RAW, it is limited to
+   6TiSCH, and thus its scope is narrower than the use cases described
+   next in this document.
 
 2.  Amusement Parks
 
@@ -221,7 +221,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 4]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 4]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -232,7 +232,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
    Attractions may rely on a large set of sensors and actuators, which
    react in real time.  Typical applications comprise:
 
-   o  emergency: safety has to be preserved, and MUST stop the
+   o  emergency: safety has to be preserved, and must stop the
       attraction when a failure is detected;
 
    o  video: augmented and virtual realities are integrated in the
@@ -277,7 +277,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 5]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 5]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -333,7 +333,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 6]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 6]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -389,7 +389,7 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020                [Page 7]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 7]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -435,23 +435,20 @@ Internet-Draft           RAW use cases scenarios               July 2019
 3.4.  Requirements for RAW
 
    As stated by the "Deterministic Networking Problem Statement"
-   [I-D.ietf-detnet-problem-statement], a Deterministic Network is
-   backwards compatible with (capable of transporting) statistically
-   multiplexed traffic while preserving the properties of the accepted
-   deterministic flows.  While the [I-D.ietf-6tisch-architecture] serves
-   that requirement, the work at 6TiSCH was focused on best-effort IPv6
-   packet flows.  RAW should be able to lock so-called hard cells for
+   [RFC8557], a Deterministic Network is backwards compatible with
+   (capable of transporting) statistically multiplexed traffic while
+   preserving the properties of the accepted deterministic flows.  While
+   the [I-D.ietf-6tisch-architecture] serves that requirement, the work
+   at 6TiSCH was focused on best-effort IPv6 packet flows.  RAW should
+   be able to lock so-called hard cells for use by a centralized
+   scheduler, and program so-called end-to-end Tracks over those cells.
 
 
 
-
-Papadopoulos, et al.     Expires January 5, 2020                [Page 8]
+Papadopoulos, et al.     Expires January 6, 2020                [Page 8]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
-
-   use by a centralized scheduler, and program so-called end-to-end
-   Tracks over those cells.
 
    Over the course of the recent years, major Industrial Protocols,
    e.g., [ODVA] with EtherNet/IP [EIP] and [Profinet], have been
@@ -494,24 +491,20 @@ Internet-Draft           RAW use cases scenarios               July 2019
    more re-transmissions, however such approach is not efficient in
    application where delays are not acceptable.
 
-
-
-
-
-
-
-
-Papadopoulos, et al.     Expires January 5, 2020                [Page 9]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
 4.2.2.  Synchronized Stream Playback
 
    In the context of ProAV, latency is the time between the transmitted
    signal over a stream and its reception.  Thus, for sound to remain
    synchronized to the movement in the video, the latency of both the
    audio and video streams must be bounded and consistent.
+
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020                [Page 9]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
 
 4.3.  The Need for Wireless
 
@@ -554,14 +547,6 @@ Internet-Draft           RAW use cases scenarios               July 2019
       especially bad reputation among the gaming community.  The main
       reasons are high latency, lag spikes and jitter.
 
-
-
-
-Papadopoulos, et al.     Expires January 5, 2020               [Page 10]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
    o  Cloud Gaming: The cloud gaming requires low latency capability as
       the user commands in a game session need to be sent back to the
       cloud server, the cloud server would update game context depending
@@ -569,6 +554,13 @@ Internet-Draft           RAW use cases scenarios               July 2019
       picture/video to be displayed at user devices and stream the
       picture/video content to the user devices.  User devices might
       very likely be connected wirelessly.
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 10]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
 
 5.2.  Specificities
 
@@ -610,14 +602,6 @@ Internet-Draft           RAW use cases scenarios               July 2019
    o  Dual/multiple link.  Due to the competitions and interference are
       common and hardly in control under wireless network, in order to
       improve the latency stability, dual/multiple link proposal is
-
-
-
-Papadopoulos, et al.     Expires January 5, 2020               [Page 11]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
       brought up to address this issue.  Two modes are defined:
       duplicate and joint.
 
@@ -626,6 +610,14 @@ Internet-Draft           RAW use cases scenarios               July 2019
       capability of the link, QoS will be degraded.  QoS degradation
       maybe acceptable for many applications today, however emerging
       time-sensitive applications are highly susceptible to increased
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 11]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
+
       latency and jitter.  In order to better control QoS, it is
       important to control access to the network resources.
 
@@ -667,17 +659,20 @@ Internet-Draft           RAW use cases scenarios               July 2019
    among drones (e.g., a drone offload some function to a neighbouring
    drone).
 
-
-
-Papadopoulos, et al.     Expires January 5, 2020               [Page 12]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
 6.3.  The Need for Wireless
 
    UAVs cannot be connected through any type of wired media, so it is
    obvious that wireless is needed.
+
+
+
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 12]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
 
 6.4.  Requirements for RAW
 
@@ -721,17 +716,19 @@ Internet-Draft           RAW use cases scenarios               July 2019
    o  IEEE 802.11: for connection to the edge and also inter-robot
       communications (e.g., for coordinated actions);
 
+   o  cellular: as an additional communication link to the edge, though
+      primarily as backup, since ultra low latencies are needed.
 
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020               [Page 13]
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 13]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
-
-   o  cellular: as an additional communication link to the edge, though
-      primarily as backup, since ultra low latencies are needed.
 
 7.2.  Specificities
 
@@ -759,12 +756,35 @@ Internet-Draft           RAW use cases scenarios               July 2019
    would have a well-defined set of requirements (latency, bandwith and
    jitter) that have to be met.
 
-8.  Informative References
+8.  IANA Considerations
+
+   N/A.
+
+9.  Security Considerations
+
+   N/A.
+
+10.  Informative References
 
    [disney-VIP]
               Wired, "Disney's $1 Billion Bet on a Magical Wristband",
               March 2015,
               <https://www.wired.com/2015/03/disney-magicband/>.
+
+
+
+
+
+
+
+
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 14]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
 
    [EIP]      http://www.odva.org/, "EtherNet/IP provides users with the
               network tools to deploy standard Ethernet technology (IEEE
@@ -775,36 +795,15 @@ Internet-Draft           RAW use cases scenarios               July 2019
               Publications_Numbered/
               PUB00138R3_CIP_Adv_Tech_Series_EtherNetIP.pdf>.
 
-
-
-
-
-
-
-Papadopoulos, et al.     Expires January 5, 2020               [Page 14]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
    [I-D.ietf-6tisch-architecture]
               Thubert, P., "An Architecture for IPv6 over the TSCH mode
-              of IEEE 802.15.4", draft-ietf-6tisch-architecture-21 (work
-              in progress), June 2019.
+              of IEEE 802.15.4", draft-ietf-6tisch-architecture-24 (work
+              in progress), July 2019.
 
    [I-D.ietf-detnet-architecture]
               Finn, N., Thubert, P., Varga, B., and J. Farkas,
               "Deterministic Networking Architecture", draft-ietf-
               detnet-architecture-13 (work in progress), May 2019.
-
-   [I-D.ietf-detnet-problem-statement]
-              Finn, N. and P. Thubert, "Deterministic Networking Problem
-              Statement", draft-ietf-detnet-problem-statement-09 (work
-              in progress), December 2018.
-
-   [I-D.ietf-detnet-use-cases]
-              Grossman, E., "Deterministic Networking Use Cases", draft-
-              ietf-detnet-use-cases-20 (work in progress), December
-              2018.
 
    [IEEE802.1TSN]
               IEEE standard for Information Technology, "IEEE
@@ -821,12 +820,6 @@ Internet-Draft           RAW use cases scenarios               July 2019
               IEEE standard for Information Technology, "IEEE 802.11
               Real Time Applications TIG Report", Nov 2018.
 
-   [IEEE802154]
-              IEEE standard for Information Technology, "IEEE Std.
-              802.15.4, Part. 15.4: Wireless Medium Access Control (MAC)
-              and Physical Layer (PHY) Specifications for Low-Rate
-              Wireless Personal Area Networks".
-
    [ISA100]   ISA/ANSI, "ISA100, Wireless Systems for Automation",
               <https://www.isa.org/isa100/>.
 
@@ -834,18 +827,20 @@ Internet-Draft           RAW use cases scenarios               July 2019
               network technologies built on the Common Industrial
               Protocol (CIP) including EtherNet/IP.".
 
-
-
-
-Papadopoulos, et al.     Expires January 5, 2020               [Page 15]
-
-Internet-Draft           RAW use cases scenarios               July 2019
-
-
    [Profinet]
               http://us.profinet.com/technology/profinet/, "PROFINET is
               a standard for industrial networking in automation.",
               <http://us.profinet.com/technology/profinet/>.
+
+
+
+
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 15]
+
+Internet-Draft           RAW use cases scenarios               July 2019
+
 
    [RFC7554]  Watteyne, T., Ed., Palattella, M., and L. Grieco, "Using
               IEEE 802.15.4e Time-Slotted Channel Hopping (TSCH) in the
@@ -853,14 +848,17 @@ Internet-Draft           RAW use cases scenarios               July 2019
               DOI 10.17487/RFC7554, May 2015,
               <https://www.rfc-editor.org/info/rfc7554>.
 
+   [RFC8557]  Finn, N. and P. Thubert, "Deterministic Networking Problem
+              Statement", RFC 8557, DOI 10.17487/RFC8557, May 2019,
+              <https://www.rfc-editor.org/info/rfc8557>.
+
+   [RFC8578]  Grossman, E., Ed., "Deterministic Networking Use Cases",
+              RFC 8578, DOI 10.17487/RFC8578, May 2019,
+              <https://www.rfc-editor.org/info/rfc8578>.
+
    [robots]   Kober, J., Glisson, M., and M. Mistry, "Playing catch and
               juggling with a humanoid robot.", 2012,
               <https://doi.org/10.1109/HUMANOIDS.2012.6651623>.
-
-   [WirelessHART]
-              www.hartcomm.org, "Industrial Communication Networks -
-              Wireless Communication Network and Communication Profiles
-              - WirelessHART - IEC 62591", 2010.
 
 Authors' Addresses
 
@@ -893,7 +891,9 @@ Authors' Addresses
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020               [Page 16]
+
+
+Papadopoulos, et al.     Expires January 6, 2020               [Page 16]
 
 Internet-Draft           RAW use cases scenarios               July 2019
 
@@ -949,4 +949,4 @@ Internet-Draft           RAW use cases scenarios               July 2019
 
 
 
-Papadopoulos, et al.     Expires January 5, 2020               [Page 17]
+Papadopoulos, et al.     Expires January 6, 2020               [Page 17]
