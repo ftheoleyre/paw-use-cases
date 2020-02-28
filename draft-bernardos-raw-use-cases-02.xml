@@ -339,7 +339,7 @@ transceiver
         <t>
             Policy needs to be supported when selecting data links. The focus of RAW here should be on the selectors, responsible for the routing path a packet takes to reach its end destination. This would minimize the amount of routing information that has to travel inside the network because of precomputed routing tables with the selector being responsible for choosing the most appropriate option according to policy and safety.
         </t>
-    </section>
+    </section> 
     
 </section>
 
