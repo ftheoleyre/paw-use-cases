@@ -13,7 +13,7 @@
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
 
-<rfc category="std" ipr="trust200902" docName="draft-bernardos-raw-use-cases-01">
+<rfc category="std" ipr="trust200902" docName="draft-bernardos-raw-use-cases-02">
 
 
 <front> 
@@ -305,7 +305,8 @@ transceiver
     <section title="Challenges">
         <t>
             This paradigm change brings a lot of new challenges:
-        </t><dl spacing='compact'>
+        </t>
+        <dl spacing='compact'>
             <dt>-</dt><dd>
                 Efficiency: It is necessary to keep latency, time and data overhead (routing, security) of new aeronautical datalinks at a minimum.
             </dd>
