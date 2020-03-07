@@ -155,7 +155,7 @@ Key attributes of Deterministic Networking include:
       <list style="symbols">
         <t>time synchronization on all the nodes,</t>
         <t>centralized computation of network-wide deterministic paths,</t>
-        <t>multi-technology path with co-channel interference minimzation,</t>
+        <t>multi-technology path with co-channel interference minimization,</t>
         <t>frame preemption and guard time mechanisms to ensure a worst-case delay, and</t>
         <t>new traffic shapers within and at the edge to protect the network.</t>
       </list>
@@ -244,103 +244,152 @@ the use cases described next in this document.
 
 <section title="Aeronautical Communications">
     <t>
-        Aircraft are currently connected to ATC (Air-Traffic Control) and AOC (Airline Operational Control) via voice and data communications systems through all phases of a flight. Within the airport terminal, connectivity is focused on high bandwidth communications while during en-route high reliability, robustness and range is the main focus.
+Aircraft are currently connected to ATC (Air-Traffic Control) and AOC (Airline
+Operational Control) via voice and data communications systems through all
+phases of a flight. Within the airport terminal, connectivity is focused on high
+bandwidth communications while during en-route high reliability, robustness and
+range is the main focus.
     </t>
-    
+
     <section title="Problem Statement">
         <t>
-            Worldwide civil air traffic is expected to grow by 84% until 2040 compared to 2017 [EURO20]. Thus, legacy systems in air traffic management (ATM) are likely to reach their capacity limits and the need for new aeronautical communication technologies becomes apparent. Especially problematic is the saturation of VHF band in high density areas in Europe, the US, and Asia <xref target="KEAV20"/> <xref target="FAA20"/>  calling for suitable new digital approaches such as AeroMACS for airport  communications, SatCOM for remote domains, and LDACS as long-range terrestrial aeronautical  communications system. Making the frequency spectrum’s usage more efficient a transition from analogue voice to digital data communication <xref target="PLA14"/> is necessary to cope with the expected growth of civil aviation and its supporting infrastructure. A promising candidate for long range terrestrial communications, already in the process of being standardized in the International Civil Aviation Organization (ICAO), is the L-band Digital Aeronautical Communications System (LDACS) <xref target="ICAO18"/> <xref target="draft-maeurer-raw-ldacs" format="default"/>.
+Worldwide civil air traffic is expected to grow by 84% until 2040 compared to
+2017 <xref target="EURO20"/>. Thus, legacy systems in air traffic management
+(ATM) are likely to reach their capacity limits and the need for new
+aeronautical communication technologies becomes apparent. Especially problematic
+is the saturation of VHF band in high density areas in Europe, the US, and Asia
+<xref target="KEAV20"/> <xref target="FAA20"/> calling for suitable new digital
+approaches such as AeroMACS for airport communications, SatCOM for remote
+domains, and LDACS as long-range terrestrial aeronautical communications system.
+Making the frequency spectrum's usage more efficient a transition from analogue
+voice to digital data communication <xref target="PLA14"/> is necessary to cope
+with the expected growth of civil aviation and its supporting infrastructure. A
+promising candidate for long range terrestrial communications, already in the
+process of being standardized in the International Civil Aviation Organization
+(ICAO), is the L-band Digital Aeronautical Communications System (LDACS) <xref
+target="ICAO18"/> <xref target="I-D.maeurer-raw-ldacs" format="default"/>.
         </t>
     </section>
-    
+
     <section title="Specifics">
         <t>
-            During the creation process of new communications system, analogue voice is replaced by digital data communication. This sets a paradigm shift from analogue to digital wireless communications and supports the related trend towards increased autonomous data processing that the Future Communications Infrastructure (FCI) in civil aviation must provide. The FCI is depicted in <xref target="fig_LDACS"/>:
+During the creation process of new communications system, analogue voice is
+replaced by digital data communication. This sets a paradigm shift from analogue
+to digital wireless communications and supports the related trend towards
+increased autonomous data processing that the Future Communications
+Infrastructure (FCI) in civil aviation must provide. The FCI is depicted in
+<xref target="fig_LDACS"/>:
         </t>
+
         <figure title="The Future Communication Infrastructure (FCI): AeroMACS for APT/TMA domain, LDACS A/G for TMA/ENR domain, LDACS A/G for ENR/ORP domain, SatCOM for ORP domain communications"  anchor="fig_LDACS">
             <artwork>
                 <![CDATA[
-                    
-    Satellite
-   #         #
-   #          # #
-   #            #   #
-   #             #      #
-   #               #        #
-   #                #          #
-   #                  #            #
-   # Satellite-based   #              #
-   #   Communications   #                 #
-   #      SatCOM (#)     #                   #
-   #                      #                    Aircraft
-   #                       #                 %         %
-   #                        #              %             %
-   #                         #           %     Air-Air     %
-   #                          #        %     Communications   %
-   #                           #     %         LDACS A/A (%)    %
-   #                           #   %                              %
-   #                            Aircraft  % % % % % % % % % %  Aircraft
-   #                                 |           Air-Ground           |
-   #                                 |         Communications         |
-   #                                 |           LDACS A/G (|)        |
-   #      Communications in          |                                |
-   #    and around airports          |                                |
-   #         AeroMACS (-)            |                                |
-   #                                 |                                |
-   #         Aircraft-------------+  |                                |
-   #                              |  |                                |
-   #                              |  |                                |
-   #         Ground network       |  |           Ground network       |
-SatCOM <------------------------> Airport <------------------------> LDACS
-transceiver                        based                               GS
+ Satellite
+#         #
+#          # #
+#            #   #
+#             #      #
+#               #        #
+#                #          #
+#                  #            #
+# Satellite-based   #              #
+#   Communications   #                 #
+#      SatCOM (#)     #                   #
+#                      #                    Aircraft
+#                       #                 %         %
+#                        #              %             %
+#                         #           %     Air-Air     %
+#                          #        %     Communications   %
+#                           #     %         LDACS A/A (%)    %
+#                           #   %                              %
+#                            Aircraft  % % % % % % % % % %  Aircraft
+#                                 |           Air-Ground           |
+#                                 |         Communications         |
+#                                 |           LDACS A/G (|)        |
+#      Communications in          |                                |
+#    and around airports          |                                |
+#         AeroMACS (-)            |                                |
+#                                 |                                |
+#         Aircraft-------------+  |                                |
+#                              |  |                                |
+#                              |  |                                |
+#         Ground network       |  |         Ground network         |
+SatCOM <---------------------> Airport <----------------------> LDACS
+transceiver                     based                             GS
 transceiver
-                    
-                    
-                    
                 ]]>
             </artwork>
         </figure>
+
     </section>
-    
+
     <section title="Challenges">
         <t>
-            This paradigm change brings a lot of new challenges:
+This paradigm change brings a lot of new challenges:
+
+          <list style="symbols">
+
+            <t>
+Efficiency: It is necessary to keep latency, time and data overhead (routing,
+security) of new aeronautical datalinks at a minimum.
+            </t>
+
+            <t>
+Modularity: Systems in avionics usually operate up to 30 years, thus solutions
+must be modular, easily adaptable and updatable.
+            </t>
+
+            <t>
+Interoperability: All 192 members of the international Civil Aviation
+Organization (ICAO) must be able to use these solutions.
+            </t>
+
+          </list>
+
         </t>
-        <dl spacing='compact'>
-            <dt>-</dt><dd>
-                Efficiency: It is necessary to keep latency, time and data overhead (routing, security) of new aeronautical datalinks at a minimum.
-            </dd>
-            <dt>-</dt><dd>
-                Modularity: Systems in avionics usually operate up to 30 years, thus
-                solutions must be modular, easily adaptable and updatable.
-            </dd>
-            <dt>-</dt><dd>
-                Interoperability: All 192 members of the international Civil Aviation
-                Organization (ICAO) must be able to use these solutions.
-            </dd>
-        </dl>
+
     </section>
-    
+
     <section title="The Need for Wireless">
         <t>
-            In a high mobility environment such as aviation, the envisioned solutions to provide worldwide coverage of data connections with in-flight aircraft require a multi-system, multi-link, multi-hop approach. Thus air, ground and space based datalink providing technologies will have to operate seamlessly together to cope with the increasing needs of data exchange between aircraft, air traffic controller, airport infrastructure, airlines, air network service providers (ANSPs) and so forth.
-            Thus making use of wireless technologies is a must in tackling this enormous need for a worldwide digital aeronautical datalink infrastructure.
+In a high mobility environment such as aviation, the envisioned solutions to
+provide worldwide coverage of data connections with in-flight aircraft require a
+multi-system, multi-link, multi-hop approach. Thus air, ground and space based
+datalink providing technologies will have to operate seamlessly together to cope
+with the increasing needs of data exchange between aircraft, air traffic
+controller, airport infrastructure, airlines, air network service providers
+(ANSPs) and so forth. Thus making use of wireless technologies is a must in
+tackling this enormous need for a worldwide digital aeronautical datalink
+infrastructure.
         </t>
     </section>
-    
+
     <section title="Requirements for RAW">
+
         <t>
-            Different safety levels need to be supported, from extremely
-            safety critical ones requiring low latency, such as a WAKE warning - a warning that two aircraft come dangerously close to each other - and high resiliency, to  less safety critical ones requiring low-medium latency for services such as WXGRAPH - graphical weather data.
+Different safety levels need to be supported, from extremely safety critical
+ones requiring low latency, such as a WAKE warning - a warning that two aircraft
+come dangerously close to each other - and high resiliency, to less safety
+critical ones requiring low-medium latency for services such as WXGRAPH -
+graphical weather data.
         </t>
+
         <t>
-            Overhead needs to be kept at a minimum since aeronautical data links provide comparatively small data rates in the order of kbit/s.
+Overhead needs to be kept at a minimum since aeronautical data links provide
+comparatively small data rates in the order of kbit/s.
         </t>
+
         <t>
-            Policy needs to be supported when selecting data links. The focus of RAW here should be on the selectors, responsible for the routing path a packet takes to reach its end destination. This would minimize the amount of routing information that has to travel inside the network because of precomputed routing tables with the selector being responsible for choosing the most appropriate option according to policy and safety.
+Policy needs to be supported when selecting data links. The focus of RAW here
+should be on the selectors, responsible for the routing path a packet takes to
+reach its end destination. This would minimize the amount of routing information
+that has to travel inside the network because of precomputed routing tables with
+the selector being responsible for choosing the most appropriate option
+according to policy and safety.
         </t>
+
     </section> 
-    
+
 </section>
 
 <section title="Amusement Parks">
@@ -520,7 +569,7 @@ industry operate at a very low rate, typically 4 times per second. Factory
 Automation, on the other hand, deal with discrete goods such as individual
 automobile parts, and requires faster loops, in the order of 10ms. Motion
 control that monitors dynamic activities may require even faster rates in the
-order of a few ms. Finally, some industries exhibit hybrid behaviours, like
+order of a few ms. Finally, some industries exhibit hybrid behaviors, like
 canned soup that will start as a process industry while mixing the food and then
 operate as a discrete manufacturing when putting the final product in cans and
 shipping them. 
@@ -910,7 +959,7 @@ UAVs typically have various forms of wireless connectivity:
          <list style="symbols">
 
             <t>cellular: for communication with the control center, for remote
-manuevering as well as monitoring of the drone;
+maneuvering as well as monitoring of the drone;
             </t>
 
             <t>IEEE 802.11: for inter-drone communications (e.g., platooning)
@@ -967,7 +1016,7 @@ low-medium latency.
         <t>
 When a given service is decomposed into functions -- hosted at different drones
 -- chained, each link connecting two given functions would have a well-defined
-set of requirements (latency, bandwith and jitter) that have to be met.
+set of requirements (latency, bandwidth and jitter) that have to be met.
         </t>
 
    </section>
@@ -1082,6 +1131,14 @@ N/A.
 
     </section>
 
+    <section anchor="Acknowledgments" title="Acknowledgments">
+
+      <t>
+The work of Carlos J. Bernardos in this draft has been partially supported by
+the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
+      </t>
+
+    </section>
 
 </middle>
 
@@ -1100,7 +1157,7 @@ N/A.
       <?rfc include='reference.I-D.ietf-6tisch-architecture'?>
       <?rfc include='reference.RFC.8655'?>
       <?rfc include='reference.I-D.thubert-raw-technologies'?>
-      <?rfc include='reference.I-D.draft-maeurer-raw-ldacs'?>
+      <?rfc include='reference.I-D.maeurer-raw-ldacs'?>
 
        <reference anchor="disney-VIP" target="https://www.wired.com/2015/03/disney-magicband/">
            <front>
