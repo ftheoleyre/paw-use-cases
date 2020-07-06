@@ -166,7 +166,7 @@ Key attributes of Deterministic Networking include:
 Wireless operates on a shared medium, and transmissions cannot be fully
 deterministic due to uncontrolled interferences, including self-induced
 multipath fading. RAW (Reliable and Available Wireless) is an effort to provide
-Deterministic Networking on across a path that include a wireless physical
+Deterministic Networking Mechanisms on across a path that include a wireless physical
 layer. Making Wireless Reliable and Available is even more challenging than it
 is with wires, due to the numerous causes of loss in transmission that add up to
 the congestion losses and the delays caused by overbooked shared resources.
@@ -398,11 +398,8 @@ according to policy and safety.
 
       <t>
 The digitalization of Amusement Parks is expected to decrease significantly the
-cost for maintaining the attractions. By monitoring in real-time the machines,
-predictive maintenance will help to reduce the repairing cost as well as the
-downtime. Besides, the attractions may use wireless transmissions to
-interconnect sensors and actuators, to privilege reconfigurability, and
-standardization.
+cost for maintaining the attractions.
+Such deployment is a mix between industrial automation (aka. Smart Factories) and multimedia entertainment applications.
       </t>
       
       <t>
@@ -418,7 +415,7 @@ failure is detected.
             </t>
 
             <t>
-Video: augmented and virtual realities are integrated in the attraction. Wearable
+Video: augmented and virtual realities are integrated in the attraction. Wearable mobile
 devices (e.g., glasses, virtual reality headset) need to offload one part of the
 processing tasks.
             </t>
@@ -461,14 +458,15 @@ target="ieee80211-rt-tig"/>.
                </t>
 
             <t>
-Wearable devices are free to move in the park. They exchange traffic locally
+Wearable mobile devices are free to move in the park. They exchange traffic locally
 (identification, personalization, multimedia) or globally (billing, child
 tracking).
                </t>
 
             <t>
-Computationally intensive applications offload some tasks to a cloud, and
-data analytics rely on a centralized infrastructure (predictive maintenance,
+Computationally intensive applications offload some tasks.
+Edge computing seems an efficient way to implement real-time applications with offloading.
+Some non time-critical tasks may rather use the cloud (predictive maintenance,
 marketing).
                </t>
 
@@ -516,28 +514,21 @@ different critical requirements. Thus, flow isolation has to be provided.
 
         <t>
 We have to schedule appropriately the transmissions, even in presence of mobile
-devices. While the <xref target="I-D.ietf-6tisch-architecture"/> already
-proposes an architecture for synchronized, IEEE Std. 802.15.4 Time-Slotted
-Channel Hopping (TSCH) networks, 6TiSCH does not address real-time IPv6 flows.
-RAW might provide mechanisms helping to automatically adapt the network (i.e.,
-schedule appropriately the transmissions, across heterogeneous technologies,
-with strict SLA requirements).
+devices.
+While the <xref target="I-D.ietf-6tisch-architecture"/> already proposes an architecture for synchronized, IEEE Std. 802.15.4 Time-Slotted Channel Hopping (TSCH) networks, we still need multi-technology solutions, able to guarantee end-to-end requirements across heterogeneous technologies, with strict SLA requirements.
            </t>
 
         <t>
-Nowadays, long-range wireless transmissions are used for best-effort traffic,
-and <xref target="IEEE802.1TSN"/> is used for critical flows using Ethernet
-devices. However, we need an IP enabled technology to interconnect large areas,
-independent of the PHY and MAC layer to maximize the compliancy.
+Nowadays, long-range wireless transmissions are used mostly for best-effort traffic.
+On the contrary, <xref target="IEEE802.1TSN"/> is used for critical flows using Ethernet
+devices.
+However, we need an IP enabled technology to interconnect large areas, independent of the PHY and MAC layers.
            </t>
 
         <t>
 We expect to deploy several different technologies (long vs. short range) which
-have to cohabit in the same area. Thus, we need to schedule appropriately the
-transmissions to limit the co-technology interference, so that an end-to-end
-delay across multiple technologies can be guaranteed. It is needed to understand
-which technologies RAW will cover and how they can be used cohabitating in the
-same area.
+have to cohabit in the same area.
+Thus, we need to provide layer-3 mechanisms able to exploit multiple co-interfering technologies.
          </t>
 
     </section>
