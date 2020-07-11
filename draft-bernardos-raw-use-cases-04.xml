@@ -661,7 +661,11 @@ transport the industrial flow, regardless of the MAC/PHY technology, wired or
 wireless, and across technologies. RAW mechanisms should be able to setup a
 Track over a wireless access segment such as TSCH and a backbone segment such as
 Ethernet or WI-Fi, to report a sensor data or a critical monitoring within a
-bounded latency.
+bounded latency. It is also important to ensure that RAW solutions are
+interoperable with existing wireless solutions in place, and with legacy
+equipment which capabilities can be extended using retrofitting. Maintanability,
+as a broader concept than reliability is also important in industrial scenarios
+<xref target="square-peg" />.
     </t>
     </section>
 
@@ -1105,10 +1109,144 @@ set of requirements (latency, bandwidth and jitter) that have to be met.
 
 </section>
 
+<!-- [2020-07-11] cjbc: text added -->
+<section title="Emergencies: Instrumented emergency vehicle">
+
+    <section title="Use Case Description">
+
+      <t>
+An instrumented ambulance would be one that has a LAN to which are connected
+these end systems:
+
+        <list style="symbols" >
+
+          <t>
+vital signs sensors attached to the casualty in the ambulance. Relay medical
+data to hospital emergency room,
+          </t>
+
+          <t>
+radionavigation sensor to relay position data to various destinations including
+dispatcher,
+          </t>
+
+          <t>
+voice communication for ambulance attendant (e.g. consult with ER doctor),
+          </t>
+
+          <t>
+voice communication between driver and dispatcher,
+          </t>
+
+          <t>
+etc.
+          </t>
+
+        </list>
+
+      </t>
+
+      <t>
+The LAN needs to be routed through radio-WANs to complete the internetwork
+linkage.
+      </t>
+
+   </section>
+
+   <section title="Specifics">
+
+      <t>
+What we have today is multiple communications systems to reach the vehicle:
+
+        <list style="symbols" >
+
+          <t>
+A dispatching system,
+          </t>
+
+          <t>
+a cellphone for the attendant,
+          </t>
+
+          <t>
+a special purpose telemetering system for medical data,
+          </t>
+
+          <t>
+etc.
+          </t>
+
+        </list>
+
+      </t>
+
+      <t>
+This redundancy of systems, because of its stovepiping, does not contribute to
+availability as a whole.
+      </t>
+
+      <t>
+Most of the scenarios involving the use of an instrumented ambulance are
+composed of many different flows, each of them with slightly different
+requirements in terms of reliability and latency. Destinations might be either
+at the ambulance itself (local traffic), at a near edge cloud or at the general
+Internet/cloud.
+      </t>
+
+   </section>
+
+   <section title="The Need for Wireless">
+
+        <t>
+Local traffic between the first responders/ambulance staff and the ambulance
+equipment cannot be doine via wireled connectivity as the responders perform
+initial treatment outside of the ambulance. The communications from the
+ambulance to external services has to be wireless as well.
+        </t>
+
+    </section> <!-- title="The Need for Wireless" -->
+
+    <section title="Requirements for RAW">
+
+      <t>
+We can derive some pertinent requirements from this scenario:
+
+        <list style="symbols" >
+
+          <t>
+High availability of the internetwork is required. 
+          </t>
+
+          <t>
+The internetwork needs to operate in damaged state (e.g. during an earthquake
+aftermath, heavy weather, wildfire, etc.). In addition to continuity of
+operations, rapid restoral is a needed characteristic.
+
+          </t>
+
+          <t>
+End-to-end security, both authenticity and confidentiality, is required of
+traffic. All data needs to be authenticated; some (such as medical) needs to be
+confidential.
+          </t>
+
+          <t>
+The radio-WAN has characteristics similar to cellphone -- the vehicle will
+travel from one radio footprint to another.
+          </t>
+
+        </list>
+
+      </t>
+
+    </section>
+
+</section>
+
     <section anchor="sec:iana" title="IANA Considerations">
 
       <t>
-N/A.
+This document has no IANA actions.
       </t>
 
     </section>
@@ -1117,7 +1255,13 @@ N/A.
     <section anchor="sec:security" title="Security Considerations">
 
       <t>
-N/A.
+This document covers a number of representative applications and network
+scenarios that are expected to make use of RAW technologies. Each of the
+potential RAW use cases will have security considerations from both the
+use-specific perspective and the RAW technology perspective. <xref
+target="I-D.ietf-detnet-security" /> provides a comprehensive discussion of
+security considerations in the context of Deterministic Networking, which are
+generally applicable also to RAW.
       </t>
 
     </section>
@@ -1127,7 +1271,13 @@ N/A.
       <t>
 Nils M&auml;urer, Thomas Gr&auml;upl and Corinna Schmitt have contributed
 significantly to this document, providing input for the Aeronautical
-communications section.
+communications section. Rex Buddenberg has also contributed to the document,
+providing input to the Emergency: instrumented emergency vehicle section.
+      </t>
+
+      <t>
+The authors would like to thank Toerless Eckert, Xavi Vilajosana Guillen and
+Rute Sofia for their valuable comments on previous versions of this document.
       </t>
 
       <t>
@@ -1155,6 +1305,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
       <?rfc include='reference.RFC.8655'?>
       <?rfc include='reference.I-D.thubert-raw-technologies'?>
       <?rfc include='reference.I-D.maeurer-raw-ldacs'?>
+      <?rfc include='reference.I-D.ietf-detnet-security'?>
 
        <reference anchor="disney-VIP" target="https://www.wired.com/2015/03/disney-magicband/">
            <front>
@@ -1165,7 +1316,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
                <date year="2015" month="March"/>
            </front>
        </reference>
-       
+
        <reference anchor="EURO20" target="https://www.eurocontrol.int/sites/default/files/content/documents/officialdocuments/reports/challenges-of-growth-2018.pdf"> <!--LDACS-->
            <front>
                <title>EUROCONTROL's Challenges of Growth 2018 Study Report</title>
@@ -1175,7 +1326,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
                <date year="2018"/>
            </front>
        </reference>
-       
+
        <reference anchor="KEAV20" target="https://www.sesarju.eu/"> <!--LDACS-->
            <front>
                <title>Single European Sky ATM Research Joint Undertaking</title>
@@ -1185,7 +1336,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
                <date year="2019"/>
            </front>
        </reference>
-       
+
        <reference anchor="FAA20" target="https://www.faa.gov/nextgen/ "> <!--LDACS-->
            <front>
                <title>Next Generation Air Transportation System</title>
@@ -1195,7 +1346,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
                <date year="2019"/>
            </front>
        </reference>
-       
+
        <reference anchor="PLA14"> <!--LDACS-->
            <front>
                <title>Flight Trial Demonstration of Seamless Aeronautical Networking
@@ -1219,8 +1370,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
            </front>
            <seriesInfo name='IEEE Communications Magazine, vol. 52, no. 5' value=''/>
        </reference>
-       
-       
+
        <reference anchor="ICAO18"> <!--LDACS-->
            <front>
                <title>L-Band Digital Aeronautical Communication System (LDACS)
@@ -1230,11 +1380,8 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
            </front>
            <seriesInfo name='International Standards and Recommended Practices Annex 10 - Aeronautical Telecommunications, Vol. III - Communication Systems' value=''/>
        </reference>
-       
-       
-       
-       
-	   
+
+
       <reference anchor="ieee80211-rt-tig" target="http://www.ieee802.org/11/Reports/rtatig_update.htm">
          <front>
             <title>IEEE 802.11 Real Time Applications TIG Report</title>
@@ -1244,8 +1391,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
             <date year="2018" month="Nov."/>
          </front>
       </reference>
-      
-      
+
       <reference anchor="robots" target="https://doi.org/10.1109/HUMANOIDS.2012.6651623">
          <front>
             <title>Playing catch and juggling with a humanoid robot.</title>
@@ -1260,9 +1406,8 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
 -->
          </front>
       </reference>
-      
-      
-	  <reference anchor="ODVA">
+
+      <reference anchor="ODVA">
          <front>
             <title>The organization that supports network technologies built on 
             the Common Industrial Protocol (CIP) including EtherNet/IP.</title>
@@ -1272,9 +1417,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
             <date></date>
          </front>
       </reference>
-     
-     
-	   
+
       <reference anchor="Profinet"  target="http://us.profinet.com/technology/profinet/">
          <front>
             <title>PROFINET is a standard for industrial networking in
@@ -1285,8 +1428,8 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
             <date></date>
          </front>
       </reference>
-	  
-	  <reference anchor="EIP"  target="http://www.odva.org/Portals/0/Library/Publications_Numbered/PUB00138R3_CIP_Adv_Tech_Series_EtherNetIP.pdf">
+
+      <reference anchor="EIP"  target="http://www.odva.org/Portals/0/Library/Publications_Numbered/PUB00138R3_CIP_Adv_Tech_Series_EtherNetIP.pdf">
           <front>
           <title> EtherNet/IP provides users with the network tools to deploy
           standard Ethernet technology (IEEE 802.3 combined with the TCP/IP
@@ -1298,8 +1441,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
             <date></date>
          </front>
       </reference>
-	  
-	  
+
        <reference anchor="ISA100" target="https://www.isa.org/isa100/">
          <front>
             <title>ISA100, Wireless Systems for Automation</title>
@@ -1309,8 +1451,7 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
             <date/>
          </front>
       </reference>
-	  
-	  
+
 <!--
       <reference anchor="WirelessHART">
          <front>
@@ -1325,7 +1466,6 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
 -->
 
 <!--
-	  
       <reference anchor="IEEE802154">
          <front>
             <title>IEEE Std. 802.15.4, Part. 15.4: Wireless Medium Access
@@ -1363,6 +1503,16 @@ the H2020 5Growth (Grant 856709) and 5G-DIVE projects (Grant 859881).
            <date year="2018" month="Nov" />
         </front>
      </reference>
+
+      <reference anchor="square-peg" target="https://ieeexplore.ieee.org/document/8703476">
+         <front>
+            <title>A Square Peg in a Round Hole: The Complex Path for Wireless in the Manufacturing Industry</title>
+            <author initials="B." surname="Martinez" fullname="B. Martinez"></author>
+            <author initials="C." surname="Cano" fullname="C. Cano"></author>
+            <author initials="X." surname="Vilajosana" fullname="X. Vilajosana"></author>
+            <date year="2019"/>
+         </front>
+      </reference>
 
  </references>
 
