@@ -1,0 +1,1 @@
+the repository has been moved to https://github.com/raw-wg/raw-use-cases since its adoption as WG document. 
